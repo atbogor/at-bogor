@@ -11,18 +11,14 @@
     <link rel="stylesheet" href="signin.css">
 
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
     <title>@Bogor | {{ $title }}</title>
   </head>
   <body>
-    @include('partials.navbar')
-
-    <div class = "container mt-4">
+    <div class = "container mt-5">
         @yield('container')
     </div>
-
-    @include('partials.footer')
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
