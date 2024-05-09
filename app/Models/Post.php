@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    // tambahin logic scope filter, slug, sama field yang bisa diisi
 }

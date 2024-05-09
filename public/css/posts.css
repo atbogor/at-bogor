@@ -1,0 +1,55 @@
+.card-title,
+.card-text {
+    color: #142213 !important;
+}
+
+.link-offset-2 {
+    color: #142213 !important;
+}
+
+.btn-success {
+    background-color: #FB2000 !important;
+    border-color: #224121 !important;
+    color: #FEE9CA !important;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+
+.form-control {
+    border-color: #224121 !important;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    height: 100%;
+    width: 25rem !important;
+}
+
+.headline.card {
+    width: 95%;
+    border-color: #FFFFFF !important;
+}
+
+.img-fluid {
+    border-radius: 12px !important;
+}
+
+.blog-content.card {
+    border-radius: 12px !important;
+    border: 2px solid #224121 !important;
+    display: flex;
+    overflow: hidden;
+}
+
+.nav-pills .nav-item {
+    background-color: #FFB49F;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.nav-pills .nav-item .active {
+    background-color: #FEE9CA;
+    border-radius: 15px;
+}
+
+.nav-pills .nav-item a {
+    color: #142213 !important;
+}

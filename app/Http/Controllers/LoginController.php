@@ -10,6 +10,9 @@ class LoginController extends Controller
     {
         return view('login.index', [
             'title' => 'Login'
+            // bisa tambahin active
         ]);
     }
+
+    // method authenticate sama logout disini nanti
 }

@@ -2,43 +2,7 @@
 
 @section('container')
 
-<style>
-body {
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 500;
-}
-
-.h3 {
-  color: #142213;
-} 
-
-.form-floating label {
-  color: #224121; /* Ubah sesuai keinginan */
-}
-
-.border{
-  border-color: #224121;
-
-}
-
-.btn-success {
-  color: #FEE9CA !important;
-  background-color: #224121 !important;
-  /* ubah tinggi */
-}
-
-.border-success{
-  border-color: #224121 !important;
-}
-
-.d-block{
-  color: #224121
-}
-
-.col-reg{
-  color: #FB2000;
-}
-</style>
+<link rel="stylesheet" href="/css/login.css">
 
 <div class="row justify-content-center">
   <div class="col-md-4">
@@ -51,13 +15,15 @@ body {
 
         <div class="form-floating mb-2">
           <label for="floatingInput">Email address</label>
-          <input type="email" class="form-control border border-success" id="floatingInput" placeholder="name@example.com">
+          <input type="email" class="form-control border border-success" id="floatingInput"
+            placeholder="name@example.com">
         </div>
         <div class="form-floating">
           <label for="floatingPassword">Password</label>
-          <input type="password" class="form-control border border-success" id="floatingPassword" placeholder="Enter your password">
+          <input type="password" class="form-control border border-success" id="floatingPassword"
+            placeholder="Enter your password">
         </div>
-        
+
         <button class="w-100 btn btn-secondary btn-success mt-4" type="submit">Sign In</button>
       </form>
 

@@ -1,0 +1,21 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+}
+
+.bg-light {
+    background-color: #224121 !important;
+}
+
+.navbar-brand,
+.navbar-nav,
+.nav-link {
+    color: #FFB49F !important;
+}
+
+.navbars.btn-primary {
+    background-color: #FFB49F !important;
+    border-color: #FFB49F !important;
+    color: #FB2000 !important;
+    width: 100px;
+}

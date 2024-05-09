@@ -2,41 +2,9 @@
 
 @section('container')
 
-<style>
-    .card-title,
-    .card-text {
-        color: #142213 !important;
-    }
+<link rel="stylesheet" href="/css/posts.css">
 
-    .link-offset-2 {
-        color: #142213 !important;
-    }
-
-    .btn-success {
-        background-color: #FB2000 !important;
-        border-color: #224121 !important;
-        color: #FEE9CA !important;
-        border-top-left-radius: 0%;
-        border-bottom-left-radius: 0%;
-    }
-
-    .form-control {
-        border-color: #224121 !important;
-        border-top-right-radius: 0%;
-        border-bottom-right-radius: 0%;
-        height: 100%;
-        width: 25rem !important;
-    }
-
-    .card {
-        width: 95%;
-        border-color: #FFFFFF !important;
-    }
-
-    .img-fluid {
-        border-radius: 12px !important;
-    }
-</style>
+<!-- jangan lupa actionnya di form, terus kalau yg headline mabil data yang pertama index 0 -->
 
 <div class="row justify-content-center mb-5">
     <form class="form-inline my-2 my-lg-0">
@@ -45,11 +13,12 @@
     </form>
 </div>
 
-<div class="row justify-content-center mb-3">
-    <div class="d-flex card mb-3">
+<!-- jangan lupa di loop aja nanti sama tambahin condition ada atau engga -->
+<div class="row justify-content-center mb-4">
+    <div class="d-flex headline card mb-3">
         <div class="row g-0">
             <div class="col-md-6">
-                <div class="card-body">
+                <div class="blog-content card-body">
                     <h1 class="card-title">Article Name</h1>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                         additional
@@ -61,6 +30,70 @@
             <div class="col-md-6">
                 <img src="https://koran-jakarta.com/images/article/perjalanan-kota-bogor-dulu-hingga-kini-menjadi-penyanggah-ibu-kota-negara-220327193334.jpg"
                     class="img-fluid rounded-start" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">All Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Entertaiment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="blog-content card">
+                <img src="https://koran-jakarta.com/images/article/perjalanan-kota-bogor-dulu-hingga-kini-menjadi-penyanggah-ibu-kota-negara-220327193334.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Article Name</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read now</u></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="blog-content card">
+                <img src="https://koran-jakarta.com/images/article/perjalanan-kota-bogor-dulu-hingga-kini-menjadi-penyanggah-ibu-kota-negara-220327193334.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Article Name</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read now</u></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="blog-content card">
+                <img src="https://koran-jakarta.com/images/article/perjalanan-kota-bogor-dulu-hingga-kini-menjadi-penyanggah-ibu-kota-negara-220327193334.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Article Name</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read now</u></a>
+                </div>
             </div>
         </div>
     </div>

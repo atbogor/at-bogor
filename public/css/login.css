@@ -1,0 +1,36 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+}
+
+.h3 {
+    color: #142213;
+}
+
+.form-floating label {
+    color: #224121;
+    /* Ubah sesuai keinginan */
+}
+
+.border {
+    border-color: #224121;
+
+}
+
+.btn-success {
+    color: #FEE9CA !important;
+    background-color: #224121 !important;
+    /* ubah tinggi */
+}
+
+.border-success {
+    border-color: #224121 !important;
+}
+
+.d-block {
+    color: #224121
+}
+
+.col-reg {
+    color: #FB2000;
+}
