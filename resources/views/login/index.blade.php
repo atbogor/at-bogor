@@ -6,8 +6,12 @@
 
 <div class="row justify-content-center">
   <div class="col-md-4">
+
+    <!-- disini nanti bs tambahin message kalau sukses apa engga -->
+
     <main class="form-signin">
-      <form>
+      <form> <!-- jangan lupa tambahin action dan method -->
+        <!-- tambahin logic backend di setiap input kalau error gimana, sama id dan name jangan lupa ubah -->
         <div class="d-flex align-items-center justify-content-center">
           <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         </div>
