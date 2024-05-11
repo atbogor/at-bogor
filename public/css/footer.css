@@ -1,0 +1,10 @@
+.footers {
+    background-color: #224121;
+    color: #FEE9CA;
+    bottom: 0;
+    width: 100%;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #142213 !important
+}

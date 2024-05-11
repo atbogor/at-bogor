@@ -24,7 +24,7 @@
     @yield('container')
   </div>
 
-  <!-- @include('partials.footer') -->
+  @include('partials.footer')
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
