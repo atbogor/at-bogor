@@ -12,6 +12,12 @@
     .container{
         height: 90px;
     }
+
+    .date.form-control{
+        width:10px;
+    }
+
+
 </style>
 
 <div class="row justify-content-center">
@@ -44,6 +50,30 @@
         </div>
 
         <div class="form-floating mb-2">
+          <label for="floatingInput">Date of Birth</label>
+          <input type="text" class="date form-control border border-success" id="floatingInput"
+            placeholder="dd">
+          <select class="form-select col-md-4 px-2" aria-label="Default select example">
+                <option selected>Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <input type="year" class="form-control border border-success col-md-2" id="floatingInput"
+            placeholder="yyy">
+        </div>
+        <div class="input-group-prepend"></div>
+
+        <div class="form-floating mb-2">
           <label for="floatingInput">Gender</label>
           <select class="form-select col-md-12 px-2" aria-label="Default select example">
                 <option selected>Gender</option>
@@ -51,7 +81,6 @@
                 <option value="2">Female</option>
                 </select>
         </div>
-
         <div class="input-group-prepend">
             
         </div>
@@ -66,7 +95,7 @@
       </form>
 
       <small class="d-block text-center mt-2">
-        Not registered? <a href="#" class="col-reg">Register Now!</a>
+        Already have an account? <a href="#" class="col-reg">Login</a>
       </small>
 
       <div class="container col-lg-4">
