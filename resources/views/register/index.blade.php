@@ -14,9 +14,16 @@
     }
 
     .date.form-control{
-        width:10px;
+        width:70px;
     }
 
+    .year.form-control{
+        width:100px;
+    }
+
+    .border-dark-green {
+      border-color: #214123;
+    }
 
 </style>
 
@@ -49,11 +56,13 @@
             placeholder="name123">
         </div>
 
-        <div class="form-floating mb-2">
-          <label for="floatingInput">Date of Birth</label>
-          <input type="text" class="date form-control border border-success" id="floatingInput"
-            placeholder="dd">
-          <select class="form-select col-md-4 px-2" aria-label="Default select example">
+        <div class="row">
+          <div class="col">
+            <label for="floatingInput">Date of Birth</label>
+            <div class="d-flex">
+              <input type="text" class="date form-control border border-success me-2" id="floatingInput" placeholder="dd">
+              <div style="width: 20px;"></div>
+              <select class="month form-control form-select me-2 border border-dark-green" aria-label="Default select example">
                 <option selected>Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -67,10 +76,13 @@
                 <option value="10">October</option>
                 <option value="11">November</option>
                 <option value="12">December</option>
-            </select>
-            <input type="year" class="form-control border border-success col-md-2" id="floatingInput"
-            placeholder="yyy">
+              </select>
+              <div style="width: 20px;"></div>
+              <input type="year" class="year form-control border border-success" id="floatingInput" placeholder="yyyy">
+            </div>
+          </div>
         </div>
+
         <div class="input-group-prepend"></div>
 
         <div class="form-floating mb-2">
