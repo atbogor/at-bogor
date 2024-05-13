@@ -32,7 +32,7 @@
       </form>
 
       <small class="d-block text-center mt-2">
-        Not registered? <a href="#" class="col-reg">Register Now!</a>
+        Not registered? <a href="/register" class="col-reg">Register Now!</a>
       </small>
 
     </main>
