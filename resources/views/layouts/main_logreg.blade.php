@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="style.css">
 
   <title>@Bogor | {{ $title }}</title>
+  
 </head>
 
 <body>

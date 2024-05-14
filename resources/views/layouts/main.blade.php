@@ -14,7 +14,9 @@
 
   <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
 
+
   <title>@Bogor | {{ $title }}</title>
+
 </head>
 
 <body>

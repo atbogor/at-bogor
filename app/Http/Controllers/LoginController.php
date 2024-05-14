@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -13,6 +14,19 @@ class LoginController extends Controller
             // bisa tambahin active
         ]);
     }
+     // method authenticate sama logout disini nanti
+    public function authenticate(Request $request){
+        $credentials = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
 
-    // method authenticate sama logout disini nanti
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+
+        return back()->with('loginError','Login failed');
+    }
+   
 }
