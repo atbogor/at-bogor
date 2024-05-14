@@ -21,8 +21,12 @@
         width:100px;
     }
 
-    .border-dark-green {
-      border-color: #214123;
+    .month-dropdown {
+      box-shadow: 0 0 0 0.5px #214123;
+    }
+
+    .gender-floating-form {
+      box-shadow: 0 0 0 0.5px #214123;
     }
 
 </style>
@@ -62,8 +66,8 @@
             <div class="d-flex">
               <input type="text" class="date form-control border border-success me-2" id="floatingInput" placeholder="dd">
               <div style="width: 20px;"></div>
-              <select class="month form-control form-select me-2 border border-dark-green" aria-label="Default select example">
-                <option selected>Month</option>
+              <select class="month-dropdown form-control form-select me-2 border border-dark-green" aria-label="Default select example">
+                <option selected>MMMM</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
@@ -87,7 +91,7 @@
 
         <div class="form-floating mb-2">
           <label for="floatingInput">Gender</label>
-          <select class="form-select col-md-12 px-2" aria-label="Default select example">
+          <select class="gender-floating-form form-select col-md-12 px-2" aria-label="Default select example">
                 <option selected>Gender</option>
                 <option value="1">Male</option>
                 <option value="2">Female</option>
