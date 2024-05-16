@@ -5,35 +5,37 @@
 <link rel="stylesheet" href="/css/login.css">
 
 <style>
-    .form-select{
-        height: 37px;
-    }
+  .form-select {
+    height: 37px;
+  }
 
-    .floatingInput{
-      color: #214123;
-    }
+  <<<<<<< Updated upstream .floatingInput {
+    color: #214123;
+  }
 
-    .container{
-        height: 90px;
-    }
+  .container {
+    height: 90px;
+  }
 
-    .date.form-control{
-        width:70px;
-    }
+  =======.container {
+    height: 90px;
+  }
 
-    .year.form-control{
-        width:100px;
-    }
+  >>>>>>>Stashed changes .date.form-control {
+    width: 70px;
+  }
 
-    .month-dropdown {
-      box-shadow: 0 0 0 0.5px #214123;
-    }
+  .year.form-control {
+    width: 100px;
+  }
 
-    .gender-floating-form {
-      box-shadow: 0 0 0 0.5px #214123;
-      border-radius: 3px;
-    }
+  .month-dropdown {
+    box-shadow: 0 0 0 0.5px #214123;
+  }
 
+  .gender-floating-form {
+    box-shadow: 0 0 0 0.5px #214123;
+  }
 </style>
 
 <div class="row justify-content-center">
@@ -51,8 +53,7 @@
 
         <div class="form-floating mb-2">
           <label for="floatingInput">Full Name</label>
-          <input type="name" class="form-control border border-success" id="floatingInput"
-            placeholder="Name">
+          <input type="name" class="form-control border border-success" id="floatingInput" placeholder="Name">
         </div>
         <div class="form-floating mb-2">
           <label for="floatingInput">Email address</label>
@@ -61,17 +62,18 @@
         </div>
         <div class="form-floating mb-2">
           <label for="floatingInput">Username</label>
-          <input type="user" class="form-control border border-success" id="floatingInput"
-            placeholder="name123">
+          <input type="user" class="form-control border border-success" id="floatingInput" placeholder="name123">
         </div>
 
         <div class="row">
           <div class="col">
             <label class="floatingInput">Date of Birth</label>
             <div class="d-flex">
-              <input type="text" class="date form-control border border-success me-2" id="floatingInput" placeholder="dd">
+              <input type="text" class="date form-control border border-success me-2" id="floatingInput"
+                placeholder="dd">
               <div style="width: 20px;"></div>
-              <select class="month-dropdown form-control form-select me-2 border border-dark-green" aria-label="Default select example">
+              <select class="month-dropdown form-control form-select me-2 border border-dark-green"
+                aria-label="Default select example">
                 <option selected>MMMM</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -97,18 +99,13 @@
         <div class="form-floating mb-2">
           <label for="floatingInput">Gender</label>
           <select class="gender-floating-form form-select col-md-12 px-2" aria-label="Default select example">
-              <option value="" disabled selected hidden>Gender</option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
+            <option selected>Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
           </select>
-
-
-
-
-
         </div>
         <div class="input-group-prepend">
-            
+
         </div>
 
         <div class="form-floating">
@@ -125,8 +122,8 @@
       </small>
 
       <div class="container col-lg-4">
-          
-        </div>
+
+      </div>
 
     </main>
   </div>
