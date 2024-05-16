@@ -1,5 +1,5 @@
 body {
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: "SF Pro Display", sans-serif;
     font-weight: 500;
 }
 
@@ -10,12 +10,12 @@ body {
 .navbar-brand,
 .navbar-nav,
 .nav-link {
-    color: #FFB49F !important;
+    color: #ffb49f !important;
 }
 
 .navbars.btn-primary {
-    background-color: #FFB49F !important;
-    border-color: #FFB49F !important;
-    color: #FB2000 !important;
+    background-color: #ffb49f !important;
+    border-color: #ffb49f !important;
+    color: #fb2000 !important;
     width: 100px;
 }
