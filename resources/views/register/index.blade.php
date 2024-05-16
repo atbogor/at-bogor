@@ -97,10 +97,15 @@
         <div class="form-floating mb-2">
           <label for="floatingInput">Gender</label>
           <select class="gender-floating-form form-select col-md-12 px-2" aria-label="Default select example">
-                <option selected>Gender</option>
-                <option value="1">Male</option>
-                <option value="2">Female</option>
-                </select>
+              <option value="" disabled selected hidden>Gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+          </select>
+
+
+
+
+
         </div>
         <div class="input-group-prepend">
             
