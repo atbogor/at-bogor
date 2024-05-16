@@ -9,6 +9,10 @@
         height: 37px;
     }
 
+    .floatingInput{
+      color: #214123;
+    }
+
     .container{
         height: 90px;
     }
@@ -27,6 +31,7 @@
 
     .gender-floating-form {
       box-shadow: 0 0 0 0.5px #214123;
+      border-radius: 3px;
     }
 
 </style>
@@ -62,7 +67,7 @@
 
         <div class="row">
           <div class="col">
-            <label for="floatingInput">Date of Birth</label>
+            <label class="floatingInput">Date of Birth</label>
             <div class="d-flex">
               <input type="text" class="date form-control border border-success me-2" id="floatingInput" placeholder="dd">
               <div style="width: 20px;"></div>
