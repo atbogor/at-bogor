@@ -9,7 +9,7 @@
     height: 37px;
   }
 
-  <<<<<<< Updated upstream .floatingInput {
+  .floatingInput {
     color: #214123;
   }
 
@@ -17,11 +17,11 @@
     height: 90px;
   }
 
-  =======.container {
+  .container {
     height: 90px;
   }
 
-  >>>>>>>Stashed changes .date.form-control {
+  .date.form-control {
     width: 70px;
   }
 
@@ -44,30 +44,57 @@
     <!-- disini nanti bs tambahin message kalau sukses apa engga -->
 
     <main class="form-signin">
-      <form> <!-- jangan lupa tambahin action dan method -->
+      <form action="/register" method="post"> <!-- jangan lupa tambahin action dan method -->
         <!-- tambahin logic backend di setiap input kalau error gimana, sama id dan name jangan lupa ubah -->
+        @csrf
         <div class="d-flex align-items-center justify-content-center">
           <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         </div>
         <h1 class="h3 mb-3 fw-normal text-center">Create an account</h1>
 
         <div class="form-floating mb-2">
-          <label for="floatingInput">Full Name</label>
-          <input type="name" class="form-control border border-success" id="floatingInput" placeholder="Name">
-        </div>
-        <div class="form-floating mb-2">
-          <label for="floatingInput">Email address</label>
-          <input type="email" class="form-control border border-success" id="floatingInput"
-            placeholder="name@example.com">
-        </div>
-        <div class="form-floating mb-2">
-          <label for="floatingInput">Username</label>
-          <input type="user" class="form-control border border-success" id="floatingInput" placeholder="name123">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" class="form-control border border-success @error('name') is-invalid @enderror"
+            id="name" placeholder="Full Name" required value="{{ old('name') }}">
+
+          @error('name')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
+
         </div>
 
-        <div class="row">
+        <div class="form-floating mb-2">
+          <label for="floatingInput">Email address</label>
+          <input type="email" name="email"
+            class="form-control border border-success @error('email') is-invalid @enderror" id="email"
+            placeholder="name@example.com" required value="{{ old('email') }}">
+
+          @error('email')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
+        </div>
+
+
+        <div class="form-floating mb-2">
+          <label for="username">Username</label>
+          <input type="text" name="username"
+            class="form-control border border-success @error('username') is-invalid @enderror" id="username"
+            placeholder="name123" required value="{{ old('username') }}">
+
+          @error('username')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
+        </div>
+
+        <!-- <div class="row">
           <div class="col">
-            <label class="floatingInput">Date of Birth</label>
+             <label class="floatingInput">Date of Birth</label>
             <div class="d-flex">
               <input type="text" class="date form-control border border-success me-2" id="floatingInput"
                 placeholder="dd">
@@ -90,28 +117,49 @@
               </select>
               <div style="width: 20px;"></div>
               <input type="year" class="year form-control border border-success" id="floatingInput" placeholder="yyyy">
-            </div>
+            </div> 
           </div>
+        </div> -->
+
+        <div class="form-floating mb-2">
+          <label for="dob">Date Of Birth</label>
+          <input type="date" name="dob" class="form-control border border-success @error('dob') is-invalid @enderror"
+            id="dob" placeholder="Date Of Birth" required value="{{ old('dob') }}">
         </div>
 
         <div class="input-group-prepend"></div>
 
         <div class="form-floating mb-2">
-          <label for="floatingInput">Gender</label>
-          <select class="gender-floating-form form-select col-md-12 px-2" aria-label="Default select example">
-            <option selected>Gender</option>
+          <label for="gender">Gender</label>
+          <select name="gender"
+            class="gender-floating-form form-select col-md-12 px-2 @error('gender') is-invalid @enderror" id="gender"
+            aria-label=" Default select example" required value="{{ old('gender') }}">
+            <option disabled selected>Gender</option>
             <option value="1">Male</option>
             <option value="2">Female</option>
           </select>
+
+          @error('gender')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
         </div>
+
         <div class="input-group-prepend">
 
         </div>
 
         <div class="form-floating">
           <label for="floatingPassword">Password</label>
-          <input type="password" class="form-control border border-success" id="floatingPassword"
-            placeholder="Enter your password">
+          <input type="password" name="password"
+            class="form-control border border-success @error('password') is-invalid @enderror" id="password"
+            placeholder="Password" required placeholder="Enter your password" required>
+          @error('password')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
         </div>
 
         <button class="w-100 btn btn-secondary btn-success mt-4" type="submit">Register</button>
