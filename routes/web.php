@@ -23,3 +23,4 @@ Route::get('/ticket', [TicketController::class, 'show']);
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/homepage', [HomepageController::class, 'index']);
+Route::get('/tickets', [TicketController::class, 'index']);

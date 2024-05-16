@@ -6,6 +6,7 @@
 
 <!-- jangan lupa actionnya di form, terus kalau yg headline mabil data yang pertama index 0 -->
 
+<div class="container mt-4">
 <div class="row justify-content-center mb-5">
     <form class="form-inline my-2 my-lg-0">
         <input class="form-control " type="search" placeholder="Search" aria-label="Search">
@@ -97,6 +98,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection

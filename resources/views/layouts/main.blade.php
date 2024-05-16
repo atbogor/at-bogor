@@ -16,15 +16,16 @@
 
 
   <title>@Bogor | {{ $title }}</title>
-
+  <style>
+  </style>
 </head>
 
 <body>
   @include('partials.navbar')
 
-  <div class="container mt-4">
+
     @yield('container')
-  </div>
+
 
   @include('partials.footer')
 
