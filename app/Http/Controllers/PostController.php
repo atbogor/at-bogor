@@ -15,7 +15,7 @@ class PostController extends Controller
             [
                 'title' => 'Blogs',
                 'active' => 'post',
-                "posts" => Post::latest()->paginate(7)->withQueryString()
+                "posts" => Post::latest()->paginate(9)->withQueryString()
             ]
         );
     }

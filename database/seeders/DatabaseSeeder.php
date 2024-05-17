@@ -39,6 +39,6 @@ class DatabaseSeeder extends Seeder
             'slug' => 'entertainment',
         ]);
 
-        Post::factory(50)->create();
+        Post::factory(54)->create();
     }
 }
