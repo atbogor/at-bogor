@@ -19,3 +19,12 @@ body {
     color: #ffffff !important;
     width: 100px;
 }
+
+.navbar .nav-link.active {
+    color: #fb2000 !important;
+    /* Ubah warna teks sesuai kebutuhan Anda */
+}
+
+.navbar .nav-link:hover {
+    color: #FFB49F !important;
+}
