@@ -10,12 +10,12 @@ body {
 .navbar-brand,
 .navbar-nav,
 .nav-link {
-    color: #ffb49f !important;
+    color: #ffffff !important;
 }
 
 .navbars.btn-primary {
-    background-color: #ffb49f !important;
-    border-color: #ffb49f !important;
-    color: #fb2000 !important;
+    background-color: #fb2000 !important;
+    border-color: #fb2000 !important;
+    color: #ffffff !important;
     width: 100px;
 }
