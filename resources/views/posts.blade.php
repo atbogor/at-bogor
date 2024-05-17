@@ -8,8 +8,12 @@
 
 <div class="container mt-4">
     <div class="row justify-content-center mb-5">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="/posts">
+            @if(request('category'))
+                <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
+            <input class="form-control " type="text" placeholder="Search" aria-label="Search" name="search"
+                value="{{ request('search') }}">
             <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
@@ -45,16 +49,16 @@
                 <div class="col-md-6 mb-4">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">All Blog</a>
+                            <a class="nav-link active" aria-current="page" href="/posts">All Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nature</a>
+                            <a class="nav-link" href="/posts?category=nature">Nature</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">History</a>
+                            <a class="nav-link" href="/posts?category=history">History</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Entertaiment</a>
+                            <a class="nav-link" href="/posts?category=entertainment">Entertaiment</a>
                         </li>
                     </ul>
                 </div>
@@ -72,8 +76,8 @@
                                 <a class="btn btn-secondary mb-2" href="">{{ $post->category->name }}</a>
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                                                                                                                                                                                                                                                                                                                    the
-                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                    the
+                                                                                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
                                 <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read
                                             now</u></a>
                             </div>
