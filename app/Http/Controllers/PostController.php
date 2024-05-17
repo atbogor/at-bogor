@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,7 +14,8 @@ class PostController extends Controller
             'posts',
             [
                 'title' => 'Blogs',
-                'active' => 'post'
+                'active' => 'post',
+                "posts" => Post::latest()->paginate(7)->withQueryString()
             ]
         );
     }
