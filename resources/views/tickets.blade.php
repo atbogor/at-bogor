@@ -20,7 +20,8 @@
       padding: 0;
       margin: 0;
     } */
-
+  
+  
   .search_box {
     /* max-width: 1690px; */
     /* margin: 0 auto; */
@@ -29,11 +30,13 @@
     /* padding: 165px 0 100px; */
     position: relative;
     /* margin-top: px; */
-    width: 100vw;
+    width: 100%;
     height: 500px;
+    
     display: flex;
     align-items: center;
     justify-content: center !important;
+    
   }
 
   .banner_part {
@@ -55,6 +58,7 @@
     width: 70%;
     top: -50px;
     border-radius: 20px;
+    
 
   }
 
@@ -73,6 +77,10 @@
     height: 100%;
     width: 25rem !important;
   }
+
+  .search_box .container{
+    max-width: none !important;
+  }
 </style>
 
 
@@ -88,29 +96,20 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7">
-
+          <h1>test</h1>
         </div>
       </div>
     </div>
 </div>
 </section>
 
-<section class="search_box">
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <!-- <div class="col-lg-8"> -->
-      <div class="search_form">
-        <div class="container mt-4">
-          <div class="row justify-content-center mb-5">
-            <form class="form-inline my-2 my-lg-0">
+<section class="search_box ">
+  <div class="search_form">
+    <form class="form-inline my-2 my-lg-0 justify-content-center">
               <input class="form-control " type="search" placeholder="Any idea for your next trip?" aria-label="Search">
               <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-        <!-- </div> -->
-      </div>
-    </div>
+    </form>
+  </div>
 </section>
 
 </div>
