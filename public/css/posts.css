@@ -1,6 +1,11 @@
+.head.card-title,
+u.head {
+    color: #142213 !important;
+}
+
 .card-title,
 .card-text {
-    color: #142213 !important;
+    color: #FFFFFF !important;
 }
 
 .link-offset-2 {
@@ -13,6 +18,13 @@
     color: #FEE9CA !important;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
+}
+
+.btn-secondary {
+    background-color: #FEE9CA !important;
+    color: #142213 !important;
+    border-radius: 40px;
+    padding-inline: 1rem;
 }
 
 .form-control {
@@ -37,6 +49,7 @@
     border: 2px solid #224121 !important;
     display: flex;
     overflow: hidden;
+    background-color: #224121;
 }
 
 .nav-pills .nav-item {
@@ -52,4 +65,8 @@
 
 .nav-pills .nav-item a {
     color: #142213 !important;
+}
+
+u {
+    color: #FFFFFF;
 }
