@@ -53,20 +53,27 @@ u.head {
 }
 
 .nav-pills .nav-item {
-    background-color: #FFB49F;
+    background-color: #FEE9CA;
     border-radius: 15px;
     margin-right: 10px;
 }
 
 .nav-pills .nav-item .active {
-    background-color: #FEE9CA;
+    background-color: #224121;
     border-radius: 15px;
+    color: #FEE9CA;
+}
+
+.nav-pills .nav-item a.active {
+    color: #FEE9CA !important;
 }
 
 .nav-pills .nav-item a {
-    color: #142213 !important;
+    color: #224121 !important;
 }
 
 u {
     color: #FFFFFF;
 }
+
+.nav-link:hover {}

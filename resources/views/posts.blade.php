@@ -49,16 +49,20 @@
                 <div class="col-md-6 mb-4">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/posts">All Blog</a>
+                            <a class="nav-link {{ !request('category') ? 'active' : '' }}" aria-current="page"
+                                href="/posts">All Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts?category=nature">Nature</a>
+                            <a class="nav-link {{ request('category') == 'nature' ? 'active' : ''}}"
+                                href="/posts?category=nature">Nature</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts?category=history">History</a>
+                            <a class="nav-link {{ request('category') == 'history' ? 'active' : ''}}"
+                                href="/posts?category=history">History</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts?category=entertainment">Entertaiment</a>
+                            <a class="nav-link {{ request('category') == 'entertainment' ? 'active' : ''}}"
+                                href="/posts?category=entertainment">Entertaiment</a>
                         </li>
                     </ul>
                 </div>
@@ -73,11 +77,12 @@
                             <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
-                                <a class="btn btn-secondary mb-2" href="">{{ $post->category->name }}</a>
+                                <a class="btn btn-secondary mb-2"
+                                    href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                                                                                                                                                                                                                                                                                                                                                                                    the
-                                                                                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    the
+                                                                                                                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
                                 <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read
                                             now</u></a>
                             </div>
