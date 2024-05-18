@@ -15,14 +15,13 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index']); // ini kalau sudah masuk middleware ditambahin
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest'); 
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout',[LoginController::class,'logout']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::post('/login', [LoginController::class, 'authenticate']); // ini kalau sudah masuk middleware ditambahin
 Route::get('/ticket', [TicketController::class, 'show']);
-
-Route::get('/posts', [PostController::class, 'index']);
 Route::get('/homepage', [HomepageController::class, 'index']);
 Route::get('/tickets', [TicketController::class, 'index']);

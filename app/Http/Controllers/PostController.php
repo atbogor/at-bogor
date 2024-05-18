@@ -25,4 +25,5 @@ class PostController extends Controller
     }
 
     // nanti tambahin function yang show detail
+    
 }

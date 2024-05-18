@@ -39,7 +39,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
-      Welcome Back, {{ auth()->user()->name }}
+      Welcome Back, {{auth()->user()->name}}
       </a>
       <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
@@ -47,9 +47,12 @@
         <hr class="dropdown-divider">
       </li>
       <li>
+        <form action="/logout" method="post">
+          @csrf
         <button type="submit" class="dropdown-item">
         Logout
         </button>
+        </form>
       </li>
       </ul>
     </li>
