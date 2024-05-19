@@ -34,16 +34,13 @@
 }
 
 /* =============== Popular Destination ========================== */
-
-.popular-destination .container {
+.popular-destination {
     background-color: red;
-    width: 100%;
 }
 
 .scrollable-container {
     display: flex;
     overflow-x: auto;
-    /* white-space: nowrap; */
     background-color: blue;
     padding: 10px;
 }
