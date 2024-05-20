@@ -113,6 +113,62 @@
   u {
     color: #FFFFFF;
   }
+
+  .headline.card {
+    width: 95%;
+    border-color: #FFFFFF !important;
+  }
+
+  .img-fluid {
+    border-radius: 12px !important;
+  }
+
+  .blog-content.card {
+    border-radius: 12px !important;
+    border: 2px solid #224121 !important;
+    display: flex;
+    overflow: hidden;
+    background-color: #224121;
+  }
+
+  .btn-secondary {
+    background-color: #FEE9CA !important;
+    color: #142213 !important;
+    border-radius: 40px;
+    padding-inline: 1rem;
+  }
+
+  .card-body {
+    color: #FFFFFF !important;
+    transition: 300ms ease-in;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-price {
+    order: 1;
+    margin-top: auto;
+    color: #FB2000;
+    align-self: bottom;
+    padding-top: 2rem;
+  }
+
+  .flex-button {
+    align-self: start;
+  }
+
+  .card-body:hover{
+    background-color: #FB2000;
+    color: putih;
+    transition: 300ms ease-in;
+  }
+
+  .card-body:hover .card-price{
+    color:#224121;
+  }
 </style>
 
 
@@ -137,9 +193,9 @@
 <section class="search_box ">
   <div class="search_form">
     <div class="row justify-content-center">
-      <form class="form-inline my-2 my-lg-0 justify-content-center" action="/posts">
-        @if(request('category'))
-      <input type="hidden" name="category" value="{{ request('category') }}">
+      <form class="form-inline my-2 my-lg-0 justify-content-center" action="/tickets">
+        @if(request('ticketcategory'))
+      <input type="hidden" name="category" value="{{ request('ticketcategory') }}">
     @endif
         <input class="form-control " type="text" placeholder="Any idea for your next trip?" aria-label="search"
           name="search" value="{{ request('search') }}">
@@ -151,19 +207,19 @@
         <div class="col justify-content-center">
           <ul class="nav nav-pills justify-content-center">
             <li class="nav-item">
-              <a class="nav-link" href="/posts">Tiket ke Jungleland</a>
+              <a class="nav-link" href="/tickets">Ticket to Jungleland</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts?category=nature">Tiket ke Kebun Raya</a>
+              <a class="nav-link" href="#">Ticket to Kebun Raya</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts?category=history">Tiket ke Taman Safari</a>
+              <a class="nav-link" href="#">Ticket to Taman Safari</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts?category=entertainment">Tiket ke De Voyage</a>
+              <a class="nav-link" href="#">Ticket to De Voyage</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts?category=entertainment">Tiket ke Curug Bidadari</a>
+              <a class="nav-link" href="#">Ticket to Curug Bidadari</a>
             </li>
           </ul>
         </div>
@@ -177,56 +233,57 @@
     <div class="header">
       <h1 class="text-center">All tickets</h1>
     </div>
-    <div class="container ">
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 mb-4">
           <ul class="nav nav-pills justify-content-center">
             <li class="nav-item">
-              <a class="nav-link {{ !request('category') ? 'active' : '' }}" aria-current="page" href="/posts">All
-                Blog</a>
+              <a class="nav-link {{ !request('ticketcategory') ? 'active' : '' }}" aria-current="page"
+                href="/tickets">All tickets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ request('category') == 'nature' ? 'active' : ''}}"
-                href="/posts?category=nature">Nature</a>
+              <a class="nav-link {{ request('ticketcategory') == 'nature' ? 'active' : '' }}"
+                href="/tickets?ticketcategory=nature">Nature</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ request('category') == 'history' ? 'active' : ''}}"
-                href="/posts?category=history">History</a>
+              <a class="nav-link {{ request('ticketcategory') == 'history' ? 'active' : '' }}"
+                href="/tickets?ticketcategory=history">History</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ request('category') == 'entertainment' ? 'active' : ''}}"
-                href="/posts?category=entertainment">Entertaiment</a>
+              <a class="nav-link {{ request('ticketcategory') == 'entertainment' ? 'active' : '' }}"
+                href="/tickets?ticketcategory=entertainment">Entertainment</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-  <div class="row">
-    @foreach ($tickets as $ticket)
-    <div class="col-md-4 mb-5 d-flex">
-      <div class="blog-content card h-100">
-        <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
-        <div class="card-body">
-          <a class="btn btn-secondary mb-2 disabled" href="#">{{$ticket->ticketcategory->name}}</a>
-          <h5 class="card-title">{{$ticket->title}}</h5>
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    the
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
-          <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read
-                now</u></a>
-        </div>
-      </div>
-    </div>
-    @endforeach
-    
-    </div>
-  </div>
-  </div>
-  
 
   </div>
+  @if($tickets->count())
+  <div class="container">
+    <div class="row">
+      @foreach ($tickets as $ticket)
+        <div class="col-md-4 mb-5 d-flex">
+          <div class="blog-content card h-100">
+          <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
+          <div class="card-body flex-container">
+            <a class="btn btn-secondary mb-2 disabled flex-button" href="#">{{$ticket->ticketcategory->name}}</a>
+            <h3 class="card-title">{{$ticket->title}}</h3>
+            <h5 class="card-location">{{$ticket->location}}</h5>
+            <h4 class="card-price">IDR {{$ticket->price}}</h4>
+          </div>
+          </div>
+        </div>
+      @endforeach 
+    </div>
+  </div>
+  @else
+    <p class="text-center fs-4">No ticket found.</p>
+  @endif
+
+  <div class="d-flex justify-content-center">
+        {{ $tickets->links() }}
+    </div>
 </section>
 
 
