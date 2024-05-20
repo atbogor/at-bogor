@@ -16,7 +16,7 @@
                 value="{{ request('search') }}">
             <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-    </div>
+    </div>  
 
     <!-- jangan lupa di loop aja nanti sama tambahin condition ada atau engga -->
     @if($posts->count())
