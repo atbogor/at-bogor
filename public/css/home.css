@@ -33,32 +33,59 @@
     top: 22%;
 }
 
-/* =============== Popular Destination ========================== */
-.popular-destination {
-    /* background-color: red; */
-}
-
 .scrollable-container {
     display: flex;
     overflow-x: auto;
+    border-radius: 15px;
+    /* overflow-y: hidden; */
     /* background-color: blue; */
     /* padding: 10px; */
 }
 
+/* =============== Popular Destination ========================== */
+.home-page h1 {
+    color: #142213 !important;
+}
+
+.destination-container.card {
+    flex: 0 0 auto;
+    border-radius: 15px;
+    /* height: 40vh; */
+    /* width: 20vw; */
+    border: 2px solid #142213 !important;
+    background-color: #224121;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+
+/* =============== Popular Article ========================== */
 .card-img-top {
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
 
-.item-container {
+.article-container.card {
     flex: 0 0 auto;
     border-radius: 15px;
     /* height: 40vh; */
     /* width: 20vw; */
-    border: 2px solid #224121 !important;
+    border: 2px solid #142213 !important;
     background-color: #224121;
     display: flex;
     align-items: left;
     justify-content: center;
-    margin-right: 10px;
+}
+
+/* ============================ Popular Gallery ========================= */
+.gallery-container.card {
+    flex: 0 0 auto;
+    border-radius: 15px;
+    /* height: 40vh; */
+    /* width: 20vw; */
+    border: 2px solid #142213 !important;
+    background-color: #224121;
+    display: flex;
+    align-items: left;
+    justify-content: center;
 }
