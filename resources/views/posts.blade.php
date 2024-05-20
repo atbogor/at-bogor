@@ -73,7 +73,7 @@
             <div class="row">
                 @foreach($posts->skip(1) as $post)
                     <div class="col-md-4 mb-5 d-flex">
-                        <div class="blog-content card h-100">
+                        <div class="blog-content card" style="width: 24rem;" >
                             <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
