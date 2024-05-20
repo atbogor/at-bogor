@@ -8,7 +8,7 @@
 
 <div class="container mt-4">
     <div class="row justify-content-center mb-5">
-        <form class="form-inline my-2 my-lg-0" action="/posts">
+        <form class="form-inline my-2 my-lg-0 justify-content-center" action="/posts">
             @if(request('category'))
                 <input type="hidden" name="category" value="{{ request('category') }}">
             @endif
@@ -73,7 +73,7 @@
             <div class="row">
                 @foreach($posts->skip(1) as $post)
                     <div class="col-md-4 mb-5 d-flex">
-                        <div class="blog-content card" style="width: 24rem;" >
+                        <div class="blog-content card h-100">
                             <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
@@ -81,8 +81,8 @@
                                     href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                                                                                                                                                                                                                                                                                                                                                                                                                            the
-                                                                                                                                                                                                                                                                                                                                                                                                                                            card's content.</p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    the
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
                                 <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read
                                             now</u></a>
                             </div>
