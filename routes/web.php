@@ -8,12 +8,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home',
-        'active' => 'home'
-    ]);
-});
+Route::get('/', [HomepageController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest'); 
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -23,5 +18,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/ticket', [TicketController::class, 'show']);
-Route::get('/homepage', [HomepageController::class, 'index']);
 Route::get('/tickets', [TicketController::class, 'index']);

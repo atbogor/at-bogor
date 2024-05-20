@@ -2,7 +2,9 @@ body {
     font-family: "SF Pro Display", sans-serif;
     font-weight: 500;
 }
-
+nav {
+    padding: 0.5rem 1rem !important ;
+}
 .bg-light {
     background-color: #224121 !important;
 }
@@ -26,5 +28,5 @@ body {
 }
 
 .navbar .nav-link:hover {
-    color: #FFB49F !important;
+    color: #ffb49f !important;
 }
