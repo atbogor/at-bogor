@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Ticket;
+use App\Models\TicketCategory;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -40,5 +42,22 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::factory(70)->create();
+
+        TicketCategory::create([
+            'name' => "Nature",
+            "slug"=> "nature",
+        ]);
+
+        TicketCategory::create([
+            'name' => "Entertainment",
+            "slug"=> "entertainment",
+        ]);
+
+        TicketCategory::create([
+            'name' => "History",
+            "slug"=> "history",
+        ]);
+
+        Ticket::factory(100)->create();
     }
 }
