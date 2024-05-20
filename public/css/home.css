@@ -35,24 +35,30 @@
 
 /* =============== Popular Destination ========================== */
 .popular-destination {
-    background-color: red;
+    /* background-color: red; */
 }
 
 .scrollable-container {
     display: flex;
     overflow-x: auto;
-    background-color: blue;
-    padding: 10px;
+    /* background-color: blue; */
+    /* padding: 10px; */
+}
+
+.card-img-top {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .item-container {
     flex: 0 0 auto;
-    height: 40vh;
-    width: 20vw;
-    border: 1px solid #ddd;
-    background-color: #ffffff;
+    border-radius: 15px;
+    /* height: 40vh; */
+    /* width: 20vw; */
+    border: 2px solid #224121 !important;
+    background-color: #224121;
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     margin-right: 10px;
 }
