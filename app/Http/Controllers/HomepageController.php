@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Ticket;
 
 class HomepageController extends Controller
 {
@@ -12,7 +13,10 @@ class HomepageController extends Controller
         return view('home', [
             'title' => 'Home',
             'active' => 'home',
-            "posts" => Post::all()
+            "posts" => Post::all(),
+            "tickets" => Ticket::all()
         ]);
+
+        
     }
 }

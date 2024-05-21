@@ -77,7 +77,7 @@
                             <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
-                                <a class="btn btn-secondary mb-2"
+                                <a class="btn btn-secondary disabled mb-2"
                                     href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of

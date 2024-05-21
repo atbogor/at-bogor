@@ -42,24 +42,58 @@
     /* padding: 10px; */
 }
 
+/* ===================Category tag======================= */
+.btn.btn-secondary.disabled {
+    background-color: #fee9ca !important;
+    opacity: 1;
+}
+
 /* =============== Popular Destination ========================== */
 .home-page h1 {
     color: #142213 !important;
 }
+.card-body {
+    color: #ffffff !important;
+    transition: 300ms ease-in;
+}
+
+.card-price {
+    order: 1;
+    margin-top: auto;
+    color: #fb2000;
+    align-self: bottom;
+    padding-top: 2rem;
+}
 
 .destination-container.card {
     flex: 0 0 auto;
-    border-radius: 15px;
-    /* height: 40vh; */
-    /* width: 20vw; */
-    border: 2px solid #142213 !important;
-    background-color: #224121;
+    border-radius: 15px !important;
+    border: 2px solid #224121 !important;
     display: flex;
-    align-items: left;
-    justify-content: center;
+    overflow: hidden;
+    background-color: #224121;
 }
 
 /* =============== Popular Article ========================== */
+
+.btn-secondary {
+    background-color: #fee9ca !important;
+    color: #142213 !important;
+    border-radius: 40px;
+    padding-inline: 1rem;
+}
+.head.card-title,
+u.head {
+    color: #142213 !important;
+}
+u {
+    color: #ffffff;
+}
+.card-title,
+.card-text {
+    color: #ffffff !important;
+}
+
 .card-img-top {
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -67,14 +101,18 @@
 
 .article-container.card {
     flex: 0 0 auto;
-    border-radius: 15px;
-    /* height: 40vh; */
-    /* width: 20vw; */
-    border: 2px solid #142213 !important;
-    background-color: #224121;
+    /* border-radius: 15px; */
+    /* border: 2px solid #142213 !important; */
+    /* background-color: #224121; */
+    /* display: flex; */
+    /* align-items: left; */
+    /* justify-content: center;  */
+
+    border-radius: 15px !important;
+    border: 2px solid #224121 !important;
     display: flex;
-    align-items: left;
-    justify-content: center;
+    overflow: hidden;
+    background-color: #224121;
 }
 
 /* ============================ Popular Gallery ========================= */

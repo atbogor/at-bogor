@@ -1,7 +1,8 @@
 @extends('layouts.main') @section('container')
 
 <link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/posts.css">
+<!-- <link rel="stylesheet" href="/css/posts.css"> -->
+<link rel="stylesheet" href="">
 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
@@ -20,22 +21,17 @@
         <div class="row">
             <div class="col-12">
                 <div class="scrollable-container d-flex gap-3">
-                @foreach($posts->take(7) as $post)
-                    <div class="destination-container card" style= "width: 24rem;">
-                        <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
-                            alt="...">
-                        <div class="card-body">
-                            <a class="btn btn-secondary mb-2"
-                                href="#">{{ $post->category->name }}</a>
-                            <h5 class="card-title">{{ $post->title }}</h5>
-                            <p>
-                                <a class="link-offset-2 link-underline link-underline-opacity-100" href="#">
-                                    <u>Read now</u>
-                                </a>
-                            </p>
+                @foreach($tickets->take(7) as $ticket)
+                    <div class="destination-container card" style="width: 24rem;">
+                        <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
+                        <div class="card-body flex-container">
+                            <a class="btn btn-secondary disabled mb-2 flex-button " href="#">{{$ticket->ticketcategory->name}}</a>
+                            <h4 class="card-title">{{$ticket->title}}</h4>
+                            <h5 class="card-location">{{$ticket->location}}</h5>                                <h4 class="card-price">IDR {{$ticket->price}}</h4>
                         </div>
                     </div>
-                    @endforeach
+                    
+                @endforeach
                 </div>
             </div>
         </div>
@@ -55,7 +51,7 @@
                         <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
                             alt="...">
                         <div class="card-body">
-                            <a class="btn btn-secondary mb-2"
+                            <a class="btn btn-secondary disabled mb-2"
                                 href="#">{{ $post->category->name }}</a>
                             <h5 class="card-title">{{ $post->title }}</h5>
                             
