@@ -18,7 +18,7 @@ class TicketController extends Controller
     public function index()
     {
         if (request('ticketcategory')) {
-            $category = TicketCategory::firstWhere('slug', request('ticketcategory'));
+            $ticketcategory = TicketCategory::firstWhere('slug', request('ticketcategory'));
         }
         // disini bs tambahin filter
         return view(
@@ -26,7 +26,7 @@ class TicketController extends Controller
             [
                 'title' => 'Tickets',
                 'active' => 'tickets',
-                "tickets" => Ticket::latest()->filter(request(['search', 'ticketcategory']))->paginate(7)->withQueryString()
+                "tickets" => Ticket::latest()->filter(request(['search', 'ticketcategory']))->paginate(12)->withQueryString()
             ]
         );
     }

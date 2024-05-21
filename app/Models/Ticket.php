@@ -17,7 +17,8 @@ class Ticket extends Model
     $query->when($filters['search'] ?? false, function ($query, $search) {
         return $query->where(function ($query) use ($search) {
             $query->where('title', 'like', '%' . $search . '%')
-                ->orWhere('body', 'like', '%' . $search . '%');
+                ->orWhere('description', 'like', '%' . $search . '%')
+                ->orWhere('location', 'like', '%' . $search . '%');
         });
     });
 

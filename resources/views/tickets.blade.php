@@ -25,13 +25,13 @@
   .search_box {
     /* max-width: 1690px; */
     /* margin: 0 auto; */
-    /* background-color: red; */
+    background-color: red;
     /* box-shadow: -1.717px 8.835px 85.56px 6.44px rgba(170, 170, 170, 0.29); */
     /* padding: 165px 0 100px; */
     position: relative;
     /* margin-top: px; */
     width: 100%;
-    height: 25vh;
+    /* height: 100%; */
 
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@
     top: -50px;
     border-radius: 20px;
     max-width: none !important;
-
+    
   }
 
   .btn-success {
@@ -160,14 +160,14 @@
     align-self: start;
   }
 
-  .card-body:hover{
+  .card-body:hover {
     background-color: #FB2000;
     color: putih;
     transition: 300ms ease-in;
   }
 
-  .card-body:hover .card-price{
-    color:#224121;
+  .card-body:hover .card-price {
+    color: #224121;
   }
 </style>
 
@@ -206,13 +206,12 @@
       <div class="row-fluid justify-content-center mt-4">
         <div class="col justify-content-center">
           <ul class="nav nav-pills justify-content-center">
+            @foreach ($tickets->shuffle()->take(5) as $ticket)
             <li class="nav-item">
-              <a class="nav-link" href="/tickets">Ticket to Jungleland</a>
+              <a class="nav-link" href="#">Ticket to {{$ticket->title}}</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Ticket to Kebun Raya</a>
-            </li>
-            <li class="nav-item">
+            @endforeach
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#">Ticket to Taman Safari</a>
             </li>
             <li class="nav-item">
@@ -221,7 +220,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Ticket to Curug Bidadari</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -259,32 +258,43 @@
     </div>
 
   </div>
-  @if($tickets->count())
+@if($tickets->count())
   <div class="container">
     <div class="row">
-      @foreach ($tickets as $ticket)
-        <div class="col-md-4 mb-5 d-flex">
-          <div class="blog-content card h-100">
-          <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
-          <div class="card-body flex-container">
-            <a class="btn btn-secondary mb-2 disabled flex-button" href="#">{{$ticket->ticketcategory->name}}</a>
-            <h3 class="card-title">{{$ticket->title}}</h3>
-            <h5 class="card-location">{{$ticket->location}}</h5>
-            <h4 class="card-price">IDR {{$ticket->price}}</h4>
-          </div>
-          </div>
-        </div>
-      @endforeach 
+    @foreach ($tickets as $ticket)
+    <div class="col-md-4 mb-5 d-flex">
+    <div class="blog-content card h-100">
+    <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
+    <div class="card-body flex-container">
+      <a class="btn btn-secondary mb-2 disabled flex-button" href="#">{{$ticket->ticketcategory->name}}</a>
+      <h3 class="card-title">{{$ticket->title}}</h3>
+      <h5 class="card-location">{{$ticket->location}}</h5>
+      <h4 class="card-price">IDR {{$ticket->price}}</h4>
+    </div>
+    </div>
+    </div>
+    @endforeach 
     </div>
   </div>
-  @else
-    <p class="text-center fs-4">No ticket found.</p>
-  @endif
+@else
+  <p class="text-center fs-4">No ticket found.</p>
+@endif
 
   <div class="d-flex justify-content-center">
-        {{ $tickets->links() }}
-    </div>
+    {{ $tickets->links() }}
+  </div>
 </section>
 
 
 @endsection
+
+<script>
+        function adjustRelativeContainerHeight() {
+            var relativeContainer = document.getElementById('search_box');
+            var absoluteContent = document.getElementById('search_form');
+            relativeContainer.style.height = absoluteContent.offsetHeight + '20px';
+        }
+
+        window.onload = adjustRelativeContainerHeight;
+        window.onresize = adjustRelativeContainerHeight;
+    </script>
