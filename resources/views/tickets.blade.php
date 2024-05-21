@@ -25,7 +25,7 @@
   .search_box {
     /* max-width: 1690px; */
     /* margin: 0 auto; */
-    background-color: red;
+    /* background-color: red; */
     /* box-shadow: -1.717px 8.835px 85.56px 6.44px rgba(170, 170, 170, 0.29); */
     /* padding: 165px 0 100px; */
     position: relative;
@@ -190,8 +190,8 @@
 </div>
 </section>
 
-<section class="search_box ">
-  <div class="search_form">
+<section class="search_box " id="relativeContainer">
+  <div class="search_form" id="absoluteContent">
     <div class="row justify-content-center">
       <form class="form-inline my-2 my-lg-0 justify-content-center" action="/tickets">
         @if(request('ticketcategory'))
@@ -290,9 +290,9 @@
 
 <script>
         function adjustRelativeContainerHeight() {
-            var relativeContainer = document.getElementById('search_box');
-            var absoluteContent = document.getElementById('search_form');
-            relativeContainer.style.height = absoluteContent.offsetHeight + '20px';
+            var relativeContainer = document.getElementById('relativeContainer');
+            var absoluteContent = document.getElementById('absoluteContent');
+            relativeContainer.style.height = absoluteContent.offsetHeight + 'px';
         }
 
         window.onload = adjustRelativeContainerHeight;
