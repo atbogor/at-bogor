@@ -38,11 +38,13 @@
     .heading-title{
         display: flex;
         font-size: 46px;
+        text-align: center;
     }
 
     .loc-and-type{
         display: flex;
-        height: 50px;
+        /* margin: auto */
+        height: 50%;
         width: 94%;
         margin: auto;
         justify-content: space-between;
@@ -81,9 +83,12 @@
         margin-left: auto;
         background-color: #FEE9CA; 
         padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
         border-radius: 10px; 
         margin-top: -10px;
         margin-bottom: 10px;
+        height: 50px;
         /* overflow: hidden; */
     }
 
@@ -160,6 +165,7 @@
         width: 94%;
         margin: auto;
         margin-top: 3%;
+        height: 3.2em;
         /* background-color: black; */
     }
 
@@ -171,6 +177,23 @@
 
     .price-title{
         color: #224121;
+    }
+
+    .button-parent{
+        display: flex;
+        margin-left: auto;
+        background-color: #FB2000; 
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 10px; 
+    }
+
+    .button-text{
+        margin-bottom: 0px;
+        color: white
     }
 </style>
 
@@ -184,27 +207,27 @@
     
 </div>
 <div class="title">
-    <h1 class="heading-title">Destination Name</h1>
+    <h1 class="heading-title">{{ $ticket->title }}</h1>
 </div>
 
 <div class="loc-and-type">
     <i class="fas fa-map-marker-alt"></i>
-    <h3 class="locaysh">Bogor, Bogor Tengah</h3>
+    <h3 class="locaysh">{{ $ticket->location }}</h3>
     <div class="type-parent">
-        <h3 class="type">History</h3>
+        <h3 class="type">{{ $ticket->ticketcategory->name }}</h3>
     </div>
 </div>
 
 <hr>
 
 <div class="desc">
-    <h3 class="desc-1">Bagus banget loh guys ini destinasinya. Kalo kalian kesini dijamin ketagihan dan ga nyesel. Sekali kesini pasti bakal balik lagi minimal 10x sih sebulan.</h3>
+    <h3 class="desc-1"> {{ $ticket->description }} </h3>
 </div>
 
 <div class="price-frame">
     <div class="pricey">
         <h2 class="price-tag">Price</h2>
-        <h2 class="value">Rp 100.000</h2>
+        <h2 class="value"> {{ $ticket->price }}</h2>
     </div>
     
     <div class="quantity-button">
@@ -221,7 +244,12 @@
     <div class="total-price">
          Rp <span id="total-price">10</span>
     </div>
+    <div class="button-parent">
+        <h3 class="button-text">Check Out</h3>
+    </div>
 </div>
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

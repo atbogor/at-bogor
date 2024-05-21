@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function show(){
+    public function show(Ticket $ticket){
         return view('ticket',[
             'title'=>'Ticket Post', 
-            'active'=>'ticket'
-            
+            'active'=>'ticket',
+            'ticket' => $ticket
         ]);
     }
     public function index()

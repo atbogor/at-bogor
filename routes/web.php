@@ -17,5 +17,5 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/ticket', [TicketController::class, 'show']);
+Route::get('/ticket/{ticket:slug}', [TicketController::class, 'show']);
 Route::get('/tickets', [TicketController::class, 'index']);

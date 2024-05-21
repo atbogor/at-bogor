@@ -209,7 +209,7 @@
           <ul class="nav nav-pills justify-content-center">
             @foreach ($tickets->shuffle()->take(5) as $ticket)
             <li class="nav-item">
-              <a class="nav-link" href="#">Ticket to {{$ticket->title}}</a>
+              <a class="nav-link" href="/ticket/{{ $ticket->slug }}">Ticket to {{$ticket->title}}</a>
             </li>
             @endforeach
             <!-- <li class="nav-item">
@@ -264,15 +264,17 @@
     <div class="row">
     @foreach ($tickets as $ticket)
     <div class="col-md-4 mb-5 d-flex">
-    <div class="blog-content card h-100">
-    <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
-    <div class="card-body flex-container">
-      <a class="btn btn-secondary mb-2 disabled flex-button" href="#">{{$ticket->ticketcategory->name}}</a>
-      <h3 class="card-title">{{$ticket->title}}</h3>
-      <h5 class="card-location">{{$ticket->location}}</h5>
-      <h4 class="card-price">IDR {{$ticket->price}}</h4>
+      <a href="/ticket/{{ $ticket->slug }}">
+      <div class="blog-content card h-100">
+        <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
+        <div class="card-body flex-container">
+          <a class="btn btn-secondary mb-2 disabled flex-button" href="#">{{$ticket->ticketcategory->name}}</a>
+          <h3 class="card-title">{{$ticket->title}}</h3>
+          <h5 class="card-location">{{$ticket->location}}</h5>
+          <h4 class="card-price">IDR {{$ticket->price}}</h4>
+       </div>
     </div>
-    </div>
+  </a>
     </div>
     @endforeach 
     </div>
