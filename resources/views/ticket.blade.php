@@ -19,7 +19,7 @@
         width: 94%;
         background-position: center; 
         margin: auto;
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Naruhito_and_Masako_visit_Bogor_Palace_55.jpg/392px-Naruhito_and_Masako_visit_Bogor_Palace_55.jpg');
+        background-image: url('https://source.unsplash.com/1600x900/?');
         background-size: cover; 
         /* background-attachment: fixed; */
     }
@@ -85,7 +85,7 @@
         padding: 10px;
         padding-left: 30px;
         padding-right: 30px;
-        border-radius: 10px; 
+        border-radius: 15px; 
         margin-top: -10px;
         margin-bottom: 10px;
         height: 50px;
@@ -94,14 +94,16 @@
 
     .price-frame {
         display: flex;
-        height: 147px;
+        flex-wrap: wrap;
+        align-items: center; 
+        justify-content: center;
+        height: 10em;
         width: 94%;
         margin: auto;
         background-color: rgba(254, 233, 202, 0.35); 
         border-radius: 10px; 
         margin-bottom: 90px;
         background-size: 1px;
-        justify-content: middle;
     }
 
     .divider-2{
@@ -112,40 +114,69 @@
         margin: 1px auto; 
     }
 
-    .pricey{
+    .pricey {
         display: flex;
+        align-items: center; 
+        justify-content: center;
+        width: 8em;
+        /* margin-left: 3% ; */
+        height: 30%; 
+        /* border: 1px solid #000;  */
     }
 
-    .price-tag{
-        margin-left: 30%;
-        margin-top: 23%;
-        color: #142213;
-        /* font-size: 100%; */
+    .rp-div {
+        display: flex;
+        align-items: center; 
+        justify-content: right;
+        margin-right: 0.5%;
+        width: 6.5em;
+        height: 30%; 
+        /* border: 1px solid #000;  */
     }
 
-    .desc-1{
-        margin-bottom: 20px;
+    .val-div {
+        display: flex;
+        align-items: center; 
+        justify-content: left;
+        width: 9em;
+        height: 30%; 
+        /* border: 1px solid #000;  */
     }
 
-    .value{
-        margin-left: 60%;
-        margin-top: 23%;
-        white-space: nowrap;
-    }
+    @media (max-width: 267px) {
+        .rp-div{
+            justify-content: center;
+            height: 30px;
+        }
+
+        .price-frame{
+            height: 15em;
+        }
+
+        .pricey {
+            height: 30px;
+        }
+
+        .val-div {
+            height: 30px;
+        }
+    } 
 
     /* quantity button */
     .quantity-button {
         display: flex;
         align-items: center;
-        width: 160px;
+        justify-content: right;
+        width: 18em;
         margin-left: auto;
         margin-right: 3%;
+        /* border: 1px solid #000;  */
     }
 
     .quantity-input {
-        margin-left: 20px;
-        margin-right: 20px;
-        width: 40px;
+        margin-left: 3%;
+        margin-right: 3%;
+        width: 50%;
         text-align: center;
         background-color: rgba(254, 233, 202, 0);
         font-size: 200%;
@@ -153,7 +184,6 @@
     }
 
     button{
-        /* cursor: pointer; */
         padding: 5px 10px;
         border: 3px solid black; 
         border-radius: 100%;
@@ -193,7 +223,8 @@
 
     .button-text{
         margin-bottom: 0px;
-        color: white
+        color: white;
+        justify-content: center;
     }
 </style>
 
@@ -227,6 +258,13 @@
 <div class="price-frame">
     <div class="pricey">
         <h2 class="price-tag">Price</h2>
+    </div>
+
+    <div class="rp-div">
+        <h2 class="rp">Rp</h2>
+    </div>
+
+    <div class="val-div">
         <h2 class="value"> {{ $ticket->price }}</h2>
     </div>
     
@@ -253,33 +291,37 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const decreaseButton = document.querySelector('.decrease');
-        const increaseButton = document.querySelector('.increase');
-        const quantityInput = document.querySelector('.quantity-input');
-        const totalPriceElement = document.getElementById('total-price');
-        const pricePerItem = 100000; 
+    const decreaseButton = document.querySelector('.decrease');
+    const increaseButton = document.querySelector('.increase');
+    const quantityInput = document.querySelector('.quantity-input');
+    const totalPriceElement = document.getElementById('total-price');
+    const pricePerItem = {{ $ticket->price }}; 
 
-        function updateTotalPrice() {
-            const quantity = parseInt(quantityInput.value);
-            const totalPrice = quantity * pricePerItem;
-            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); // Format with thousand separator
-        }
+    function updateTotalPrice() {
+        const quantity = parseInt(quantityInput.value);
+        const totalPrice = quantity * pricePerItem;
+        totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); // Format with thousand separator
+    }
 
-        decreaseButton.addEventListener('click', function() {
-            let currentValue = parseInt(quantityInput.value);
-            if (currentValue > 1) {
-                quantityInput.value = currentValue - 1;
-                updateTotalPrice();
-            }
-        });
-
-        increaseButton.addEventListener('click', function() {
-            let currentValue = parseInt(quantityInput.value);
-            quantityInput.value = currentValue + 1;
+    decreaseButton.addEventListener('click', function() {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+            quantityInput.value = currentValue - 1;
             updateTotalPrice();
-        });
+        }
+    });
 
+    increaseButton.addEventListener('click', function() {
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;
         updateTotalPrice();
     });
+
+    // Add event listener for input change
+    quantityInput.addEventListener('input', updateTotalPrice);
+
+    updateTotalPrice();
+});
+
 </script>
 @endsection
