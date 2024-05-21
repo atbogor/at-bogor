@@ -1,6 +1,7 @@
 @extends("layouts.main")
 @section("container")
 
+
 <style>
   /* .jumbo-container-fluid{
     background-color: red !important;
@@ -123,7 +124,7 @@
     border-radius: 12px !important;
   }
 
-  .blog-content.card {
+  .ticket-content.card {
     border-radius: 12px !important;
     border: 2px solid #224121 !important;
     display: flex;
@@ -167,9 +168,18 @@
     transition: 300ms ease-in;
   }
 
-  .card-body:hover .card-price {
+  #ticket-box:hover .card-price {
     color: #224121;
   }
+
+  #ticket-box a{
+    text-decoration: none;
+  }
+
+  #ticket-box:hover .card-body{
+    background-color: #FB2000;
+  }
+
 </style>
 
 
@@ -263,21 +273,20 @@
   <div class="container">
     <div class="row">
     @foreach ($tickets as $ticket)
-    <div class="col-md-4 mb-5 d-flex">
-      <a href="/ticket/{{ $ticket->slug }}">
-      <div class="blog-content card h-100">
-        <img src="https://source.unsplash.com/1600x900/?" class="card-img-top" alt="...">
-        <div class="card-body flex-container">
-          <a class="btn btn-secondary mb-2 disabled flex-button" href="#">{{$ticket->ticketcategory->name}}</a>
-          <h3 class="card-title">{{$ticket->title}}</h3>
-          <h5 class="card-location">{{$ticket->location}}</h5>
-          <h4 class="card-price">IDR {{$ticket->price}}</h4>
-       </div>
-    </div>
-  </a>
-    </div>
+     <div class="col-md-4 mb-5 d-flex" id="ticket-box">
+                <a href="/ticket/{{ $ticket->slug }}" id="atickets">
+                    <div class="ticket-content card h-100">
+                        <img src="https://source.unsplash.com/1600x900/?{{ $ticket->ticketcategory->name }}" class="card-img-top" alt="...">
+                        <div class="card-body flex-container">
+                            <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
+                            <h3 class="card-title">{{$ticket->title}}</h3>
+                            <h5 class="card-location">{{$ticket->location}}</h5>
+                            <h4 class="card-price">IDR {{$ticket->price}}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
     @endforeach 
-    </div>
   </div>
 @else
   <p class="text-center fs-4">No ticket found.</p>
@@ -300,4 +309,4 @@
 
         window.onload = adjustRelativeContainerHeight;
         window.onresize = adjustRelativeContainerHeight;
-    </script>
+</script>

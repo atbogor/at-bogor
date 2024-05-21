@@ -25,7 +25,7 @@ class TicketController extends Controller
             'tickets',
             [
                 'title' => 'Tickets',
-                'active' => 'tickets',
+                'active' => 'ticket',
                 "tickets" => Ticket::latest()->filter(request(['search', 'ticketcategory']))->paginate(12)->withQueryString()
             ]
         );

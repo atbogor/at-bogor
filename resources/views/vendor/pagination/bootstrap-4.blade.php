@@ -13,7 +13,7 @@
     }
 
     .page-item .page-link:hover {
-        color: #224121;
+        color: #FB2000;
     }
 </style>
 
