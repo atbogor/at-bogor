@@ -78,7 +78,6 @@
     @enderror
         </div>
 
-
         <div class="form-floating mb-2">
           <label for="username">Username</label>
           <input type="text" name="username"
@@ -134,9 +133,9 @@
           <select name="gender"
             class="gender-floating-form form-select col-md-12 px-2 @error('gender') is-invalid @enderror" id="gender"
             aria-label=" Default select example" required value="{{ old('gender') }}">
-            <option disabled selected>Gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
+            <option disabled {{ old('gender') === null ? 'selected' : '' }}>Gender</option>
+            <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+            <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
           </select>
 
           @error('gender')
