@@ -131,11 +131,12 @@
     background-color: #224121;
   }
 
-  .btn-secondary {
+  .btn-secondary.disabled {
     background-color: #FEE9CA !important;
     color: #142213 !important;
     border-radius: 40px;
     padding-inline: 1rem;
+    opacity: 1;
   }
 
   .card-body {
