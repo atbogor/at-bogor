@@ -1,0 +1,24 @@
+.h1{
+    font-size: 64px;
+}
+.img-fluid{
+    width: 1105px;
+    height: 456px;
+}
+
+.btn-secondary{
+    background-color: #FFB49F !important;
+    width: 110px !important;
+    height: 35px !important;
+    font-size: 15px !important;
+    border-radius: 15px !important;
+}
+
+.btn-outline-dark{
+    height: 35px !important;
+}
+
+.row-desc{
+    font-size: 18px;
+}
+

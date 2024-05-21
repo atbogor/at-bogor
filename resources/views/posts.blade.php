@@ -26,7 +26,7 @@
                     <div class="col-md-6">
                         <div class="blog-content card-body">
                             <h1 class="head card-title">{{ $posts[0]->title }}</h1>
-                            <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u
+                            <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="/post/{{ $posts[0]->slug }}"><u
                                         class="head">Read
                                         now</u></a>
                             </p>
@@ -83,7 +83,7 @@
                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                                                                                                                                                                                                                                                                                                                                                                                                                                     the
                                                                                                                                                                                                                                                                                                                                                                                                                                                     card's content.</p> -->
-                                <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="#"><u>Read
+                                <p><a class="link-offset-2 link-underline link-underline-opacity-100" href="/post/{{ $post->slug }}"><u>Read
                                             now</u></a>
                             </div>
                         </div>
