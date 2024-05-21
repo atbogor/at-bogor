@@ -25,5 +25,13 @@ class PostController extends Controller
     }
 
     // nanti tambahin function yang show detail
+    public function show(Post $post){
+       return view('post', 
+       [
+                'title' => 'SingleBlogs',
+                'active' => 'post',
+                'post' => $post
+       ]);
+    }
     
 }
