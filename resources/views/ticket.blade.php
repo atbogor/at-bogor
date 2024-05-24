@@ -43,12 +43,13 @@
 
     .loc-and-type{
         display: flex;
-        /* margin: auto */
+        margin: auto
         height: 50%;
         width: 94%;
         margin: auto;
         justify-content: space-between;
         margin-top: 20px;
+        align-items: center; 
     }
 
     .fa-map-marker-alt {
@@ -57,7 +58,22 @@
     }
     
     .locaysh{
-        margin-left: 19px;
+        margin-top: 1%;
+        margin-left: 1.5%;
+        text-align: left;
+        white-space: nowrap;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    .btn-secondary.disabled {
+        background-color: #FEE9CA !important;
+        color: #142213 !important;
+        border-radius: 40px;
+        padding-inline: 1rem;
+        font-size: 1.5em;
+        opacity: 1;
+        margin-top: 1%;
     }
 
     hr{
@@ -78,19 +94,7 @@
         text-align: justify;
     }
 
-    .type-parent{
-        display: flex;
-        margin-left: auto;
-        background-color: #FEE9CA; 
-        padding: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-        border-radius: 15px; 
-        margin-top: -10px;
-        margin-bottom: 10px;
-        height: 50px;
-        /* overflow: hidden; */
-    }
+    
 
     .price-frame {
         display: flex;
@@ -244,9 +248,10 @@
 <div class="loc-and-type">
     <i class="fas fa-map-marker-alt"></i>
     <h3 class="locaysh">{{ $ticket->location }}</h3>
-    <div class="type-parent">
+    <!-- <div class="type-parent">
         <h3 class="type">{{ $ticket->ticketcategory->name }}</h3>
-    </div>
+    </div> -->
+    <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
 </div>
 
 <hr>
