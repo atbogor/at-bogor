@@ -23,8 +23,18 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'username' => 'Testuser',
             'email' => 'test@gmail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
         ]);
+
+        User::factory()->create(
+            [
+                'name' => 'Admin',
+                'username' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('password'),
+                'is_admin' => true,
+            ]
+        );
 
         Category::create([
             'name' => 'Nature',
@@ -45,17 +55,17 @@ class DatabaseSeeder extends Seeder
 
         TicketCategory::create([
             'name' => "Nature",
-            "slug"=> "nature",
+            "slug" => "nature",
         ]);
 
         TicketCategory::create([
             'name' => "Entertainment",
-            "slug"=> "entertainment",
+            "slug" => "entertainment",
         ]);
 
         TicketCategory::create([
             'name' => "History",
-            "slug"=> "history",
+            "slug" => "history",
         ]);
 
         Ticket::factory(100)->create();

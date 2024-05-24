@@ -42,15 +42,19 @@
       Welcome Back, {{auth()->user()->name}}
       </a>
       <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
+      <li>
+        @can('admin')
+        <a class="dropdown-item" href="/dashboard/posts">My Dashboard</a>
+      </li>
       <li>
         <hr class="dropdown-divider">
       </li>
+    @endcan
       <li>
         <form action="/logout" method="post">
-          @csrf
+        @csrf
         <button type="submit" class="dropdown-item">
-        Logout
+          Logout
         </button>
         </form>
       </li>
