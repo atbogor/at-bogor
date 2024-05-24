@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <table class="table table-striped mt-5">
+    <table class="table table-striped mt-4">
         <thead>
             <tr>
                 <th scope="col">ID</th>
