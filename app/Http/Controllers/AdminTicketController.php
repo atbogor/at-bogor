@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use Gate;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
-class AdminPostController extends Controller
+class AdminTicketController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboardposts', [
-            'title' => 'Posts',
-            'active' => 'posts',
-            'posts' => Post::all()
+        return view('dashboard.ticket.index', [
+            'title' => 'Tickets',
+            'active' => 'ticket',
+            'tickets' => Ticket::latest()->paginate(5)->withQueryString()
         ]);
     }
 
@@ -39,7 +38,7 @@ class AdminPostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Ticket $ticket)
     {
         //
     }
@@ -47,7 +46,7 @@ class AdminPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Ticket $ticket)
     {
         //
     }
@@ -55,7 +54,7 @@ class AdminPostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Ticket $ticket)
     {
         //
     }
@@ -63,7 +62,7 @@ class AdminPostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Ticket $ticket)
     {
         //
     }

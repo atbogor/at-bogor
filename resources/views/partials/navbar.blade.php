@@ -44,7 +44,7 @@
       <ul class="dropdown-menu">
       <li>
         @can('admin')
-        <a class="dropdown-item" href="/dashboard/posts">My Dashboard</a>
+        <a class="dropdown-item" href="/dashboard/tickets">My Dashboard</a>
       </li>
       <li>
         <hr class="dropdown-divider">

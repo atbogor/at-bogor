@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
@@ -25,4 +26,4 @@ Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/ticket/{ticket:slug}', [TicketController::class, 'show']);
 Route::get('/tickets', [TicketController::class, 'index']);
 
-Route::resource('/dashboard/posts', AdminPostController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/tickets', AdminTicketController::class)->except('show')->middleware('admin');
