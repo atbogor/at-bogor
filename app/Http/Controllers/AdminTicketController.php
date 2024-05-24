@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ticket;
+use App\Models\TicketCategory;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
 class AdminTicketController extends Controller
@@ -24,7 +26,9 @@ class AdminTicketController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.ticket.create', [
+            'ticketcategories' => TicketCategory::all(),
+        ]);
     }
 
     /**
@@ -65,5 +69,11 @@ class AdminTicketController extends Controller
     public function destroy(Ticket $ticket)
     {
         //
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Ticket::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

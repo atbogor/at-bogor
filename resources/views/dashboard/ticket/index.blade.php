@@ -31,9 +31,9 @@
     <hr>
     <div class="row">
         <div class="col-6">
-            <div class="btn btn-primary">
+            <a class="btn btn-primary" href="/dashboard/tickets/create">
                 Add Tickets
-            </div>
+            </a>
         </div>
     </div>
 
