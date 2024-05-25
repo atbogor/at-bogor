@@ -3,6 +3,11 @@
 @section('content')
 
 <style>
+    .body,
+    h1 {
+        color: #142213;
+    }
+
     .btn.btn-primary {
         background-color: #FFB49F;
         border-color: #FFB49F;
@@ -54,6 +59,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
+                <th scope="col">Location</th>
                 <th scope="col">Category</th>
                 <th scope="col">Cost</th>
                 <th scope="col"> </th>
@@ -64,17 +70,19 @@
                 <tr>
                     <td>{{ $ticket->id }}</td>
                     <td>{{ $ticket->title }}</td>
+                    <td>{{ $ticket->location }}</td>
                     <td>{{ $ticket->ticketcategory->name }}</td>
                     <td>{{ $ticket->price }}</td>
                     <td>
                         <div class="dropdown">
-                            <a class="" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                            <a class="" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <i class="fa-solid fa-ellipsis"></i>
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/tickets/{{ $ticket->slug }}/edit"><i
+                                            class="fa-solid fa-pencil"></i> Edit</a></li>
 
                                 <form action="/dashboard/tickets/{{ $ticket->slug }}" method="post" class="dropdown-item">
                                     @method('delete')

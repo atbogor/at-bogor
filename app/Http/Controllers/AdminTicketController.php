@@ -63,7 +63,10 @@ class AdminTicketController extends Controller
      */
     public function edit(Ticket $ticket)
     {
-        //
+        return view('dashboard.ticket.edit', [
+            'ticket' => $ticket,
+            'ticketcategories' => TicketCategory::all(),
+        ]);
     }
 
     /**
@@ -71,7 +74,22 @@ class AdminTicketController extends Controller
      */
     public function update(Request $request, Ticket $ticket)
     {
+        $rules = [
+            'title' => 'required|max:255',
+            'category_id' => 'required',
+            'price' => 'required|numeric',
+            'location' => 'required|max:255',
+            'description' => 'required',
+            'image' => 'image|file|max:1024',
+        ];
 
+        if ($request->slug != $ticket->slug) {
+            $rules['slug'] = 'required|unique:tickets';
+        }
+
+        $validatedData = $request->validate($rules);
+        Ticket::where('id', $ticket->id)->update($validatedData);
+        return redirect('/dashboard/tickets')->with('success', 'New Post has been updated!');
     }
 
     /**

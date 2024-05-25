@@ -9,24 +9,24 @@
 
     <!-- disini nanti bs tambahin message kalau sukses apa engga -->
     @if(session()->has('success'))
-    <div class = "alert alert-success alert-dismissible fade show" role="alert">
-      {{session('success')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('success')}}
+
     </div>
-    @endif
+  @endif
 
     @if(session()->has('loginError'))
-    <div class = "alert alert-danger alert-dismissible fade show" role="alert">
-      {{session('loginError')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{session('loginError')}}
+
     </div>
-    @endif
+  @endif
 
 
 
     <main class="form-signin">
-      <form action = "/login" method= "post"> 
-        @csrf 
+      <form action="/login" method="post">
+        @csrf
         <!-- tambahin logic backend di setiap input kalau error gimana, sama id dan name jangan lupa ubah -->
         <div class="d-flex align-items-center justify-content-center">
           <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
@@ -35,13 +35,14 @@
 
         <div class="form-floating mb-2">
           <label for="email">Email address</label>
-          <input type="email" name = "email"class="form-control border border-success @error('email') is-invalid @enderror" id="email"
-            placeholder="name@example.com" autofocus required value="{{ old ('email')}}">
-            @error('email')
-            <div class = "invalid-feedback">
-              {{ $message }}
-            </div>
-            @enderror
+          <input type="email" name="email"
+            class="form-control border border-success @error('email') is-invalid @enderror" id="email"
+            placeholder="name@example.com" autofocus required value="{{ old('email')}}">
+          @error('email')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+    @enderror
         </div>
         <div class="form-floating">
           <label for="password">Password</label>
