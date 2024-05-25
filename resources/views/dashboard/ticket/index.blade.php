@@ -29,6 +29,12 @@
         </div>
     </div>
     <hr>
+    @if(session()->has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-6">
             <a class="btn btn-primary" href="/dashboard/tickets/create">
@@ -55,14 +61,25 @@
                     <td>{{ $ticket->ticketcategory->name }}</td>
                     <td>{{ $ticket->price }}</td>
                     <td>
-                        <i class="fa-solid fa-ellipsis"></i>
+                        <div class="dropdown">
+                            <a class="" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> View</a></li>
+                            </ul>
+                        </div>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    <div class="d-flex justify-content-center mt-3">
+    <div class="d-flex justify-content-center mt-5">
         {{ $tickets->links() }}
     </div>
 </div>

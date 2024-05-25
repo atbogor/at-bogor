@@ -17,7 +17,7 @@ class AdminTicketController extends Controller
         return view('dashboard.ticket.index', [
             'title' => 'Tickets',
             'active' => 'ticket',
-            'tickets' => Ticket::latest()->paginate(5)->withQueryString()
+            'tickets' => Ticket::orderBy('id')->paginate(5)->withQueryString()
         ]);
     }
 
@@ -36,7 +36,18 @@ class AdminTicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:tickets',
+            'category_id' => 'required',
+            'price' => 'required|numeric',
+            'location' => 'required|max:255',
+            'description' => 'required',
+            'image' => 'image|file|max:1024',
+        ]);
+
+        Ticket::create($validatedData);
+        return redirect('/dashboard/tickets')->with('success', 'New ticket has been added!');
     }
 
     /**
@@ -68,7 +79,6 @@ class AdminTicketController extends Controller
      */
     public function destroy(Ticket $ticket)
     {
-        //
     }
 
     public function checkSlug(Request $request)
