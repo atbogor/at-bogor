@@ -15,6 +15,12 @@
         border-color: #142213 !important;
         border-top: 1px solid;
     }
+
+    .delete-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
 </style>
 
 <div class="container mt-4">
@@ -69,7 +75,17 @@
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pencil"></i> Edit</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+
+                                <form action="/dashboard/tickets/{{ $ticket->slug }}" method="post" class="dropdown-item">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="delete-button" type="submit">
+                                        <li onclick="return confirm('Are you sure?')">
+                                            <i class="fa-solid fa-trash"></i> Delete
+                                        </li>
+                                    </button>
+                                </form>
+
                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> View</a></li>
                             </ul>
                         </div>

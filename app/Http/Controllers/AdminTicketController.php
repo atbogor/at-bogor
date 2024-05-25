@@ -71,7 +71,7 @@ class AdminTicketController extends Controller
      */
     public function update(Request $request, Ticket $ticket)
     {
-        //
+
     }
 
     /**
@@ -79,6 +79,8 @@ class AdminTicketController extends Controller
      */
     public function destroy(Ticket $ticket)
     {
+        Ticket::destroy($ticket->id);
+        return redirect('/dashboard/tickets')->with('success', 'Ticket has been deleted!');
     }
 
     public function checkSlug(Request $request)
