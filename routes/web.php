@@ -28,5 +28,5 @@ Route::get('/ticket/{ticket:slug}', [TicketController::class, 'show']);
 Route::get('/tickets', [TicketController::class, 'index']);
 Route::get('/testimonial', [TestimonialController::class, 'index']);
 
-Route::resource('/dashboard/tickets', AdminTicketController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');

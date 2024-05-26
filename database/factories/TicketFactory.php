@@ -17,12 +17,12 @@ class TicketFactory extends Factory
     public function definition(): array
     {
         return [
-            "title"=> $this->faker->sentence(mt_rand(2,6)),
-            "slug"=> $this->faker->slug(),
-            "price"=> $this->faker->randomDigit(),
-            "location"=> $this->faker->city(),
-            "description"=> $this->faker->sentence(mt_rand(2,6)),
-            "category_id"=> mt_rand(1,3),
+            "title" => $this->faker->sentence(mt_rand(2, 6)),
+            "slug" => $this->faker->slug(),
+            "price" => $this->faker->numberBetween(10000, 500000),
+            "location" => $this->faker->city(),
+            "description" => $this->faker->paragraph(mt_rand(5, 15)),
+            "category_id" => mt_rand(1, 3),
         ];
     }
 }

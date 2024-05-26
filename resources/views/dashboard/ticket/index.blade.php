@@ -94,7 +94,8 @@
                                     </button>
                                 </form>
 
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> View</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/tickets/{{ $ticket->slug }}"><i
+                                            class="fa-solid fa-eye"></i> View</a></li>
                             </ul>
                         </div>
                     </td>
