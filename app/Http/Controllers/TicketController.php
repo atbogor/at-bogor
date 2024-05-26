@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function show(Ticket $ticket){
-        return view('ticket',[
-            'title'=>'Ticket Post', 
-            'active'=>'ticket',
+    public function show(Ticket $ticket)
+    {
+        return view('ticket', [
+            'title' => 'Ticket Post',
+            'active' => 'ticket',
             'ticket' => $ticket
         ]);
     }
@@ -31,5 +32,5 @@ class TicketController extends Controller
         );
     }
 
-    
+
 }

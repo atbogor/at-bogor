@@ -60,7 +60,7 @@
     top: -50px;
     border-radius: 20px;
     max-width: none !important;
-    
+
   }
 
   .btn-success {
@@ -172,14 +172,13 @@
     color: #224121;
   }
 
-  #ticket-box a{
+  #ticket-box a {
     text-decoration: none;
   }
 
-  #ticket-box:hover .card-body{
+  #ticket-box:hover .card-body {
     background-color: #FB2000;
   }
-
 </style>
 
 
@@ -218,10 +217,10 @@
         <div class="col justify-content-center">
           <ul class="nav nav-pills justify-content-center">
             @foreach ($tickets->shuffle()->take(5) as $ticket)
-            <li class="nav-item">
-              <a class="nav-link" href="/ticket/{{ $ticket->slug }}">Ticket to {{$ticket->title}}</a>
-            </li>
-            @endforeach
+        <li class="nav-item">
+        <a class="nav-link" href="/ticket/{{ $ticket->slug }}">Ticket to {{$ticket->title}}</a>
+        </li>
+      @endforeach
             <!-- <li class="nav-item">
               <a class="nav-link" href="#">Ticket to Taman Safari</a>
             </li>
@@ -269,44 +268,52 @@
     </div>
 
   </div>
-@if($tickets->count())
+  @if($tickets->count())
   <div class="container">
     <div class="row">
     @foreach ($tickets as $ticket)
-     <div class="col-md-4 mb-5 d-flex" id="ticket-box">
-                <a href="/ticket/{{ $ticket->slug }}" id="atickets">
-                    <div class="ticket-content card h-100">
-                        <img src="https://source.unsplash.com/1600x900/?{{ $ticket->ticketcategory->name }}" class="card-img-top" alt="...">
-                        <div class="card-body flex-container">
-                            <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
-                            <h3 class="card-title">{{$ticket->title}}</h3>
-                            <h5 class="card-location">{{$ticket->location}}</h5>
-                            <h4 class="card-price">IDR {{$ticket->price}}</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-    @endforeach 
-  </div>
+    <div class="col-md-4 mb-5 d-flex" id="ticket-box">
+    <a href="/ticket/{{ $ticket->slug }}" id="atickets">
+    <div class="ticket-content card h-100">
+
+      @if ($ticket->image)
+    <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top"
+    alt="{{ $ticket->ticketcategory->name }}">
+  @else
+  <img src="https://source.unsplash.com/1600x900/?{{ $ticket->ticketcategory->name }}" class="card-img-top"
+  alt="...">
+@endif
+
+      <div class="card-body flex-container">
+      <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
+      <h3 class="card-title">{{$ticket->title}}</h3>
+      <h5 class="card-location">{{$ticket->location}}</h5>
+      <h4 class="card-price">IDR {{$ticket->price}}</h4>
+      </div>
+    </div>
+    </a>
+    </div>
+  @endforeach 
+    </div>
 @else
   <p class="text-center fs-4">No ticket found.</p>
 @endif
 
-  <div class="d-flex justify-content-center">
-    {{ $tickets->links() }}
-  </div>
+    <div class="d-flex justify-content-center">
+      {{ $tickets->links() }}
+    </div>
 </section>
 
 
 @endsection
 
 <script>
-        function adjustRelativeContainerHeight() {
-            var relativeContainer = document.getElementById('relativeContainer');
-            var absoluteContent = document.getElementById('absoluteContent');
-            relativeContainer.style.height = absoluteContent.offsetHeight + 'px';
-        }
+  function adjustRelativeContainerHeight() {
+    var relativeContainer = document.getElementById('relativeContainer');
+    var absoluteContent = document.getElementById('absoluteContent');
+    relativeContainer.style.height = absoluteContent.offsetHeight + 'px';
+  }
 
-        window.onload = adjustRelativeContainerHeight;
-        window.onresize = adjustRelativeContainerHeight;
+  window.onload = adjustRelativeContainerHeight;
+  window.onresize = adjustRelativeContainerHeight;
 </script>

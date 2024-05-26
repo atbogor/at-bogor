@@ -21,8 +21,15 @@
     <a href="/dashboard/tickets" class="btn btn-success">Back to All My Post</a>
     <hr>
 
-    <img src="https://source.unsplash.com/1200x400?{{ $ticket->ticketcategory->name }}" class="img-fluid mt-3 mb-3"
-        alt="">
+    @if ($ticket->image)
+        <div style="max-height: 350px; overflow:hidden;">
+            <img src="{{ asset('storage/' . $ticket->image) }}" class="img-fluid mt-3"
+                alt="{{ $ticket->ticketcategory->name }}">
+        </div>
+    @else
+        <img src="https://source.unsplash.com/1200x400?{{ $ticket->ticketcategory->name }}" class="img-fluid mt-3"
+            alt="{{ $ticket->category->name }}">
+    @endif
 
     <div class="row">
         <p><b>Price: </b>{{ $ticket->price }}</p>

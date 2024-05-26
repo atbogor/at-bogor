@@ -6,6 +6,7 @@ use App\Models\Ticket;
 use App\Models\TicketCategory;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminTicketController extends Controller
 {
@@ -45,6 +46,10 @@ class AdminTicketController extends Controller
             'description' => 'required',
             'image' => 'image|file|max:1024',
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('ticket-images');
+        }
 
         Ticket::create($validatedData);
         return redirect('/dashboard/tickets')->with('success', 'New ticket has been added!');
@@ -90,6 +95,14 @@ class AdminTicketController extends Controller
         }
 
         $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('ticket-images');
+        }
+
         Ticket::where('id', $ticket->id)->update($validatedData);
         return redirect('/dashboard/tickets')->with('success', 'New Post has been updated!');
     }
