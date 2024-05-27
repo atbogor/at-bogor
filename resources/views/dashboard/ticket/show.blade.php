@@ -28,7 +28,7 @@
         </div>
     @else
         <img src="https://source.unsplash.com/1200x400?{{ $ticket->ticketcategory->name }}" class="img-fluid mt-3"
-            alt="{{ $ticket->category->name }}">
+            alt="{{ $ticket->ticketcategory->name }}">
     @endif
 
     <div class="row">
