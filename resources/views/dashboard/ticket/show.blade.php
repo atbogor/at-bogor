@@ -31,8 +31,8 @@
             alt="{{ $ticket->ticketcategory->name }}">
     @endif
 
-    <div class="row">
-        <p><b>Price: </b>{{ $ticket->price }}</p>
+    <div class="row mt-2">
+        <p><b>Price: </b>Rp.{{ $ticket->price }}</p>
     </div>
     <div class="row">
         <p><b>Location: </b>{{ $ticket->location }}</p>
