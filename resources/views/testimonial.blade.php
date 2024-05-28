@@ -21,7 +21,7 @@
         background: transparent;  
     }
 
-    .btn {
+    .add-yours .btn {
     background-color: #FB2000 !important;
     border-color: #224121 !important;
     color: #FEE9CA !important;
@@ -38,6 +38,10 @@
     width: 50% !important;
     /* padding: 8px 8px; */
   }
+
+  .testimonial-content{
+    background-color: #;
+  }
 </style>
 
 <section class="testi-header">
@@ -48,18 +52,29 @@
     </div>
 </section>
 <section class="all-testimonials d-flex justify-content-center " style="max-height: 50vh; overflow-y: auto;">
-    <div class="container-md w-75">
-        <div class="row row-cols-sm-1 row-cols-md-3 g-5 g-lg-3">
-            <div class="col">
-                <div class="testimonial rounded-4 p-3 h-100">
-                    <h5>User</h5>
-                    <div class="testimonial-content">
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+    @if($testimonials->count())
+        <div class="container">
+            <div class="row">
+                <div class="container-md w-75">
+                    <div class="row row-cols-sm-1 row-cols-md-3 g-5 g-lg-3">
+                        @foreach ($testimonials as $testimonial)
+                        <div class="col">
+                            <div class="testimonial rounded-4 p-3 h-100">
+                            <h5>{{$testimonial->users->username}}</h5>
+                                <div class="testimonial-content">
+                                    <p>{{$testimonial->testimonial_content}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach 
                     </div>
                 </div>
-            </div>
-        </div>
     </div>
+@else
+  <p class="text-center fs-4">No Testimonial found.</p>
+@endif
+
 </section>
 <section class="add-yours mt-5">
     <div class="addyours-header d-flex justify-content-center">
@@ -73,7 +88,9 @@
     <div class="form d-flex justify-content-center">
         <div class="input-group mb-3 w-50">
             <input type="text" class="form-control" placeholder="Write your testimony about this site.." aria-label="user-testi" aria-describedby="user-testi">
+            
             <button class="btn btn-outline-secondary" type="send" id="button-addon2">Send</button>
+          
         </div>
     </div>
     

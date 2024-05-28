@@ -179,6 +179,7 @@
   #ticket-box:hover .card-body {
     background-color: #FB2000;
   }
+
 </style>
 
 
@@ -271,6 +272,8 @@
   @if($tickets->count())
   <div class="container">
     <div class="row">
+
+
     @foreach ($tickets as $ticket)
     <div class="col-md-4 mb-5 d-flex" id="ticket-box">
     <a href="/ticket/{{ $ticket->slug }}" id="atickets">
@@ -280,7 +283,7 @@
     <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top"
     alt="{{ $ticket->ticketcategory->name }}">
   @else
-  <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900" class="card-img-top"
+  <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid"
   alt="...">
 @endif
 
