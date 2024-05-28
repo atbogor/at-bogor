@@ -27,12 +27,12 @@
                 alt="{{ $ticket->ticketcategory->name }}">
         </div>
     @else
-        <img src="https://source.unsplash.com/1200x400?{{ $ticket->ticketcategory->name }}" class="img-fluid mt-3"
+        <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1200/400" class="img-fluid mt-3"
             alt="{{ $ticket->ticketcategory->name }}">
     @endif
 
     <div class="row mt-2">
-        <p><b>Price: </b>Rp.{{ $ticket->price }}</p>
+        <p><b>Price: </b>Rp. {{ $ticket->price }}</p>
     </div>
     <div class="row">
         <p><b>Location: </b>{{ $ticket->location }}</p>
