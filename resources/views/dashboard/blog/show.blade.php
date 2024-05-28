@@ -15,6 +15,10 @@
     }
 </style>
 
-<h1>{{ $post->title}}</h1>
+<h2>back</h2>
+
+<div class="container mt-4">
+    <h1>{{ $post->title }}</h1>
+</div>
 
 @endsection

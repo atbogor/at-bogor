@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Cviebrock\EloquentSluggable\Services\SlugService;
-
 
 class AdminBlogController extends Controller
 {
@@ -15,21 +12,15 @@ class AdminBlogController extends Controller
      */
     public function index()
     {
-        return view('dashboard.blog.index', [
-            'title' => 'Blogs',
-            'active' => 'post',
-            'posts' => Post::orderBy('id')->paginate(5)->withQueryString()
-        ]);
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Post $post)
+    public function create()
     {
-        return view('dashboard.blog.create', [
-            'category' => Category::all(),
-        ]);
+        //
     }
 
     /**
@@ -45,9 +36,7 @@ class AdminBlogController extends Controller
      */
     public function show(Post $post)
     {
-        return view('dashboard.blog.show', [
-            'post' => $post,
-        ]);
+        //
     }
 
     /**
@@ -63,7 +52,7 @@ class AdminBlogController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-
+        //
     }
 
     /**
@@ -73,5 +62,4 @@ class AdminBlogController extends Controller
     {
         //
     }
-
 }

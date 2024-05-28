@@ -60,6 +60,7 @@ class AdminTicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
+        dd($ticket);
         return view('dashboard.ticket.show', [
             'ticket' => $ticket,
         ]);
