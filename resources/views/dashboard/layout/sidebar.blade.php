@@ -24,39 +24,21 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link link-dark" aria-current="page">
+        <a href="/dashboard/tickets" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16">
             <use xlink:href="#home" />
-          </svg>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="/dashboard/tickets" class="nav-link active">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#speedometer2" />
           </svg>
           Tickets
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-dark">
+        <a href="/dashboard/blogs" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#table" />
+            <use xlink:href="#speedometer2" />
           </svg>
           Blogs
         </a>
       </li>
-      <hr mb-2>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#table" />
-          </svg>
-          Log Out
-        </a>
-      </li>
-
     </ul>
   </div>
   <!-- </main> -->

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\LoginController;
@@ -30,3 +31,4 @@ Route::get('/testimonial', [TestimonialController::class, 'index']);
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
+Route::resource('/dashboard/blogs', AdminBlogController::class)->middleware('admin');
