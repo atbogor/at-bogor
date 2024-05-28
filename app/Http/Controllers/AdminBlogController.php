@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
 class AdminBlogController extends Controller
@@ -12,7 +14,12 @@ class AdminBlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.blog.index', [
+            'title' => 'Blogs',
+            'active' => 'post',
+            'posts' => Post::orderBy('id')->paginate(5)->withQueryString()
+        ]);
+
     }
 
     /**
@@ -20,7 +27,9 @@ class AdminBlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.blog.create', [
+            'categories' => Category::all(),
+        ]);
     }
 
     /**
@@ -34,9 +43,14 @@ class AdminBlogController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(Post $post)
     {
-        //
+        $post_1 = Post::all();
+        return view('dashboard.blog.show', [
+            'post' => $post
+        ]);
+
     }
 
     /**
@@ -60,6 +74,13 @@ class AdminBlogController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+        return redirect('/dashboard/posts')->with('success', 'Blog has been deleted!');
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

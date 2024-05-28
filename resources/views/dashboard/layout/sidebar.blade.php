@@ -32,7 +32,7 @@
         </a>
       </li>
       <li>
-        <a href="/dashboard/blogs" class="nav-link link-dark">
+        <a href="/dashboard/posts" class="nav-link link-dark">
           <svg class="bi pe-none me-2" width="16" height="16">
             <use xlink:href="#speedometer2" />
           </svg>

@@ -72,9 +72,9 @@
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="/dashboard/blogs/{{ $post->slug }}/edit"><i
+                                <li><a class="dropdown-item" href="/dashboard/posts/{{ $post->slug }}/edit"><i
                                             class="fa-solid fa-pencil"></i> Edit</a></li>
-                                <form action="/dashboard/blogs/{{ $post->slug }}" method="post" class="dropdown-item">
+                                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="dropdown-item">
                                     @method('delete')
                                     @csrf
                                     <button class="delete-button" type="submit">
@@ -84,7 +84,7 @@
                                     </button>
                                 </form>
 
-                                <li><a class="dropdown-item" href="/dashboard/blogs/{{ $post->slug }}"><i
+                                <li><a class="dropdown-item" href="/dashboard/posts/{{ $post->slug }}"><i
                                             class="fa-solid fa-eye"></i> View</a></li>
                             </ul>
                         </div>
