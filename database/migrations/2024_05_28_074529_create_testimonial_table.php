@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId("user_id")->references("id")->on("users")
             ->onDelete("cascade")
             ->onUpdate("cascade");
-            $table->string("slug")->unique();
+            $table->string("slug");
             $table->timestamps();
         });
     }
