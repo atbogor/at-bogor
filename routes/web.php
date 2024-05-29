@@ -27,8 +27,10 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/ticket/{ticket:slug}', [TicketController::class, 'show']);
 Route::get('/tickets', [TicketController::class, 'index']);
-Route::get('/testimonial', [TestimonialController::class, 'index']);
 Route::get('/gallery', [GalleryController::class, 'index']);
+
+Route::get('/testimonials', [TestimonialController::class, 'index']);
+Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store')->middleware('auth');
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
