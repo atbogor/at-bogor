@@ -14,7 +14,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="/gallery">Gallery</a>
+        <a class="nav-link  {{ ($active == "gallery") ? 'active' : ''}} " href="/gallery">Gallery</a>
       </li>
 
       <li class="nav-item">

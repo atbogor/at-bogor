@@ -15,13 +15,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 471px;
+        height: 29em;
         width: 94%;
         background-position: center;
         margin: auto;
-        background-image: url('https://source.unsplash.com/1600x900/?');
-        background-size: cover;
+        /* background-image: url('https://source.unsplash.com/1600x900/?');
+        background-size: cover; */
         /* background-attachment: fixed; */
+    }
+
+    .jumbo-img{
+        width: 100%;
+        height: 29em;
+        object-fit: cover;
     }
 
     .title {
@@ -235,7 +241,13 @@
 
 </div>
 <div class="jumbotron jumbotron-fluid">
-
+@if ($ticket->image)
+        <img class="jumbo-img" src="{{ asset('storage/' . $ticket->image) }}" 
+        alt="{{ $ticket->ticketcategory->name }}">
+  @else
+  <img src="https://picsum.photos/id/237/1600/900?{{ $ticket->ticketcategory->name }}" class="card-img-top"
+  alt="...">
+@endif
 </div>
 <div class="gap-2">
 
@@ -256,7 +268,7 @@
 <hr>
 
 <div class="desc">
-    <h3 class="desc-1"> {{ $ticket->description }} </h3>
+    <h3 class="desc-1"> {!! $ticket->description !!} </h3>
 </div>
 
 <div class="price-frame">
@@ -289,6 +301,7 @@
     <div class="button-parent">
         <h3 class="button-text">Check Out</h3>
     </div>
+
 </div>
 
 

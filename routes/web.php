@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminTicketController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
@@ -27,6 +28,7 @@ Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/ticket/{ticket:slug}', [TicketController::class, 'show']);
 Route::get('/tickets', [TicketController::class, 'index']);
 Route::get('/testimonial', [TestimonialController::class, 'index']);
+Route::get('/gallery', [GalleryController::class, 'index']);
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
