@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\Testimonial;
 use App\Models\Ticket;
@@ -72,5 +73,7 @@ class DatabaseSeeder extends Seeder
         Ticket::factory(100)->create();
 
         Testimonial::factory(20)->create();
+
+        Gallery::factory(12)->create();
     }
 }

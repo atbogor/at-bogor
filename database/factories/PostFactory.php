@@ -17,7 +17,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2, 6)),
+            'title' => $this->faker->sentence(mt_rand(2, 4)),
             'slug' => $this->faker->slug(),
             'body' => collect($this->faker->paragraphs(mt_rand(5, 10)))
                 ->map(fn($p) => "<p>$p</p>")

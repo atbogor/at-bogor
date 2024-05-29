@@ -49,6 +49,7 @@
 
     .loc-and-type {
         display: flex;
+        /* flex-direction: column; */
         margin: auto height: 50%;
         width: 94%;
         margin: auto;
@@ -245,8 +246,7 @@
         <img class="jumbo-img" src="{{ asset('storage/' . $ticket->image) }}" 
         alt="{{ $ticket->ticketcategory->name }}">
   @else
-  <img src="https://picsum.photos/id/237/1600/900?{{ $ticket->ticketcategory->name }}" class="card-img-top"
-  alt="...">
+  <img src="https://picsum.photos/id/237/1600/900?{{ $ticket->ticketcategory->name }}" class="jumbo-img" alt="...">
 @endif
 </div>
 <div class="gap-2">
