@@ -9,6 +9,7 @@
     .all-testimonials .container-md{
         /* background-color: cyan !important; */
         height: 50%;
+        
     }
 
     .testimonial{
@@ -36,6 +37,8 @@
     border-bottom-right-radius: 0%;
     height: 100%;
     width: 50% !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
     /* padding: 8px 8px; */
   }
 
@@ -162,7 +165,7 @@
 </section>
 
 <section class="add-yours mt-5">
-    <div class="addyours-header d-flex justify-content-center">
+    <div class="addyours-header d-flex justify-content-center pb-4">
         <h3>Add yours</h3>
     </div>
     <!-- <div class="form-testi">
