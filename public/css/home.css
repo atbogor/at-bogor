@@ -31,8 +31,13 @@
     color: rgba(254, 233, 202, 1);
     line-height: 80%;
     top: 22%;
+    /* background-color: red; */
 }
 
+.logo-jumbo{
+    object-fit: contain;
+    max-height: 200px;
+}
 .scrollable-container {
     display: flex;
     overflow-x: auto;
