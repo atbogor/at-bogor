@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomepageController;
@@ -36,3 +37,5 @@ Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'check
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
 Route::get('/dashboard/blogs/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
+
+Route::get("/myprofile", [MyProfileController::class, "index"]);
