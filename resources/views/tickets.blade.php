@@ -280,12 +280,10 @@
     <div class="ticket-content card h-100">
 
       @if ($ticket->image)
-    <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top"
-    alt="{{ $ticket->ticketcategory->name }}">
-  @else
-  <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid"
-  alt="...">
-@endif
+        <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top" alt="{{ $ticket->ticketcategory->name }}">
+      @else
+        <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid" alt="...">
+      @endif
 
       <div class="card-body flex-container">
       <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
