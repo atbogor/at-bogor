@@ -34,17 +34,32 @@
     /* background-color: red; */
 }
 
-.logo-jumbo{
+.logo-jumbo {
     object-fit: contain;
     max-height: 200px;
 }
 .scrollable-container {
-    display: flex;
+    /* display: flex; */
     overflow-x: auto;
     border-radius: 15px;
+    height: auto;
+    /* white-space: nowrap; */
     /* overflow-y: hidden; */
     /* background-color: blue; */
     /* padding: 10px; */
+}
+.see-more-card {
+    width: 24rem !important;
+    /* height: 100px; */
+    background-color: #224121;
+    border-radius: 15px;
+    border: 2px solid #224121 !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.see-more-card h2 {
+    color: white;
 }
 
 /* ===================Category tag======================= */
@@ -54,12 +69,47 @@
 }
 
 /* =============== Popular Destination ========================== */
+
 .home-page h1 {
     color: #142213 !important;
 }
+.headline.card {
+    width: 95%;
+    border-color: #ffffff !important;
+}
+
+.img-fluid {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+.ticket-box {
+    flex: 0 0 auto;
+}
+
+.ticket-content.card {
+    border-radius: 15px !important;
+    border: 2px solid #224121 !important;
+    display: flex;
+    overflow: hidden;
+    background-color: #224121;
+}
+
+.btn-secondary.disabled {
+    background-color: #fee9ca !important;
+    color: #142213 !important;
+    border-radius: 40px;
+    padding-inline: 1rem;
+    opacity: 1;
+}
+
 .card-body {
     color: #ffffff !important;
     transition: 300ms ease-in;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .card-price {
@@ -70,13 +120,26 @@
     padding-top: 2rem;
 }
 
-.destination-container.card {
-    flex: 0 0 auto;
-    border-radius: 15px !important;
-    border: 2px solid #224121 !important;
-    display: flex;
-    overflow: hidden;
-    background-color: #224121;
+.flex-button {
+    align-self: start;
+}
+
+.card-body:hover {
+    background-color: #fb2000;
+    color: putih;
+    transition: 300ms ease-in;
+}
+
+#ticket-box:hover .card-price {
+    color: #224121;
+}
+
+#ticket-box a {
+    text-decoration: none;
+}
+
+#ticket-box:hover .card-body {
+    background-color: #fb2000;
 }
 
 /* =============== Popular Article ========================== */
@@ -121,14 +184,113 @@ u {
 }
 
 /* ============================ Popular Gallery ========================= */
-.gallery-container.card {
-    flex: 0 0 auto;
-    border-radius: 15px;
-    /* height: 40vh; */
-    /* width: 20vw; */
-    border: 2px solid #142213 !important;
-    background-color: #224121;
+.gallery-container-card {
     display: flex;
-    align-items: left;
+    border-radius: 15px !important;
+    border: 2px solid #224121 !important;
+
+    background-color: #224121;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+}
+
+box {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* gap: 2em; */
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 94%;
     justify-content: center;
+}
+
+.row {
+    justify-content: center;
+}
+
+.photocard {
+    /* position: */
+    /* display: flex; */
+    height: 24rem;
+    /* width: 63vh; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 2px solid black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* flex-direction: column; */
+}
+
+/* .row > .photocard:nth-child(3n) {
+    margin-right: 0;
+} */
+
+.overlay {
+    /* position: relative; */
+    background-color: #224121;
+    bottom: 0;
+    right: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: background-color 300ms ease-out;
+}
+
+.photocard:hover .overlay {
+    background-color: #fb2000;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    margin: auto;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px;
+    max-height: 100%;
+    border: 10px solid #142213;
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #ff0000;
+    font-size: 40px;
+    background-color: #214123;
+    border-radius: 100px;
+    width: 0.8em;
+    margin-bottom: 0;
+    height: 0.8em;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
 }

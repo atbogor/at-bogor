@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Ticket;
@@ -14,7 +15,8 @@ class HomepageController extends Controller
             'title' => 'Home',
             'active' => 'home',
             "posts" => Post::all(),
-            "tickets" => Ticket::all()
+            "tickets" => Ticket::all(),
+            "galleries" => Gallery::all()
         ]);
 
         
