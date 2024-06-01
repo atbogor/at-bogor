@@ -21,10 +21,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="scrollable-container d-flex gap-3 " style="height: auto;">
-                    <div class="see-more-card col-md-4 d-flex"style = "width: 24rem; padding: 0;">\
-                    <img class="see-more-logo" src="public\assets\see-more-logo.png"></img>    
-                    <h2>See More</h2>
-                    </div>
+                    
+                
                 @foreach($tickets->take(7) as $ticket)
                     <div class="col-md-4 d-flex" id="ticket-box" style = "width: 24rem; padding: 0;">
                     <a href="/ticket/{{ $ticket->slug }}" id="atickets">
@@ -46,6 +44,10 @@
                     </a>
                     </div>
                 @endforeach
+                <a href="/tickets/"class="see-more-card col-md-4 d-flex" style = "width: 24rem; padding: 0;">
+                    <img class="see-more-logo" src="assets/see-more-logo.png"></img>    
+                    <h2>See More</h2>
+                </a>
                 </div>
             </div>
         </div>
@@ -78,6 +80,10 @@
                         </div>
                     </div>
                     @endforeach
+                    <a href="/posts/"class="see-more-card col-md-4 d-flex" style = "width: 24rem; padding: 0;">
+                    <img class="see-more-logo" src="assets/see-more-logo.png"></img>    
+                    <h2>See More</h2>
+                </a>
                 </div>
             </div>
         </div>
@@ -104,6 +110,10 @@
                         
                     
                     @endforeach
+                    <a href="/gallery/"class="see-more-card col-md-4 d-flex" style = "width: 24rem; padding: 0;">
+                    <img class="see-more-logo" src="assets/see-more-logo.png"></img>    
+                    <h2>See More</h2>
+                </a>
                 </div>
             </div>
         </div>

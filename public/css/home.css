@@ -57,7 +57,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
+.see-more-card:hover {
+    background-color: #fb2000;
+    transition: 300ms ease-in;
+}
+
 .see-more-card h2 {
     color: white;
 }
