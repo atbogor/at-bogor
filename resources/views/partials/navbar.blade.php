@@ -36,29 +36,42 @@
 
     <ul class="navbar-nav ms-auto">
       @auth
-    <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Welcome Back, {{auth()->user()->name}}
+        aria-haspopup="true" aria-expanded="false">
+        Welcome Back, {{auth()->user()->name}}
       </a>
       <ul class="dropdown-menu">
-      <li>
+        <li>
         @can('admin')
-        <a class="dropdown-item" href="/dashboard/tickets">My Dashboard</a>
+      <a class="dropdown-item" href="/dashboard/tickets">My Dashboard</a>
       </li>
       <li>
-        <hr class="dropdown-divider">
+      <hr class="dropdown-divider">
       </li>
     @endcan
+
+        @auth
+        @cannot('admin')
+        <a class="dropdown-item" href="/mybooking/mybookings">My Bookings</a>
+        </li>
+        <li>
+        <hr class="dropdown-divider">
+        </li>
+        @endcannot
+      @endauth
+
+
+
       <li>
-        <form action="/logout" method="post">
+      <form action="/logout" method="post">
         @csrf
         <button type="submit" class="dropdown-item">
-          Logout
+        Logout
         </button>
-        </form>
+      </form>
       </li>
-      </ul>
+    </ul>
     </li>
   @else
   <li class="nav-item">
