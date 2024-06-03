@@ -36,8 +36,10 @@ Route::post('/testimonials', [TestimonialController::class, 'store'])->name('tes
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
-Route::get('/dashboard/blogs/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
+// Route::get('/dashboard/blogs/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
 
 Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::get('/mybooking/mybookings', [MyBookingController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
+Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
