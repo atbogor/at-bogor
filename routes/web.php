@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\GalleryController;
@@ -33,6 +34,7 @@ Route::get('/gallery', [GalleryController::class, 'index']);
 
 Route::get('/testimonials', [TestimonialController::class, 'index']);
 Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store')->middleware('auth');
+Route::get('/about-us', [AboutUsController::class, 'index']);
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');

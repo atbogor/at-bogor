@@ -30,7 +30,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link {{ ($active == "aboutus") ? 'active' : ''}}" href="/about-us">About</a>
       </li>
     </ul>
 
