@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Testimonial;
 use App\Models\Ticket;
 use App\Models\TicketCategory;
+use App\Models\Transaction;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -75,5 +76,7 @@ class DatabaseSeeder extends Seeder
         Testimonial::factory(20)->create();
 
         Gallery::factory(12)->create();
+
+        Transaction::factory(50)->create();
     }
 }

@@ -42,11 +42,18 @@ class User extends Authenticatable
         ];
     }
 
-    public function testimonials(){
+    public function testimonials()
+    {
         return $this->hasMany(Testimonial::class);
     }
 
-    public function galleries(){
+    public function galleries()
+    {
         return $this->hasMany(Gallery::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }
