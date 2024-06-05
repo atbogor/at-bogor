@@ -98,22 +98,42 @@
         bottom: -50px;
     }
 
-    .accordion-item{
-        border: none;
-    }
-
-    .accordion-item::before{
-        height: 10px;
-        width: 2px;
-        background-color: red;
+    .accordion-button{
+        padding: 0.5rem;
     }
 
     .accordion-button:focus{
         box-shadow: none;
-        background: none;
-        color: #FB2000;
-        transition: 300ms ease-in;
+        background-color: none;
     }
+    .accordion-item {
+            position: relative;
+            border: none;
+            padding-left: 10px;
+            margin-bottom: 10px;
+    }
+    .accordion-button:not(.collapsed) {
+            color: #FB2000;
+            background:none;
+        }
+
+    .accordion-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            background-color: #FB2000;
+            transition: 0.3s ease;
+            border-radius: 0 20px;
+    }
+
+    
+
+     /* .accordion-collapse.collapse.show + .accordion-item::before {
+            height: 100%;
+    } */
 
 </style>
 
@@ -151,28 +171,45 @@
         </div>    
     </div>
 
-    <div class="faq d-flex justify-content-center align-items-start">
+    <div class="faq d-flex justify-content-center align-items-start gap-4">
         <div class="faq-img-section d-flex align-items-end">
             <img class="faq-img-1" src="https://kebunraya.id/images/about/side-bogor.jpg" alt="">
             <img class="faq-img-2" src="https://cdn.rri.co.id/berita/46/images/1706242358632-k/t59fph47pzwt2hh.jpeg" alt="">
         </div>
         <div class="questions w-50">
             <h1>Frequently Asked Questions</h1>
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        Lorem ipsum dolor sit amet consectetur?
-                    </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.
-                    </div>
-                    </div>
-                </div>
-              
-            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </div>
+  </div>
+</div>
             
         </div>
         
