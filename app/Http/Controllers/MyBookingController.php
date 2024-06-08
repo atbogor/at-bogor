@@ -13,8 +13,8 @@ class MyBookingController extends Controller
             'mybooking.mybooking',
             [
                 'title' => 'My Booking',
-                'active' => '',
-                'bookings' => Transaction::all()
+                'active' => 'ticket',
+                'bookings' => Transaction::latest()->paginate(5)->withQueryString()
             ]
         );
     }

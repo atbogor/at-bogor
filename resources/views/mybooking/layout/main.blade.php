@@ -11,6 +11,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8f794dd92.js" crossorigin="anonymous"></script>
 </head>
 
 <title>Hello, world!</title>

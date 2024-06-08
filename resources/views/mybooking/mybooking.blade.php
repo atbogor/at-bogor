@@ -71,7 +71,7 @@
                                     href="#">{{ $booking->ticket->ticketcategory->name }}</a>
                             </div>
                             <div class="receipt col-md-3 d-flex justify-content-end align-items-center">
-                                <b>See receipt</b>
+                                <b>See receipt <i class="fa-solid fa-chevron-right"></i></b>
                             </div>
                         </div>
                         <div class="row">
@@ -95,7 +95,6 @@
                                     @else
                                         Pending
                                     @endif
-
                                 </b>
                             </div>
                         </div>
@@ -104,5 +103,10 @@
             </div>
         @endforeach
     </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        {{ $bookings->links() }}
+    </div>
+
 </div>
 @endsection
