@@ -121,7 +121,7 @@
   }
 
   .img-fluid {
-    border-radius: 12px !important;
+    border-radius: 12px 12px 0 0  !important;
   }
 
   .ticket-content.card {

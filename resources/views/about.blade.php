@@ -140,6 +140,7 @@
     }
 
     .faq{
+        margin-bottom: 8%;
         /* background-color: red; */
         /* justify-content: space-between;  */
     }
@@ -152,6 +153,74 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23FB2000' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
     }
 
+    .team-img{
+        width: 18.75rem;
+        height: 25rem;
+        flex-shrink: 1;
+        border-radius: 0px 20px;
+        border: 10px solid #142213;        
+        color: white;
+    }
+    
+    #ind1{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 3.9%, rgba(20, 34, 19, 0.70) 84.4%), url(assets/alex.png) lightgray 50% / cover no-repeat;
+    }
+    #ind2{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 3.9%, rgba(20, 34, 19, 0.70) 84.4%), url(assets/catherine.png) lightgray 50% / cover no-repeat;
+    }
+    #ind3{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 3.9%, rgba(20, 34, 19, 0.70) 84.4%), url(assets/michaelscu.png) lightgray 50% / cover no-repeat;
+    }
+    #ind4{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 3.9%, rgba(20, 34, 19, 0.70) 84.4%), url(assets/valina.png) lightgray 50% / cover no-repeat;
+    }
+    #ind5{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 3.9%, rgba(20, 34, 19, 0.70) 84.4%), url(assets/vanechka.png) lightgray 50% / cover no-repeat;
+    }
+
+    .team {
+        /* background-color: red; */
+        justify-content: center; /* Pusatkan grid secara horizontal */
+        width: 100%;
+        align-items: center;
+    }
+
+    .team-img h4{
+        font-weight: 300;
+    }
+
+    .our-team{
+        margin-bottom: 8%;
+    }
+
+    .get-in-touch{
+        background-color: #FB2000;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    .footers{
+        margin-top: 0 !important;
+    }
+
+    .item{
+        text-align: center;
+        width: 14.375rem;
+        color: white;
+    }
+
+    .item h2{
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .item h5{
+        font-weight: 100;
+    }
+
+    .item h4{
+        font-weight: 500;
+    }
 </style>
 
 <section class='container-fluid all p-0'>
@@ -199,54 +268,115 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Accordion Item #1
+                            Lorem ipsum dolor sit amet consectetur? #1
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Accordion Item #2
+                            Lorem ipsum dolor sit amet consectetur? #2
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            Accordion Item #3
+                            Lorem ipsum dolor sit amet consectetur? #3
                         </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                            Accordion Item #4
+                            Lorem ipsum dolor sit amet consectetur? #4
                         </button>
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                            Accordion Item #5
+                            Lorem ipsum dolor sit amet consectetur? #5
                         </button>
                     </h2>
                     <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
                     </div>
                 </div>
             </div>   
+        </div>
+    </div>
+
+    <div class="container-fluid our-team d-flex  g-2 flex-column">
+         <div class="col-3 ml-5 w-100 mb-4">
+            <h1>Our team.</h1>
+        </div>
+        <div class="team justify-content-center w-100 align-items-center gap-2">
+            <div class="top d-flex justify-content-center">
+                <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind1">
+                    <h6>Lorem ipsum</h6>
+                    <h4>Alexander Immanuel Samosir</h4>
+                </div>
+                <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind2">
+                    <h6>Lorem ipsum</h6>
+                    <h4>Catherine Olivia Winanda</h4>
+                </div>
+                <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind3">
+                    <h6>Lorem ipsum</h6>
+                    <h4>Michael Scuderia Tanudjaja</h4>
+                </div>
+            </div>
+            <div class="bottom d-flex justify-content-center">
+                <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind4">
+                    <h6>Lorem ipsum</h6>
+                    <h4>Valina Evelyn Pranoto</h4>
+                </div>
+                <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind5">
+                    <h6>Lorem ipsum</h6>
+                    <h4>Vanechka Radja Winata</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="get-in-touch d-flex align-items-center flex-column">
+        <div class="col-3 ml-5 w-100 mb-4 d-flex justify-content-center m-0 pt-5">
+            <h1>Get in touch</h1>
+        </div>
+        <div class="items d-flex justify-content-center gap-5 mb-5">
+            <div class="item address">
+                <img src="/assets/mdi_address-marker.svg" alt="">
+                <h2>Address</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur. Ipsum donec id diam malesuada.</h5>
+                </div>
+            <div class="item phone">
+                <img src="assets/solar_phone-bold.svg" alt="">
+                <h2>Phone</h2>
+                <div class="cat">
+                    <h4>lorem ipsum</h4>
+                    <h5>021-2234-4950</h5>
+                </div>
+            </div>
+            <div class="item email">
+                <img src="/assets/ic_round-email.svg" alt="">
+                <h2>Email</h2>
+                <div class="cat">
+                    <h4>lorem ipsum</h4>
+                    <h5>atBogor@gmail.com</h5>
+                </div>
+            </div>
         </div>
     </div>
         
