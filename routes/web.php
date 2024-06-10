@@ -7,6 +7,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MyBookingController;
 use App\Http\Controllers\MyProfileController;
+use App\Http\Controllers\MyTestimonialController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomepageController;
@@ -43,5 +44,6 @@ Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('adm
 
 Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::get('/mybooking/mybookings', [MyBookingController::class, 'index'])->middleware('auth');
+Route::get('/mybooking/mytestimonial', [MyTestimonialController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
