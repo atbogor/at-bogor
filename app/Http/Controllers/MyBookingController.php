@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class MyBookingController extends Controller
@@ -12,7 +13,8 @@ class MyBookingController extends Controller
             'mybooking.mybooking',
             [
                 'title' => 'My Booking',
-                'active' => ''
+                'active' => 'ticket',
+                'bookings' => Transaction::latest()->paginate(5)->withQueryString()
             ]
         );
     }

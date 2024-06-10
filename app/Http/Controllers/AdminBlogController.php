@@ -6,6 +6,9 @@ use App\Models\Post;
 use App\Models\Category;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+
 
 class AdminBlogController extends Controller
 {
@@ -37,7 +40,20 @@ class AdminBlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'body' => 'required',
+            'image' => 'image|file|max:1024',
+        ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        Post::create($validatedData);
+        return redirect('/dashboard/posts')->with('success', 'New blog has been added!');
     }
 
     /**
@@ -46,7 +62,6 @@ class AdminBlogController extends Controller
 
     public function show(Post $post)
     {
-        $post_1 = Post::all();
         return view('dashboard.blog.show', [
             'post' => $post
         ]);
@@ -58,7 +73,11 @@ class AdminBlogController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('dashboard.blog.edit', [
+            'post' => $post,
+            'categories' => Category::all(),
+
+        ]);
     }
 
     /**
@@ -66,7 +85,30 @@ class AdminBlogController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'body' => 'required',
+            'image' => 'image|file|max:1024',
+        ];
+
+        if ($request->slug != $post->slug) {
+            $rules['slug'] = 'required|unique:posts';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        Post::where('id', $post->id)->update($validatedData);
+        return redirect('/dashboard/posts')->with('success', 'Blog has been updated!');
+
     }
 
     /**

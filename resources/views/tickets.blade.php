@@ -121,7 +121,7 @@
   }
 
   .img-fluid {
-    border-radius: 12px !important;
+    border-radius: 12px 12px 0 0  !important;
   }
 
   .ticket-content.card {
@@ -184,14 +184,14 @@
 
 
 
-<div>
+<!-- <div> -->
   <!-- <div class="jumbotron jumbotron-fluid">
   <div class="jumbo-container-fluid">
     
     
   </div>
 </div> -->
-  <section class="banner_part">
+<section class="banner_part">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7">

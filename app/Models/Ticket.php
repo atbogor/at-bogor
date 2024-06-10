@@ -35,6 +35,11 @@ class Ticket extends Model
         return $this->belongsTo(TicketCategory::class, 'category_id');
     }
 
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

@@ -36,15 +36,21 @@
         </div>
         <div class="col-md-6 d-flex justify-content-end align-items-center">
             <p style="font-size: 1.3rem">
-                <i class="fa-regular fa-circle-user"></i> Welcome, user
+                <i class="fa-regular fa-circle-user"></i> Welcome, {{auth()->user()->name}}
             </p>
         </div>
     </div>
     <hr>
 
+    @if(session()->has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-6">
-            <a class="btn btn-primary" href="/dashboard/blogs/create">Add Blogs</a>
+            <a class="btn btn-primary" href="/dashboard/posts/create">Add Blogs</a>
         </div>
     </div>
     <!-- Table -->
