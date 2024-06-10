@@ -49,8 +49,8 @@
     .photocard {
         position: relative;
         display: flex;
-        height: 24rem;
-        width: 63vh;
+        height: 18rem;
+        width: 24.3rem;
         border-radius: 12px;
         border: 2px solid black;
         background-size: cover;
@@ -107,13 +107,17 @@
         border: 10px solid #142213;
     }
 
+    .popupImage{
+        width: 100%;
+    }
+
     .close {
         display: flex; 
         justify-content: center; 
         align-items: center;
         position: absolute;
-        top: 15px;
-        right: 35px;
+        top: 2%;
+        right: 2%;
         color: #FF0000;
         font-size: 40px;
         background-color: #214123;
@@ -141,7 +145,7 @@
     @php $count = 0; @endphp
     <div class=" row">
         @foreach ($galleries as $gallery)
-            <div class="col-md-4 photocard" style="background-image: url('{{ $gallery->image }}');" onclick="showImage('{{ $gallery->image }}')">
+            <div class="col-md-12 photocard" style="background-image: url('{{ $gallery->image }}');" onclick="showImage('{{ $gallery->image }}')">
                 <div class="overlay">
                     {{ $gallery->title }}
                 </div>
@@ -155,9 +159,9 @@
 </div>
 
 <div id="popupContainer" class="popup">
-    <div class="image-pop-upp">
+    <div class="popup-content">
         <span class="close" onclick="closePopup()">&times;</span>
-        <img id="popupImage" class="popup-content" src="" alt="Popup Image">
+        <img id="popupImage" class="popupImage" src="" alt="Popup Image">
     </div>
 </div>
 
