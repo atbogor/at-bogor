@@ -1,8 +1,12 @@
 .menu {
-    background-color: red;
+    /* background-color: red; */
+    /* position: fixed; */
+    border-radius: 15px;
 }
 .content {
-    background-color: yellow;
+    /* background-color: yellow; */
+    border: 0;
+    overflow-y: auto;
 }
 .card-header {
     background-color: transparent;
@@ -11,12 +15,19 @@
 
 .card-header.h3 {
     color: #224121;
+    /* background-color: pink; */
+}
+.list-group {
+    height: 100%;
+    border-radius: 15px;
+    /* background-color: cyan; */
 }
 
 .list-group-item {
     border: 0 !important;
     color: #224121 !important;
-    border-radius: 15px;
+    border-radius: 15px !important;
+    /* background-color: transparent; */
 }
 
 .list-group-item.active {
@@ -32,4 +43,17 @@
 
 .personal-info-container {
     color: #224121;
+}
+
+.save-button.btn {
+    background-color: #fb2000;
+    color: #ffffff;
+}
+.cancel-button.btn {
+    background-color: #fee9ca;
+    color: #fb2000;
+}
+
+.btn {
+    width: 10vw;
 }
