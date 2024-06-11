@@ -21,7 +21,7 @@
     </div>
     </div>
     
-    <div class="content col-9 card p-3">
+    <div class="content col-9 card p-3 pe-0">
         <div class="title h3 px-3 py-2">
             Personal Info
         </div>
@@ -48,8 +48,17 @@
             <div class="personal-info-section d-flex flex-column">
                 <label class="form-label h5">Gender</label>
                 <div class="gender-button-container d-flex gap-3">
-                    <img src="{{ asset("assets/gender/gender-male-not-active.png") }}" alt="">
-                    <img src="{{ asset("assets/gender/gender-female-active.png") }}" alt="">
+
+                    <button class="gender-button btn p-3" id="male">
+                        <img src="{{ asset("assets/gender/male-icon.png") }}" alt="">
+                        <h6>Male</h6>
+                    </button>
+
+                    <button class="gender-button btn p-3 active" id="female">
+                        <img src="{{ asset("assets/gender/female-icon.png") }}" alt="">
+                        <h6>Female</h6>
+                    </button>
+
                 </div>
             </div>
             <div class="my-profile-save-cancel-button d-flex gap-3 ">
