@@ -2,5 +2,34 @@
     background-color: red;
 }
 .content {
-    background-color: blue;
+    background-color: yellow;
+}
+.card-header {
+    background-color: transparent;
+    border: 0;
+}
+
+.card-header.h3 {
+    color: #224121;
+}
+
+.list-group-item {
+    border: 0 !important;
+    color: #224121 !important;
+    border-radius: 15px;
+}
+
+.list-group-item.active {
+    background-color: #c7d2c7 !important;
+    border: 0 !important;
+    color: #224121 !important;
+}
+
+.title.h3 {
+    color: #224121;
+    font-weight: bold;
+}
+
+.personal-info-container {
+    color: #224121;
 }
