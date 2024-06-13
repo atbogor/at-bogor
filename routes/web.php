@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminGalleryController;
 use App\Http\Controllers\AdminTicketController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LoginController;
@@ -41,6 +42,8 @@ Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'check
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
 // Route::get('/dashboard/blogs/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
+Route::resource('/dashboard/galleries', AdminGalleryController::class)->middleware('admin');
+
 
 Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::get('/mybooking/mybookings', [MyBookingController::class, 'index'])->middleware('auth');

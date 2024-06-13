@@ -246,7 +246,8 @@
         <img class="jumbo-img" src="{{ asset('storage/' . $ticket->image) }}" 
         alt="{{ $ticket->ticketcategory->name }}">
   @else
-  <img src="https://picsum.photos/id/237/1600/900?{{ $ticket->ticketcategory->name }}" class="jumbo-img" alt="...">
+  <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="jumbo-img" alt="...">
+
 @endif
 </div>
 <div class="gap-2">

@@ -20,7 +20,7 @@ class GalleryFactory extends Factory
             'title' => $this->faker->sentence(mt_rand(1, 4)),
             'slug' => $this->faker->slug(),
             'user_id' => mt_rand(1, 3),
-            'image' => $this->faker->imageUrl()
+            // 'image' => $this->faker->imageUrl()
         ];
     }
 }

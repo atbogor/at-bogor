@@ -24,7 +24,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/dashboard/tickets" class="nav-link active" aria-current="page">
+        <a href="/dashboard/tickets" class="nav-link link-dark" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16">
             <use xlink:href="#home" />
           </svg>
@@ -39,6 +39,14 @@
           Blogs
         </a>
       </li>
+      <li>
+        <a href="/dashboard/galleries" class="nav-link link-dark">
+          <svg class="bi pe-none me-2" width="16" height="16">
+            <use xlink:href="#speedometer2" />
+          </svg>
+          Galleries
+        </a>
+      </li>
     </ul>
   </div>
   <!-- </main> -->
@@ -46,7 +54,10 @@
 
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="sidebars.js"></script>
+  <script src="sidebars.js">
+
+    
+  </script>
 </body>
 
 </html>
