@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MyProfileController extends Controller
@@ -24,7 +26,9 @@ class MyProfileController extends Controller
             "email"=> "required",
             "dob"=> "required",
         ];
-        $validatedData = $request->vallidate($rules);
+        $validatedData = $request->validate($rules);
+        
         User::where("id", auth()->user()->id)->update($validatedData);
+        return redirect("/mybooking/myprofile");
     }
 }

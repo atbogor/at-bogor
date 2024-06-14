@@ -17,24 +17,24 @@
             
                 <div class="personal-info-section">
                     <label class="form-label h5">Full Name</label>
-                    <input id="name" name="name" class="form-control " placeholder="{{ auth()->user()->name }}">
+                    <input type = "text" id="name" name="name" class="form-control " placeholder="{{ auth()->user()->name }}">
                 </div>
                 <div class="personal-info-section">
                     <label class="form-label h5">Username</label>
-                    <input id="username" name="username" class="form-control " placeholder="{{ auth()->user()->username }}">
+                    <input type = "text" id="username" name="username" class="form-control " placeholder="{{ auth()->user()->username }}">
                 </div>
                     <div class="email-dob-container d-flex justify-content-evenly gap-3">
 
                     <div class="personal-info-section flex-fill">
-                        <label id="email" name="email" class="form-label h5">Email</label>
-                        <input class="form-control " placeholder="{{ auth()->user()->email }}">
+                        <label  class="form-label h5">Email</label>
+                        <input type = "text" id="email" name="email" class="form-control " placeholder="{{ auth()->user()->email }}">
                     </div>
                     <div class="personal-info-section flex-fill">
-                        <label id="dob" name="dob" class="form-label h5">Date of birth</label>
-                        <input type="date" class="form-control" placeholder="{{ auth()->user()->dob }}">
+                        <label  class="form-label h5">Date of birth</label>
+                        <input  id="dob" name="dob" type="date" class="form-control" placeholder="{{ auth()->user()->dob }}">
                     </div>
                 </div>
-                <div class="personal-info-section d-flex flex-column">
+                <!-- <div class="personal-info-section d-flex flex-column">
                     <label class="form-label h5">Gender</label>
                     <div class="gender-button-container d-flex gap-3">
                         @if (auth()->user()->gender == "Male")
@@ -59,10 +59,10 @@
                             </button>
                         @endif
                     </div>
-                </div>
+                </div> -->
                 <div class="my-profile-save-cancel-button d-flex gap-3 ">
                     <button type="submit" class="save-button btn px-3">Save</button>
-                    <button type="button" class="cancel-button btn px-3">Cancel</button>
+                    <a  href ="/mybooking/myprofile"class="cancel-button btn px-3">Cancel</a>
                 </div>
             </form>
 

@@ -46,7 +46,7 @@ Route::resource('/dashboard/galleries', AdminGalleryController::class)->middlewa
 
 
 Route::get("/mybooking/myprofile", [MyProfileController::class, "index"]);
-Route::get("/mybooking/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
+Route::put("/mybooking/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
 Route::get('/mybooking/mybookings', [MyBookingController::class, 'index'])->middleware('auth');
 Route::get('/mybooking/mytestimonial', [MyTestimonialController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
