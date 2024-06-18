@@ -1,17 +1,17 @@
-
 @extends('mybooking.layout.main')
+
 
 @section('content')
 <link rel="stylesheet" href="/css/myprofile.css">
 
-<div class="my-profile-page ml-4 mr-4 mt-5 d-flex justify-content-evenly">
-    
-    <div class="content col-9 card p-3 pe-0">
-        <div class="title h3 px-3 py-2">
+
+    <div class="content card">
+        <div class="title h3 py-2">
             Personal Info
         </div>
-        <div class="personal-info-container px-3 py-2 d-flex flex-column row-gap-3">
-            <form method="post" action="/mybooking/myprofile/saveprofile">
+        
+        <div class="personal-info-container py-2 ">
+            <form method="post" action="/mybooking/myprofile/saveprofile" class="d-flex flex-column row-gap-3">
                 @method("put")
                 @csrf
             
@@ -34,7 +34,7 @@
                         <input  id="dob" name="dob" type="date" class="form-control" placeholder="{{ auth()->user()->dob }}">
                     </div>
                 </div>
-                <!-- <div class="personal-info-section d-flex flex-column">
+                <div class="personal-info-section d-flex flex-column">
                     <label class="form-label h5">Gender</label>
                     <div class="gender-button-container d-flex gap-3">
                         @if (auth()->user()->gender == "Male")
@@ -59,7 +59,7 @@
                             </button>
                         @endif
                     </div>
-                </div> -->
+                </div>
                 <div class="my-profile-save-cancel-button d-flex gap-3 ">
                     <button type="submit" class="save-button btn px-3">Save</button>
                     <a  href ="/mybooking/myprofile"class="cancel-button btn px-3">Cancel</a>
@@ -69,7 +69,7 @@
         </div>
     </div>
 
-</div>
+
 
 
 

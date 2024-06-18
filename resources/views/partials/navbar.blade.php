@@ -53,7 +53,7 @@
 
         @auth
         @cannot('admin')
-        <a class="dropdown-item" href="/mybooking/mybookings">My Profile</a>
+        <a class="dropdown-item" href="/mybooking/myprofile">My Profile</a>
         </li>
         <li>
         <hr class="dropdown-divider">

@@ -19,11 +19,11 @@
 
 <body>
     @include('partials.navbar')
-    <div class="row" style="max-width: 100%">
-        <div class="col-md-3">
+    <div class="row d-flex justify-content-between p-4 m-3">
+        <div class="col-3" style="width: auto">
             @include('mybooking.layout.sidebar')
         </div>
-        <div class="col-md-9">
+        <div class="col-9 py-2">
             @yield('content')
         </div>
     </div>

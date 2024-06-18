@@ -11,9 +11,9 @@
 
 
 <body>
-    <div class="menu card p-3 m-3" style="width: 18rem;">
+    <div class="menu card px-3 py-2" style="width: 18rem;">
         <div class="card-header h3">
-            Catherine Olivia Winanda
+            {{ auth()->user()->name }}
         </div>
         <div class="list-group d-flex row-gap-3">
             <hr class="my-1 w-100">
