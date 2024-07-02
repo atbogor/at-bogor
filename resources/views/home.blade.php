@@ -65,7 +65,7 @@
                     @foreach($posts->take(7) as $post)
                     
                     <div class="article-container card" style= "width: 24rem;">
-                        <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
+                        <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top"
                             alt="...">
                         <div class="card-body">
                             <a class="btn btn-secondary disabled mb-2"

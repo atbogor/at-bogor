@@ -37,7 +37,7 @@
                             <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid rounded-start"
                                 alt="{{ $posts[0]->category->name }}">
                         @endif
-                        <img src="https://source.unsplash.com/1600x900/?{{ $posts[0]->category->name }}"
+                        <img src="https://picsum.photos/seed/{{ $posts[0]->category->name }}/1600/900"
                             class="img-fluid rounded-start" alt="{{ $posts[0]->category->name }}">
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                 @foreach($posts->skip(1) as $post)
                     <div class="col-md-4 mb-5 d-flex">
                         <div class="blog-content card h-100">
-                            <img src="https://source.unsplash.com/1600x900/?{{ $post->category->name }}" class="card-img-top"
+                            <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
                                 <a class="btn btn-secondary disabled mb-2"

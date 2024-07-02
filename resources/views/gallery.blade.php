@@ -160,7 +160,9 @@
 
 <div id="popupContainer" class="popup">
     <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
+        <span class="close" onclick="closePopup()">
+            <p>x</p>
+        </span>
         <img id="popupImage" class="popupImage" src="" alt="Popup Image">
     </div>
 </div>

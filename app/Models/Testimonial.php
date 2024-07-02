@@ -10,9 +10,9 @@ class Testimonial extends Model
     use HasFactory;
     protected $table = 'testimonial';
     protected $guarded = ['id'];
-    
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class, "user_id");
     }
     public function getRouteKeyName()
