@@ -73,7 +73,7 @@
         color: white;
         padding: 10px;
         width: 100%;
-        border-radius: 9px;
+        border-radius: 0 0 9px 9px;
         transition: background-color 300ms ease-out;
     }
 
@@ -111,6 +111,11 @@
         width: 100%;
     }
 
+    .close-btn{
+        padding-top: 0.4rem;
+        font-size: 2rem;
+    }
+
     .close {
         display: flex; 
         justify-content: center; 
@@ -138,40 +143,41 @@
 <div id="jumbot" class="jumbot">
     <div class="title">
         <h3 class="title-tit">Gallery</h3>
-        <h6 class="title-sub">ASSALAMUALAIKUM WARAHMATULLAHI WABARAKATUH</h6>
+        <h6 class="title-sub">The Beauty of Bogor in Imges</h6>
     </div>
 </div>
 <div class="box">
     @php $count = 0; @endphp
     <div class=" row">
         @foreach ($galleries as $gallery)
-            <div class="col-md-12 photocard" style="background-image: url('{{ $gallery->image }}');" onclick="showImage('{{ $gallery->image }}')">
-                <div class="overlay">
-                    {{ $gallery->title }}
-                </div>
-            </div>
-            @php $count++; @endphp
-            <!-- @if ($count % 3 == 0)
-                </div><div class="row">
-            @endif -->
-        @endforeach
+    <div class="col-md-12 photocard" style="background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')" onclick="showImage(this)">
+        <div class="overlay">
+            {{ $gallery->title }}
+        </div>
+    </div>
+@endforeach
+
     </div>
 </div>
 
 <div id="popupContainer" class="popup">
     <div class="popup-content">
         <span class="close" onclick="closePopup()">
-            <p>x</p>
+            <p class="close-btn">x</p>
         </span>
         <img id="popupImage" class="popupImage" src="" alt="Popup Image">
     </div>
 </div>
 
 <script>
-    function showImage(imageUrl) {
+    function showImage(element) {
+        var backgroundImage = element.style.backgroundImage;
+        var imageUrl = backgroundImage.slice(5, -2);
+
         document.getElementById('popupImage').src = imageUrl;
         document.getElementById('popupContainer').style.display = "block";
         document.getElementById('jumbot').style.position = "static"; 
+
         document.getElementById('popupContainer').addEventListener('click', function(event) {
             if (event.target === this) {
                 closePopup();
@@ -181,7 +187,7 @@
 
     function closePopup() {
         document.getElementById('popupContainer').style.display = "none";
-        document.getElementById('jumbot').style.position = "sticky"; 
+        document.getElementById('jumbot').style.position = "relative"; 
     }
 </script>
 
