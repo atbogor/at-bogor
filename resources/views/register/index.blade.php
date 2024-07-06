@@ -36,6 +36,10 @@
   .gender-floating-form {
     box-shadow: 0 0 0 0.5px #214123;
   }
+
+  .create{
+    color: #214123
+  }
 </style>
 
 <div class="row justify-content-center">
@@ -48,9 +52,9 @@
         <!-- tambahin logic backend di setiap input kalau error gimana, sama id dan name jangan lupa ubah -->
         @csrf
         <div class="d-flex align-items-center justify-content-center">
-          <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+          <img class="mb-4" src="{{ asset('assets/atBogor-logo-reglog.png') }}" alt="" width="" height="57">
         </div>
-        <h1 class="h3 mb-3 fw-normal text-center">Create an account</h1>
+        <h1 class="create h3 mb-3 fw-normal text-center">Create an account</h1>
 
         <div class="form-floating mb-2">
           <label for="name">Full Name</label>

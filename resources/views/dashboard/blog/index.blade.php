@@ -1,4 +1,5 @@
 @extends('dashboard.layout.main')
+@section('blogActive', 'active')
 @section('content')
 
 

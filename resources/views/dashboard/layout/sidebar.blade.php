@@ -9,41 +9,39 @@
 </head>
 
 <style>
+   .nav-link {
+      color: #224121;
+    }
+    .nav-link.active {
+      background-color: #224121 !important;
+      color: white;
+    }
 </style>
 
 <body>
   <!-- <main class="d-flex flex-nowrap"> -->
 
   <div class="inisidebar d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px; height: 100vh">
-    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi pe-none me-2" width="40" height="32">
-        <use xlink:href="#bootstrap" />
-      </svg>
-      <span class="fs-4">Sidebar</span>
+    <a href="#" class="d-flex justify-content-center align-items-center mb-3 mb-md-0 link-dark text-decoration-none">
+      <img class="mb-2" src="{{ asset('assets/atBogor-logo-reglog.png') }}" alt="" width="" height="57">
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="/dashboard/tickets" class="nav-link link-dark" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#home" />
-          </svg>
+      <li class="nav-item mb-2">
+        <a href="/dashboard/tickets" class="nav-link link-white @yield('ticketActive')" aria-current="page">
+          <i class="fa-solid fa-ticket mr-2"></i>
           Tickets
         </a>
       </li>
-      <li>
-        <a href="/dashboard/posts" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#speedometer2" />
-          </svg>
+      <li class="nav-item mb-2">
+        <a href="/dashboard/posts" class="nav-link link-white @yield('blogActive')">
+          <i class="fa-solid fa-newspaper mr-2"></i>
           Blogs
         </a>
       </li>
-      <li>
-        <a href="/dashboard/galleries" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16">
-            <use xlink:href="#speedometer2" />
-          </svg>
+      <li class="nav-item mb-2">
+        <a href="/dashboard/galleries" class="nav-link link-white @yield('galleryActive')">
+          <i class="fa-solid fa-image"></i>
           Galleries
         </a>
       </li>

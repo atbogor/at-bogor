@@ -1,5 +1,6 @@
 @extends('dashboard.layout.main')
 
+@section('ticketActive', 'active')
 @section('content')
 
 <style>

@@ -1,4 +1,5 @@
 @extends('dashboard.layout.main')
+@section('galleryActive', 'active')
 @section('content')
 
 <style>

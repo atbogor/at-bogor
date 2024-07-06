@@ -29,9 +29,9 @@
         @csrf
         <!-- tambahin logic backend di setiap input kalau error gimana, sama id dan name jangan lupa ubah -->
         <div class="d-flex align-items-center justify-content-center">
-          <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+          <img class="mb-4" src="{{ asset('assets/atBogor-logo-reglog.png') }}" alt="" width="" height="57">
         </div>
-        <h1 class="h3 mb-3 fw-normal text-center">Welcome back!</h1>
+        <h1 class="welcome h3 mb-3 fw-normal text-center">Welcome back!</h1>
 
         <div class="form-floating mb-2">
           <label for="email">Email address</label>
