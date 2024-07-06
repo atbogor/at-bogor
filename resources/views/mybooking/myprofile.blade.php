@@ -31,33 +31,21 @@
                     </div>
                     <div class="personal-info-section flex-fill">
                         <label  class="form-label h5">Date of birth</label>
-                        <input  id="dob" name="dob" type="date" class="form-control" placeholder="{{ auth()->user()->dob }}">
+                        <input  id="dob" name="dob" type="date" class="form-control" placeholder="{{ auth()->user()->dob }}" value="{{ auth()->user()->dob }}">
                     </div>
                 </div>
                 <div class="personal-info-section d-flex flex-column">
                     <label class="form-label h5">Gender</label>
                     <div class="gender-button-container d-flex gap-3">
-                        @if (auth()->user()->gender == "Male")
-                            <button class="gender-button btn p-3 active" id="male">
-                                <img src="{{ asset("assets/gender/male-icon.svg") }}" alt="">
-                                <h6>Male</h6>
-                            </button>
-
-                            <button class="gender-button btn p-3" id="female">
-                                <img src="{{ asset("assets/gender/demale-icon.svg") }}" alt="">
-                                <h6>Female</h6>
-                            </button>
-                        @else
-                            <button class="gender-button btn p-3" id="male">
-                                <img src="{{ asset("assets/gender/male-icon.svg") }}" alt="">
-                                <h6>Male</h6>
-                            </button>
-
-                            <button class="gender-button btn p-3 active" id="female">
-                                <img src="{{ asset("assets/gender/demale-icon.svg") }}" alt="">
-                                <h6>Female</h6>
-                            </button>
-                        @endif
+                        <button type="button" class="gender-button btn p-3 {{ auth()->user()->gender == 'Male' ? 'active' : '' }}" id="male" onclick="setGender('male')">
+                            <img src="{{ asset('assets/gender/male-icon.svg') }}" alt="">
+                            <h6>Male</h6>
+                        </button>
+                        <button type="button" class="gender-button btn p-3 {{ auth()->user()->gender == 'Female' ? 'active' : '' }}" id="female" onclick="setGender('female')">
+                            <img src="{{ asset('assets/gender/demale-icon.svg') }}" alt="">
+                            <h6>Female</h6>
+                        </button>
+                        <input type="hidden" name="gender" id="gender" value="{{ auth()->user()->gender }}">
                     </div>
                 </div>
                 <div class="my-profile-save-cancel-button d-flex gap-3 ">
@@ -71,7 +59,17 @@
 
 
 
-
+<script>
+    function setGender(gender) {
+        document.getElementById('male').classList.remove('active');
+        document.getElementById('female').classList.remove('active');
+        
+        document.getElementById(gender).classList.add('active');
+        
+        // Set the hidden input value to the selected gender
+        document.getElementById('gender').value = gender === 'male' ? 'Male' : 'Female';
+    }
+</script>
 
 
 @endsection
