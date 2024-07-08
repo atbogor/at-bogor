@@ -5,7 +5,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-8 mt-3">
-            <a class="btn btn-outline-dark" href="/dashboard/posts"><i class="fa-solid fa-angle-left"></i> Back</a>
+            <a class="btn btn-outline-none" href="/dashboard/posts"><i class="fa-solid fa-angle-left"></i> Back</a>
         </div>
     </div>
     <div class="row mb-2">
@@ -18,7 +18,7 @@
 
     @if ($post->image)
         <div style="max-height: 350px; overflow:hidden;">
-            <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mt-3" alt="{{ $post->title }}">
+            <img src="{{ asset('storage/'.$post->image) }}" class="img-fluid mt-3" alt="{{ $post->title }}">
         </div>
     @else
         <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="img-fluid rounded-start"
