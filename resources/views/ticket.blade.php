@@ -257,7 +257,7 @@
     </div>
 </div>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center w-100">
     <div class="col-md-10">
         <div class="loc-and-type">
             <i class="fas fa-map-marker-alt"></i>
@@ -280,12 +280,14 @@
 
     <div class="col-md-1 a"></div>
 
-    <div class="col-md-1 rp-div">
+    <div class="col-md-1 rp-div p-0">
         <h3 class="rp">Rp</h3>
     </div>
 
-    <div class="col-md-1 val-div">
-        <h3 class="value"> {{ $ticket->price }}</h3>
+    <div class="col-md-1 val-div p-0">
+        {{-- <h3 class="value"> {{ $ticket->price }}</h3> --}}
+        <h3 class="card-price">{{number_format($ticket->price, 0, ',', '.') }}</h3>
+
     </div>
 
     <div class="col-md-6 quantity-button">
@@ -325,7 +327,7 @@
         function updateTotalPrice() {
             const quantity = parseInt(quantityInput.value);
             const totalPrice = quantity * pricePerItem;
-            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); // Format with thousand separator
+            totalPriceElement.textContent = totalPrice.toLocaleString('en-US').replace(',', '.'); // Format with thousand separator
         }
 
         decreaseButton.addEventListener('click', function () {
