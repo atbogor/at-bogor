@@ -28,24 +28,11 @@
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-4">
       <div class="col-md-4 d-flex align-items-center">
         <a href="/" class="mr-3 mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <svg class="bi" width="30" height="24">
-            <use xlink:href="#bootstrap" />
-          </svg>
+          <img src="{{ asset('assets/atBogor-logo-homejumbotron.png') }}" alt="" width="60">
         </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024, @Bogor</span>
+        <span class=" mb-md-0 text-body-secondary" style="color: #FEE9CA !important">&copy; 2024</span>
       </div>
 
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3 mr-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#facebook" />
-            </svg></a></li>
-        <li class="ms-3 mr-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#instagram" />
-            </svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-              <use xlink:href="#twitter" />
-            </svg></a></li>
-      </ul>
     </footer>
     <!-- </div> -->
 
@@ -61,7 +48,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Testimonial</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
         </ul>
-        <p class="text-center text-body-secondary">&copy; 2024, @Bogor</p>
+        <p class="text-center text-body-secondary" style="color: #FEE9CA !important">&copy; 2024, @Bogor</p>
       </footer>
     </div>
 
