@@ -180,6 +180,18 @@
             </div>    
         </div>
     @endif
+
+    @if ($errors->any())
+        <div class="alert-wrap d-flex justify-content-center">
+            <div class="alert alert-danger w-50">
+                
+                    @foreach ($errors->all() as $error)
+                        {{ $error }}
+                    @endforeach
+                
+            </div>
+        </div>
+    @endif
     <div class="form d-flex justify-content-center">
         
             <form action="{{route("testimonials.store")}}" method="post" class="input-group mb-3 w-50">

@@ -53,11 +53,19 @@
 
         @auth
         @cannot('admin')
-        <a class="dropdown-item" href="/mybooking/myprofile">My Profile</a>
+        <a class="dropdown-item" href="/myprofile">My Profile</a>
         </li>
         <li>
         <hr class="dropdown-divider">
-        </li>
+      </li>
+      <li>
+        <a class="dropdown-item" href="/mybookings">My Bookings</a>
+      </li>
+      <hr class="dropdown-divider">
+      <li>
+        <a class="dropdown-item" href="/mytestimonials">My Testimonials</a>
+      </li>
+      <hr class="dropdown-divider">
         @endcannot
       @endauth
 
