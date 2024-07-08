@@ -1,6 +1,7 @@
 .head.card-title,
 u.head {
     color: #142213 !important;
+    transition: 300ms;
 }
 
 .card-title,
@@ -8,10 +9,10 @@ u.head {
     color: #ffffff !important;
 }
 
-.link-offset-2 {
-    color: #142213 !important;
+u.head:hover{
+    color: #FB2000 !important;
+    transition: 300ms;
 }
-
 .btn-success {
     background-color: #fb2000 !important;
     border-color: #224121 !important;
@@ -86,5 +87,40 @@ u {
     margin-top: var(--bs-gutter-y);
 }
 
-.form-inline {
+
+.flex-button {
+    align-self: start;
+  }
+
+  .card-body:hover {
+    /* background-color: #FB2000; */
+    color: putih;
+    transition: 300ms ease-in;
+  }
+
+  #blog-box:hover .card-price {
+    color: #224121;
+  }
+
+  #blog-box a {
+    text-decoration: none;
+  }
+
+  #blog-box:hover .card-body {
+    background-color: #FB2000;
+  }
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    transition: 300ms ease-in;
+
 }
+
+
+.link-offset-2 {
+    margin-top: auto; 
+    align-self: end; 
+}
+
