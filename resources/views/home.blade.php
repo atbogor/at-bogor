@@ -102,9 +102,9 @@
 
                             <div class="photocard" style="width: 24rem; padding: 0; background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')"  onclick="showImage(this)">
                                 
-                            </div>
-                            <div class="overlay">
+                                <div class="overlay">
                                     {{ $gallery->title }}
+                                </div>
                             </div>
                         </div>
                         

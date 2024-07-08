@@ -249,7 +249,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-10 mt-4">
             <div class="title">
                 <h1 class="heading-title">{{ $ticket->title }}</h1>
             </div>
@@ -261,8 +261,8 @@
     <div class="col-md-10">
         <div class="loc-and-type">
             <i class="fas fa-map-marker-alt"></i>
-            <h3 class="col-md-8 locaysh">{{ $ticket->location }}</h3>
-            <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
+            <h3 class="col-md-8 locaysh fs-4">{{ $ticket->location }}</h3>
+            <a class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</a>
         </div>
     </div>
 </div>
@@ -270,7 +270,7 @@
 <hr class="col-md-10">
 
 <div class="col-md-10 desc">
-    <h4 class="desc-1"> {!! $ticket->description !!} </h4>
+    <p class="desc-1 fs-5"> {!! $ticket->description !!} </p>
 </div>
 
 <div class="col-md-10 price-frame">
