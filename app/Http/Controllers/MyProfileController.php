@@ -34,6 +34,6 @@ class MyProfileController extends Controller
         });
 
         User::where("id", auth()->user()->id)->update($filteredData);
-        return redirect("/mybooking/myprofile");
+        return redirect("/myprofile");
     }
 }

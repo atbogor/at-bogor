@@ -26,7 +26,11 @@ class TestimonialController extends Controller
     public function store(Request $request){
         $request->validate([
             'testimonial-content'=>'required|string|max:255',
-        ]);
+        ], 
+        [
+            'testimonial-content.max' => 'The testimonial content cannot be longer than 255 characters.',
+        ]
+        );
 
         Testimonial::create([
             'user_id'=>auth()->id(),

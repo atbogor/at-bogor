@@ -61,6 +61,8 @@
         border-radius: 0px 20px;
         border: 2px solid #224121;
         text-align: center;
+        width: 12rem;
+        height: 15rem;
     }
 
     .all h1{
@@ -238,7 +240,8 @@
                 <img class="logo-medium" src="/assets/atBogor-logo-medium-white.png" alt="">
                 <h1>?</h1>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur. Sit bibendum tristique tellus ullamcorper facilisis commodo ultrices. Non amet pellentesque etiam amet diam consequat. Rhoncus morbi mauris sed amet ut a egestas. Sed et quis ac integer est dignissim.</p>
+            <p>Welcome to @Bogor, your premier guide exclusively dedicated to exploring historical sites like museums, natural wonders, and entertainment venues. We specialize in providing comprehensive information and recommendations tailored to these three distinct categories, ensuring you have a memorable and fulfilling experience while visiting Bogor.
+            </p>
         </div>
     </div>
 
@@ -249,17 +252,17 @@
         <div class="features d-flex gap-4 justify-content-center align-items-center w-75">
                 <div class="feature d-flex justify-content-center align-items-center flex-column">
                     <img src="/assets/material-symbols_article.svg" alt="">
-                    <p>Lorem ipsum dolor.</p>
+                    <p>Captivating Bogor Insights</p>
                 </div>
                 <div class="feature d-flex justify-content-center align-items-center flex-column">
                     <!-- <div class="feature-content d-flex justify-content-center align-items-center flex-wrap"> -->
                         <img src="/assets/ant-design_picture-filled.svg" alt="">
-                        <p>Lorem ipsum dolor.</p>
+                        <p>Inspiring Visuals</p>
                     <!-- </div> -->
                 </div>
                 <div class="feature d-flex justify-content-center align-items-center flex-column">
                 <img src="/assets/mingcute_ticket-fill.svg" alt="">
-                    <p>Lorem ipsum dolor.</p>
+                    <p>Quick Ticket Reservations.</p>
                 </div>
         </div>    
     </div>
@@ -275,56 +278,57 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Lorem ipsum dolor sit amet consectetur? #1
+                            What types of attractions does @Bogor guide me to?
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
+                        <div class="accordion-body">@Bogor guides you to discover historical sites like museums, natural attractions, and exciting entertainment spots such as amusement parks.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Lorem ipsum dolor sit amet consectetur? #2
+                            How can I explore these attractions through @Bogor?
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
+                        <div class="accordion-body">@Bogor provides detailed guides to help you navigate and explore Bogor's attractions efficiently.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            Lorem ipsum dolor sit amet consectetur? #3
+                            Can I purchase tickets for attractions using @Bogor?
                         </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
+                        <div class="accordion-body">Yes, @Bogor allows you to easily book tickets for various attractions, ensuring a seamless experience from planning to visiting.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                            Lorem ipsum dolor sit amet consectetur? #4
+                            What makes @Bogor a reliable travel companion?
                         </button>
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
+                        <div class="accordion-body">@Bogor offers curated recommendations and real-time updates to enhance your journey and ensure a memorable visit to Bogor.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                            Lorem ipsum dolor sit amet consectetur? #5
+                            How can @Bogor keep me informed about upcoming events?
                         </button>
                     </h2>
                     <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur. Elit sit sit tellus rutrum quam sagittis. Nisi pellentesque nibh arcu quam risus commodo.</div>
+                        <div class="accordion-body">@Bogor provides timely updates on events, festivals, and special occasions happening in Bogor, ensuring you don't miss out on any exciting experiences.</div>
                     </div>
                 </div>
             </div>   
         </div>
     </div>
+    
 
     <div class="container-fluid our-team d-flex  g-2 flex-column">
          <div class="col-3 ml-5 w-100 mb-4">
@@ -333,25 +337,25 @@
         <div class="team justify-content-center w-100 align-items-center gap-2">
             <div class="top d-flex justify-content-center">
                 <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind1">
-                    <h6>Lorem ipsum</h6>
+                    <h6>PPTI 14</h6>
                     <h4>Alexander Immanuel Samosir</h4>
                 </div>
                 <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind2">
-                    <h6>Lorem ipsum</h6>
+                    <h6>PPTI 14</h6>
                     <h4>Catherine Olivia Winanda</h4>
                 </div>
                 <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind3">
-                    <h6>Lorem ipsum</h6>
+                    <h6>PPTI 14</h6>
                     <h4>Michael Scuderia Tanudjaja</h4>
                 </div>
             </div>
             <div class="bottom d-flex justify-content-center">
                 <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind4">
-                    <h6>Lorem ipsum</h6>
+                    <h6>PPTI 14</h6>
                     <h4>Valina Evelyn Pranoto</h4>
                 </div>
                 <div class="team-img d-flex justify-content-end align-items-start flex-column p-2 m-4" id="ind5">
-                    <h6>Lorem ipsum</h6>
+                    <h6>PPTI 14</h6>
                     <h4>Vanechka Radja Winata</h4>
                 </div>
             </div>
@@ -366,13 +370,13 @@
             <div class="item address">
                 <img src="/assets/mdi_address-marker.svg" alt="">
                 <h2>Address</h2>
-                <h5>Lorem ipsum dolor sit amet consectetur. Ipsum donec id diam malesuada.</h5>
+                <h5>BCA Learning Institute,<br>Jl. Pakuan No. 3,<br>Sumur Batu, Bogor</h5>
                 </div>
             <div class="item phone">
                 <img src="assets/solar_phone-bold.svg" alt="">
                 <h2>Phone</h2>
                 <div class="cat">
-                    <h4>lorem ipsum</h4>
+                    <h4>Customer Care</h4>
                     <h5>021-2234-4950</h5>
                 </div>
             </div>
@@ -380,7 +384,7 @@
                 <img src="/assets/ic_round-email.svg" alt="">
                 <h2>Email</h2>
                 <div class="cat">
-                    <h4>lorem ipsum</h4>
+                    <h4>Bussines Inquiries</h4>
                     <h5>atBogor@gmail.com</h5>
                 </div>
             </div>

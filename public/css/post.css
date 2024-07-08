@@ -2,12 +2,14 @@
     font-size: 64px;
 }
 .img-fluid{
+    border-radius: 10px !important;
     width: 1105px;
     height: 456px;
 }
 
 .btn-secondary{
-    background-color: #FFB49F !important;
+    background-color: #fee9ca !important;
+    color: black !important;
     width: 110px !important;
     height: 35px !important;
     font-size: 15px !important;
@@ -21,4 +23,7 @@
 .row-desc{
     font-size: 18px;
 }
+
+
+
 

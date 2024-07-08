@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="row mt-2">
-            <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="img-fluid rounded-start"
+            <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="img-fluid rounded-4 p-2"
                 alt="{{ $post->category->name }}">
         </div>
         <div class="row-desc mt-4">

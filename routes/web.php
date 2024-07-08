@@ -40,14 +40,14 @@ Route::get('/about-us', [AboutUsController::class, 'index']);
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
-// Route::get('/dashboard/blogs/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
+Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
 Route::resource('/dashboard/galleries', AdminGalleryController::class)->middleware('admin');
 
 
-Route::get("/mybooking/myprofile", [MyProfileController::class, "index"]);
-Route::put("/mybooking/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
-Route::get('/mybooking/mybookings', [MyBookingController::class, 'index'])->middleware('auth');
-Route::get('/mybooking/mytestimonial', [MyTestimonialController::class, 'index'])->middleware('auth');
+Route::get("/myprofile", [MyProfileController::class, "index"]);
+Route::put("/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
+Route::get('/mybookings', [MyBookingController::class, 'index'])->middleware('auth');
+Route::get('/mytestimonials', [MyTestimonialController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');

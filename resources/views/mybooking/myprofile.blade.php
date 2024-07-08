@@ -10,7 +10,7 @@
         </div>
         
         <div class="personal-info-container py-2 ">
-            <form method="post" action="/mybooking/myprofile/saveprofile" class="d-flex flex-column row-gap-3">
+            <form method="post" action="/myprofile/saveprofile" class="d-flex flex-column row-gap-3">
                 @method("put")
                 @csrf
             
@@ -49,7 +49,7 @@
                 </div>
                 <div class="my-profile-save-cancel-button d-flex gap-3 ">
                     <button type="submit" class="save-button btn px-3">Save</button>
-                    <a  href ="/mybooking/myprofile"class="cancel-button btn px-3">Cancel</a>
+                    <a  href ="/myprofile"class="cancel-button btn px-3">Cancel</a>
                 </div>
             </form>
 
