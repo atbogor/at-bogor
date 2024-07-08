@@ -40,7 +40,7 @@ Route::get('/about-us', [AboutUsController::class, 'index']);
 
 Route::get('/dashboard/tickets/checkSlug', [AdminTicketController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/tickets', AdminTicketController::class)->middleware('admin');
-// Route::get('/dashboard/blogs/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
+Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
 Route::resource('/dashboard/galleries', AdminGalleryController::class)->middleware('admin');
 
