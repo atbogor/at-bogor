@@ -98,9 +98,9 @@
                 <div class="scrollable-container d-flex gap-3" >
                     @foreach($galleries->take(7) as $gallery)
                         
-                        <div class="gallery-container-card" style= "width: 24rem;" onclick="showImage($gallery)">
+                        <div class="gallery-container-card" style= "width: 24rem;" >
 
-                            <div class="photocard" style="width: 24rem; padding: 0; background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')"  >
+                            <div class="photocard" style="width: 24rem; padding: 0; background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')"  onclick="showImage(this)">
                                 
                             </div>
                             <div class="overlay">
@@ -117,33 +117,39 @@
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <div id="popupContainer" class="popup">
-        <div class="image-pop-upp">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <img id="popupImage" class="popup-content" src="" alt="Popup Image">
+        
+        
+        <div id="popupContainer" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">
+                    <p class="close-btn">x</p>
+                </span>
+                <img id="popupImage" class="popupImage" src="" alt="Popup Image">
+            </div>
         </div>
-    </div>
-
-    <script>
-        function showImage($gallery) {
-            document.getElementById('popupImage').src = imageUrl;
-            document.getElementById('popupContainer').style.display = "block";
-            document.getElementById('jumbot').style.position = "static"; 
-            document.getElementById('popupContainer').addEventListener('click', function(event) {
-                if (event.target === this) {
-                    closePopup();
-                }
-            });
-        }
-
-        function closePopup() {
-            document.getElementById('popupContainer').style.display = "none";
-            document.getElementById('jumbot').style.position = "sticky"; 
-        }
-    </script>
+        
+        <script>
+            function showImage(element) {
+                var backgroundImage = element.style.backgroundImage;
+                var imageUrl = backgroundImage.slice(5, -2);
+        
+                document.getElementById('popupImage').src = imageUrl;
+                document.getElementById('popupContainer').style.display = "block";
+                document.getElementById('jumbot').style.position = "static"; 
+        
+                document.getElementById('popupContainer').addEventListener('click', function(event) {
+                    if (event.target === this) {
+                        closePopup();
+                    }
+                });
+            }
+        
+            function closePopup() {
+                document.getElementById('popupContainer').style.display = "none";
+                document.getElementById('jumbot').style.position = "relative"; 
+            }
+        </script>
+    </section>
 </div>
 
 @endsection

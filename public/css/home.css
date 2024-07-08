@@ -254,7 +254,6 @@ box {
 .gallery-container-card:hover .overlay {
     background-color: #fb2000;
 }
-
 .popup {
     display: none;
     position: fixed;
@@ -265,7 +264,7 @@ box {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
 }
 
 .popup-content {
@@ -281,14 +280,23 @@ box {
     border: 10px solid #142213;
 }
 
+.popupImage{
+    width: 100%;
+}
+
+.close-btn{
+    padding-top: 0.4rem;
+    font-size: 2rem;
+}
+
 .close {
-    display: flex;
-    justify-content: center;
+    display: flex; 
+    justify-content: center; 
     align-items: center;
     position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #ff0000;
+    top: 2%;
+    right: 2%;
+    color: #FF0000;
     font-size: 40px;
     background-color: #214123;
     border-radius: 100px;
@@ -299,7 +307,7 @@ box {
 
 .close:hover,
 .close:focus {
-    color: #ff0000;
+    color: #FF0000;
     text-decoration: none;
     cursor: pointer;
 }
