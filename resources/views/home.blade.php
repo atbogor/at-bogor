@@ -102,9 +102,9 @@
 
                             <div class="photocard" style="width: 24rem; padding: 0; background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')"  onclick="showImage(this)">
                                 
-                                <div class="overlay">
-                                    {{ $gallery->title }}
-                                </div>
+                            </div>
+                            <div class="overlay">
+                                {{ $gallery->title }}
                             </div>
                         </div>
                         
@@ -124,7 +124,7 @@
                 <span class="close" onclick="closePopup()">
                     <p class="close-btn">x</p>
                 </span>
-                <img id="popupImage" class="popupImage" src="" alt="Popup Image">
+                <img id="popupImage" class="popupImage img-fluid" src="" alt="Popup Image">
             </div>
         </div>
         
@@ -150,6 +150,47 @@
             }
         </script>
     </section>
+
+    <section class="gallery-container">
+    <h1 class="popular-gallery-title text-center mb-3">NYOBA</h1>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="scrollable-container d-flex gap-3">
+                @foreach($galleries->take(7) as $gallery)
+                <div class="gallery-container-card" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
+                    <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="photocard" style="width:24rem">
+                    <div class="overlay">
+                        {{ $gallery->title }}
+                    </div>
+                    <div class="modal fade" id="modal{{ $gallery->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ $gallery->id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-content-center">
+                                    <h5 class="modal-title w-100" id="exampleModalLabel{{ $gallery->id }}" style="color:#fee9ca;">
+                                        {{ $gallery->title }}
+                                    </h5>
+                                    <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">x</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body p-0 m-2 mt-0 align-content-center">
+                                    <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <a href="/gallery/" class="see-more-card col-md-4 d-flex" style="width: 24rem; padding: 0;">
+                    <img class="see-more-logo" src="assets/see-more-logo.png" alt="See More">
+                    <h2>See More</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 </div>
 
 @endsection

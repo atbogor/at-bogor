@@ -24,6 +24,7 @@
             <form action="/logout" method="post">
                 @csrf
                 <button type="submit" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-right-from-bracket" style="margin-right: 8px"></i>
                 Logout
                 </button>
             </form>

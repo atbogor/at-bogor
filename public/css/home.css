@@ -49,7 +49,6 @@
     /* padding: 10px; */
 }
 
-
 .see-more-card {
     width: 24rem !important;
     /* height: 100px; */
@@ -227,7 +226,7 @@ box {
     /* width: 63vh; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border: 2px solid black;
+    border: 2px solid #224121;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -253,6 +252,21 @@ box {
 
 .gallery-container-card:hover .overlay {
     background-color: #fb2000;
+}
+.gambar-popup {
+    border-radius: 15px !important;
+}
+.modal {
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #224121;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border: 0;
 }
 
 .popup {
@@ -282,20 +296,27 @@ box {
 }
 
 .close {
+    line-height: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: none;
+    color: #ff0000;
+}
+
+/* .close {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #ff0000;
     font-size: 40px;
     background-color: #214123;
     border-radius: 100px;
     width: 0.8em;
     margin-bottom: 0;
     height: 0.8em;
-}
+} */
 
 .close:hover,
 .close:focus {

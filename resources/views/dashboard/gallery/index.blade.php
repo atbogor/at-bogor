@@ -28,6 +28,7 @@
     }
 </style>
 
+<div class="container px-5 py-3">
 <div class="container mt-4">
     <div class="row d-flex align-items-center">
         <div class="col-md-6">
@@ -101,6 +102,8 @@
     <div class="d-flex justify-content-center mt-5">
         {{ $galleries->links() }}
     </div>
+</div>
+
 </div>
 
 <script src="https://kit.fontawesome.com/f8f794dd92.js" crossorigin="anonymous"></script>

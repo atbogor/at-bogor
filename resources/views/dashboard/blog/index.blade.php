@@ -30,6 +30,7 @@
 </style>
 <script src="https://kit.fontawesome.com/c8e35e2055.js" crossorigin="anonymous"></script>
 
+<div class="container px-5 py-3">
 <div class="container mt-4">
     <div class="row d-flex align-items-center">
         <div class="col-md-6">
@@ -55,7 +56,7 @@
         </div>
     </div>
     <!-- Table -->
-    <table class="table table-striped mt-4 ms-3">
+    <table class="table table-striped mt-4">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -106,5 +107,6 @@
         {{ $posts->links() }}
     </div>
 
+</div>
 </div>
 @endsection
