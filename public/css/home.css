@@ -9,7 +9,7 @@
 
     background-image: linear-gradient(
         to bottom,
-        rgba(255, 0, 0, 0) 30%,
+        rgba(15, 56, 29, 0.748) 70%,
         rgba(255, 255, 255, 1)
     );
     display: flex;
@@ -185,10 +185,31 @@ u {
     /* justify-content: center;  */
 
     border-radius: 15px !important;
+    /* border: 2px solid #224121 !important; */
+    display: flex;
+    overflow: hidden;
+    background-color: #224121;
+}
+.blog-content.card {
+    border-radius: 12px !important;
     border: 2px solid #224121 !important;
     display: flex;
     overflow: hidden;
     background-color: #224121;
+}
+.article-container.card a {
+    text-decoration: none;
+}
+#blog-box:hover .card-price {
+    color: #224121;
+}
+
+#blog-box a {
+    text-decoration: none;
+}
+
+#blog-box:hover .card-body {
+    background-color: #fb2000;
 }
 
 /* ============================ Popular Gallery ========================= */
@@ -295,28 +316,29 @@ box {
     border: 10px solid #142213;
 }
 
-.close {
+/* .close {
     line-height: 0;
     font-weight: 700;
     font-size: 2rem;
     text-shadow: none;
     color: #ff0000;
-}
+} */
 
-/* .close {
+.close {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 15px;
-    right: 35px;
+    top: 2%;
+    right: 2%;
+    color: #ff0000;
     font-size: 40px;
     background-color: #214123;
     border-radius: 100px;
     width: 0.8em;
     margin-bottom: 0;
     height: 0.8em;
-} */
+}
 
 .close:hover,
 .close:focus {

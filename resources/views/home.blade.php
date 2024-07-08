@@ -64,20 +64,19 @@
                 <div class="scrollable-container d-flex gap-3">
                     @foreach($posts->take(7) as $post)
                     
-                    <div class="article-container card" style= "width: 24rem;">
-                        <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top"
-                            alt="...">
-                        <div class="card-body">
-                            <a class="btn btn-secondary disabled mb-2"
-                                href="#">{{ $post->category->name }}</a>
-                            <h5 class="card-title">{{ $post->title }}</h5>
-                            
-                            <p>
-                                <a class="link-offset-2 link-underline link-underline-opacity-100" href="#">
-                                    <u>Read now</u>
-                                </a>
-                            </p>
-                        </div>
+                    <div class="article-container card" style= "width: 24rem;" id="blog-box">
+                        <a href="/post/{{ $post->slug }}" id="ablogs" class="card-link">
+                            <div class="blog-content card h-100">
+                                <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top" alt="...">
+                                <div class="card-body flex-container">
+                                    <button class="btn btn-secondary disabled mb-2 disabled flex-button"
+                                        href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</button>
+                                    <h5 class="card-title">{{ $post->title }}</h5>
+                                    <a class="link-offset-2 "
+                                        href="/post/{{ $post->slug }}"><u>Read now</u></a>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                     @endforeach
                     <a href="/posts/"class="see-more-card col-md-4 d-flex" style = "width: 24rem; padding: 0;">
@@ -170,9 +169,12 @@
                                     <h5 class="modal-title w-100" id="exampleModalLabel{{ $gallery->id }}" style="color:#fee9ca;">
                                         {{ $gallery->title }}
                                     </h5>
-                                    <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                    <div data-bs-theme="dark">
+                                        <button type="button" class="btn-close p-2 m-0" aria-label="Close"></button>
+                                    </div>
+                                    <!-- <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">x</span>
-                                    </button>
+                                    </button> -->
                                 </div>
                                 <div class="modal-body p-0 m-2 mt-0 align-content-center">
                                     <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt="">
