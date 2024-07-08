@@ -30,21 +30,22 @@
         object-fit: cover;
     }
 
-    .title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .gap-2 {
         opacity: 0%;
         height: 5px;
     }
 
-    .heading-title {
+    .title {
         display: flex;
-        font-size: 46px;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%; 
+        text-align: center; 
+    }
+
+    .heading-title {
+        font-size: 2.4rem;
+        text-align: center; 
     }
 
     .loc-and-type {
@@ -96,32 +97,22 @@
         height: 30%;
         width: 94%;
         margin-top: 20px;
-        margin-bottom: 5%;
+        margin-bottom: 3%;
         text-align: justify;
     }
-
-
 
     .price-frame {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        height: 10em;
+        height: 6.8em;
         width: 94%;
         margin: auto;
         background-color: rgba(254, 233, 202, 0.35);
         border-radius: 10px;
-        margin-bottom: 90px;
+        margin-bottom: 20px;
         background-size: 1px;
-    }
-
-    .divider-2 {
-        border: 0;
-        height: 1px;
-        background: #000000;
-        width: 100%;
-        margin: 1px auto;
     }
 
     .pricey {
@@ -129,9 +120,7 @@
         align-items: center;
         justify-content: center;
         width: 8em;
-        /* margin-left: 3% ; */
         height: 30%;
-        /* border: 1px solid #000;  */
     }
 
     .rp-div {
@@ -191,6 +180,7 @@
         background-color: rgba(254, 233, 202, 0);
         font-size: 200%;
         border: 0px;
+        font-size: 2rem;
     }
 
     button {
@@ -202,23 +192,24 @@
 
     .total {
         display: flex;
+        justify-content: center; 
         width: 94%;
-        margin: auto;
+        margin: auto; 
         margin-top: 3%;
         height: 3.2em;
-        /* background-color: black; */
+        align-items: center; 
     }
 
     .total-price {
-        font-size: 40px;
+        font-size: 2rem;
         margin-top: -5px;
         margin-left: 10%;
     }
-
+    
     .price-title {
         color: #224121;
     }
-
+    
     .button-parent {
         display: flex;
         margin-left: auto;
@@ -230,18 +221,20 @@
         padding-right: 30px;
         border-radius: 10px;
     }
-
+    
     .button-text {
         margin-bottom: 0px;
+        font-size: 1.rem;
         color: white;
         justify-content: center;
+        text-align: center
     }
 </style>
 
 <div class="gap-1">
 
 </div>
-<div class="jumbotron jumbotron-fluid">
+<div class="col-md-10 jumbotron jumbotron-fluid">
 @if ($ticket->image)
         <img class="jumbo-img" src="{{ asset('storage/' . $ticket->image) }}" 
         alt="{{ $ticket->ticketcategory->name }}">
@@ -253,56 +246,70 @@
 <div class="gap-2">
 
 </div>
-<div class="title">
-    <h1 class="heading-title">{{ $ticket->title }}</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="title">
+                <h1 class="heading-title">{{ $ticket->title }}</h1>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="loc-and-type">
-    <i class="fas fa-map-marker-alt"></i>
-    <h3 class="locaysh">{{ $ticket->location }}</h3>
-    <!-- <div class="type-parent">
-        <h3 class="type">{{ $ticket->ticketcategory->name }}</h3>
-    </div> -->
-    <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="loc-and-type">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3 class="col-md-8 locaysh">{{ $ticket->location }}</h3>
+            <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
+        </div>
+    </div>
 </div>
 
-<hr>
+<hr class="col-md-10">
 
-<div class="desc">
-    <h3 class="desc-1"> {!! $ticket->description !!} </h3>
+<div class="col-md-10 desc">
+    <h4 class="desc-1"> {!! $ticket->description !!} </h4>
 </div>
 
-<div class="price-frame">
-    <div class="pricey">
-        <h2 class="price-tag">Price</h2>
+<div class="col-md-10 price-frame">
+    <div class="col-md-1 pricey">
+        <h3 class="price-tag">Price</h3>
     </div>
 
-    <div class="rp-div">
-        <h2 class="rp">Rp</h2>
+    <div class="col-md-1 a"></div>
+
+    <div class="col-md-1 rp-div">
+        <h3 class="rp">Rp</h3>
     </div>
 
-    <div class="val-div">
-        <h2 class="value"> {{ $ticket->price }}</h2>
+    <div class="col-md-1 val-div">
+        <h3 class="value"> {{ $ticket->price }}</h3>
     </div>
 
-    <div class="quantity-button">
+    <div class="col-md-6 quantity-button">
         <button class="decrease"><i class="fas fa-minus"></i></button>
         <input type="text" class="quantity-input" value="1">
         <button class="increase"><i class="fas fa-plus"></i></button>
     </div>
 </div>
 
-<hr class="divider-2">
+<hr class="col-md-10">
 
-<div class="total">
-    <h1 class="price-title">Total Price</h1>
-    <div class="total-price">
-        Rp <span id="total-price">10</span>
-    </div>
-    <div class="button-parent">
-        <h3 class="button-text">Check Out</h3>
-    </div>
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 total">
+            <h2 class="price-title">Total Price</h2>
+            <div class="total-price">
+                Rp <span id="total-price">10</span>
+            </div>
+            <div class="button-parent">
+                <h3 class="button-text">Check Out</h3>
+            </div>
+        </div>
+    </div>
 </div>
 
 
