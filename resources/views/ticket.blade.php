@@ -106,7 +106,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        height: 6.8em;
+        height: 8em;
         width: 94%;
         margin: auto;
         background-color: rgba(254, 233, 202, 0.35);
@@ -149,7 +149,7 @@
         }
 
         .price-frame {
-            height: 15em;
+            height: 10rem;
         }
 
         .pricey {
@@ -161,7 +161,6 @@
         }
     }
 
-    /* quantity button */
     .quantity-button {
         display: flex;
         align-items: center;
@@ -201,7 +200,7 @@
     }
 
     .total-price {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-top: -5px;
         margin-left: 10%;
     }
@@ -213,21 +212,44 @@
     .button-parent {
         display: flex;
         margin-left: auto;
-        background-color: #FB2000;
         align-items: center;
         justify-content: center;
-        padding: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding: 20px; 
         border-radius: 10px;
+    }
+
+    .button-parent button {
+        padding: 15px 30px; 
+        font-size: 1.2rem; 
     }
     
     .button-text {
         margin-bottom: 0px;
-        font-size: 1.rem;
+        font-size: 1rem;
         color: white;
         justify-content: center;
         text-align: center
+    }
+
+    .btn-custom {
+        background-color: #FB2000;
+        color: white; 
+    }
+
+    .btn-custom:hover {
+        background-color: #FB2000; 
+        color: white; 
+    }
+
+    .date{
+        margin: auto;
+        font-size: 1.5rem;
+    }   
+
+    #date {
+        height: 38px;
+        padding: 8px 12px; 
+        font-size: 1.2rem; 
     }
 </style>
 
@@ -240,7 +262,6 @@
         alt="{{ $ticket->ticketcategory->name }}">
   @else
   <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="jumbo-img" alt="...">
-
 @endif
 </div>
 <div class="gap-2">
@@ -275,17 +296,17 @@
 
 <div class="col-md-10 price-frame">
     <div class="col-md-1 pricey">
-        <h3 class="price-tag">Price</h3>
+        <h4 class="price-tag">Price</h4>
     </div>
 
     <div class="col-md-1 a"></div>
 
     <div class="col-md-1 rp-div">
-        <h3 class="rp">Rp</h3>
+        <h4 class="rp">Rp</h4>
     </div>
 
     <div class="col-md-1 val-div">
-        <h3 class="value"> {{ $ticket->price }}</h3>
+        <h4 class="value"> {{ $ticket->price }}</h4>
     </div>
 
     <div class="col-md-6 quantity-button">
@@ -295,24 +316,31 @@
     </div>
 </div>
 
-<hr class="col-md-10">
-
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10 total">
-            <h2 class="price-title">Total Price</h2>
-            <div class="total-price">
-                Rp <span id="total-price">10</span>
-            </div>
-            <div class="button-parent">
-                <h3 class="button-text">Check Out</h3>
-            </div>
+        <label class="date">Date</label>
+        <div class="form-floating">
+            <input type="date" name="date" class="form-control border border-dark @error('date') is-invalid @enderror" id="date">
         </div>
     </div>
 </div>
 
+<hr class="col-md-10">
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 total">
+            <h4 class="price-title">Total Price</h4>
+            <div class="total-price">
+                Rp <span id="total-price">10</span>
+            </div>
+            <div class="button-parent" id="buttonParent">
+                <button type="button" class="btn btn-custom">Check Out</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -325,7 +353,7 @@
         function updateTotalPrice() {
             const quantity = parseInt(quantityInput.value);
             const totalPrice = quantity * pricePerItem;
-            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); // Format with thousand separator
+            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); 
         }
 
         decreaseButton.addEventListener('click', function () {
@@ -342,11 +370,15 @@
             updateTotalPrice();
         });
 
-        // Add event listener for input change
         quantityInput.addEventListener('input', updateTotalPrice);
 
         updateTotalPrice();
     });
 
+    var buttonParent = document.getElementById('buttonParent');
+
+    buttonParent.addEventListener('click', function() {
+        
+    });
 </script>
 @endsection
