@@ -155,7 +155,7 @@
             {{ $gallery->title }}
         </div>
     </div>
-@endforeach
+        @endforeach
 
     </div>
 </div>

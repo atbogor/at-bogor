@@ -33,7 +33,8 @@ u.head {
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
     height: 100%;
-    width: 25rem !important;
+    /* width: 25rem !important; */
+    width: 50% !important;
 }
 
 .headline.card {

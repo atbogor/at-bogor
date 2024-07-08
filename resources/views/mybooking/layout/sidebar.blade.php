@@ -17,10 +17,10 @@
         </div>
         <div class="list-group d-flex row-gap-3">
             <hr class="my-1 w-100">
-            <a href="/mybooking/mybookings" class="list-group-item list-group-item-action">My Bookings</a>
-            <a href="/mybooking/mytestimonial" class="list-group-item list-group-item-action">My Testimonial</a>
-            <a href="/mybooking/myprofile" class="list-group-item list-group-item-action active">My Profile</a>
-            <hr class="my-1 w-100">
+            <a href="/mybooking/myprofile" class="list-group-item list-group-item-action @yield('myprofileActive')">My Profile</a>
+            <a href="/mybooking/mybookings" class="list-group-item list-group-item-action @yield('mybookingActive')">My Bookings</a>
+            <a href="/mybooking/mytestimonial" class="list-group-item list-group-item-action @yield('mytestimonialActive')">My Testimonial</a>
+            <hr class="my-0 w-100">
             <form action="/logout" method="post">
                 @csrf
                 <button type="submit" class="list-group-item list-group-item-action">
