@@ -270,7 +270,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-10 mt-4">
             <div class="title">
                 <h1 class="heading-title">{{ $ticket->title }}</h1>
             </div>
@@ -278,12 +278,12 @@
     </div>
 </div>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center w-100">
     <div class="col-md-10">
         <div class="loc-and-type">
             <i class="fas fa-map-marker-alt"></i>
-            <h3 class="col-md-8 locaysh">{{ $ticket->location }}</h3>
-            <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
+            <h3 class="col-md-8 locaysh fs-4">{{ $ticket->location }}</h3>
+            <a class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</a>
         </div>
     </div>
 </div>
@@ -291,7 +291,7 @@
 <hr class="col-md-10">
 
 <div class="col-md-10 desc">
-    <h4 class="desc-1"> {!! $ticket->description !!} </h4>
+    <p class="desc-1 fs-5"> {!! $ticket->description !!} </p>
 </div>
 
 <div class="col-md-10 price-frame">
@@ -302,11 +302,11 @@
     <div class="col-md-1 a"></div>
 
     <div class="col-md-1 rp-div">
-        <h4 class="rp">Rp</h4>
+        <h3 class="rp">Rp</h3>
     </div>
 
     <div class="col-md-1 val-div">
-        <h4 class="value"> {{ $ticket->price }}</h4>
+        <h3 class="value"> {{ $ticket->price }}</h3>
     </div>
 
     <div class="col-md-6 quantity-button">
@@ -353,7 +353,7 @@
         function updateTotalPrice() {
             const quantity = parseInt(quantityInput.value);
             const totalPrice = quantity * pricePerItem;
-            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); 
+            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); // Format with thousand separator
         }
 
         decreaseButton.addEventListener('click', function () {

@@ -1,6 +1,7 @@
 @extends('mybooking.layout.main')
-
+@section('mybookingActive', 'active')
 @section('content')
+
 
 <style>
     .title {

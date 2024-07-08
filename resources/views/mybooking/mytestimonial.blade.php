@@ -1,5 +1,7 @@
 @extends('mybooking.layout.main')
+@section('mytestimonialActive', 'active')
 @section('content')
+
 <style>
     h2 {
         color: #214123;
@@ -19,7 +21,7 @@
     <br>
     <div class="col-md-10">
         @foreach ($testimonials as $testimonial)
-            <div class="card card-testi">
+            <div class="card card-testi mb-4">
                 <div class="card-body">
                     <div class="container">
                         <div class="row ">

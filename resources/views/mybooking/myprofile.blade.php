@@ -1,6 +1,5 @@
 @extends('mybooking.layout.main')
-
-
+@section('myprofileActive', 'active')
 @section('content')
 <link rel="stylesheet" href="/css/myprofile.css">
 

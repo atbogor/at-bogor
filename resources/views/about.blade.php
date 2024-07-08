@@ -193,11 +193,18 @@
         margin-bottom: 8%;
     }
 
-    .get-in-touch{
-        background-color: #FB2000;
-        color: white;
-        margin-bottom: 0;
-    }
+    .get-in-touch {
+    /* height: 500px; Define the height as needed */
+    background: linear-gradient(
+        rgba(12, 98, 19, 0.738), /* Start with semi-transparent black */
+        rgba(34, 65, 33, 1) /* End with semi-transparent black */
+    ), url("assets/Kebun_Raya_Bogor_19.jpg"); /* Overlay on top of background image */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the background image */
+    color: white;
+    margin-bottom: 0;
+}
+
 
     .footers{
         margin-top: 0 !important;

@@ -72,32 +72,30 @@
         <div class="container">
             <div class="row">
                 @foreach($posts->skip(1) as $post)
-                    <div class="col-md-4 mb-5 d-flex">
-                        <div class="blog-content card h-100">
-                            <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top"
-                                alt="...">
-                            <div class="card-body">
-                                <a class="btn btn-secondary disabled mb-2"
-                                    href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
-                                <h5 class="card-title">{{ $post->title }}</h5>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    the
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    card's content.</p> -->
-                                <p><a class="link-offset-2 link-underline link-underline-opacity-100"
-                                        href="/post/{{ $post->slug }}"><u>Read
-                                            now</u></a>
+                    <div class="col-md-4 mb-5 d-flex" id='blog-box'>
+                        <a href="/post/{{ $post->slug }}" id="ablogs" class="card-link">
+                            <div class="blog-content card h-100">
+                                <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top" alt="...">
+                                <div class="card-body flex-container">
+                                    <button class="btn btn-secondary disabled mb-2 disabled flex-button"
+                                        href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</button>
+                                    <h5 class="card-title">{{ $post->title }}</h5>
+                                    <a class="link-offset-2"
+                                        href="/post/{{ $post->slug }}"><u>Read now</u></a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                @endforeach
 
+                @endforeach
             </div>
         </div>
+        
 
     @else 
         <p class="text-center fs-4">No post found.</p>
     @endif
-
+        
     <div class="d-flex justify-content-center">
         {{ $posts->links() }}
     </div>

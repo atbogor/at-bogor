@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-8 mt-3">
-                <a class="btn btn-outline-dark" href="/posts"><i class="fa-solid fa-angle-left"></i> Back</a>
+                <a class="btn btn-outline-none" href="/posts"><i class="fa-solid fa-angle-left"></i> Back</a>
             </div>
         </div>
         <div class="row mb-2">

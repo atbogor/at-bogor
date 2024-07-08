@@ -40,7 +40,7 @@
 }
 .scrollable-container {
     /* display: flex; */
-    overflow-x: auto;
+    overflow-x: auto !important;
     border-radius: 15px;
     height: auto;
     /* white-space: nowrap; */
@@ -48,6 +48,8 @@
     /* background-color: blue; */
     /* padding: 10px; */
 }
+
+
 .see-more-card {
     width: 24rem !important;
     /* height: 100px; */
@@ -62,6 +64,7 @@
 .see-more-card:hover {
     background-color: #fb2000;
     transition: 300ms ease-in;
+    text-decoration: none;
 }
 
 .see-more-card h2 {
@@ -248,7 +251,7 @@ box {
     transition: background-color 300ms ease-out;
 }
 
-.photocard:hover .overlay {
+.gallery-container-card:hover .overlay {
     background-color: #fb2000;
 }
 

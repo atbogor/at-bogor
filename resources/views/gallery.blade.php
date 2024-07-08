@@ -143,7 +143,7 @@
 <div id="jumbot" class="jumbot">
     <div class="title">
         <h3 class="title-tit">Gallery</h3>
-        <h6 class="title-sub">The Beauty of Bogor in Imges</h6>
+        <h6 class="title-sub">The Beauty of Bogor in Images</h6>
     </div>
 </div>
 <div class="box">
@@ -155,7 +155,7 @@
             {{ $gallery->title }}
         </div>
     </div>
-@endforeach
+        @endforeach
 
     </div>
 </div>
