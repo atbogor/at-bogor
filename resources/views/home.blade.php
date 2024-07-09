@@ -90,108 +90,54 @@
     </section>
 
     <section class="gallery-container">
-        <h1 class="popular-gallery-title text-center  mb-3">Popular Gallery</h1>
+        <h1 class="popular-gallery-title text-center mb-3">Gallery</h1>
 
         <div class="row">
             <div class="col-12">
-                <div class="scrollable-container d-flex gap-3" >
+                <div class="scrollable-container d-flex gap-3">
                     @foreach($galleries->take(7) as $gallery)
                         
-                        <div class="gallery-container-card" style= "width: 24rem;" >
+                        <div class="gallery-container-card" id="gallery-box" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
+                                <div class="gallery-content card h-100">
+                                    <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top" style="width:24rem">
+                                    <div class="card-body flex-container">
+                                    
+                                        <h5 class="card-title m-0">
+                                            {{ Str::limit(strip_tags($gallery->title ), 38) }}
 
-                            <div class="photocard" style="width: 24rem; padding: 0; background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')"  onclick="showImage(this)">
-                                
-                            </div>
-                            <div class="overlay">
-                                {{ $gallery->title }}
-                            </div>
-                        </div>
-                        
-                    
-                    @endforeach
-                    <a href="/gallery/"class="see-more-card col-md-4 d-flex" style = "width: 24rem; padding: 0;">
-                    <img class="see-more-logo" src="assets/see-more-logo.png"></img>    
-                    <h2>See More</h2>
-                </a>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div id="popupContainer" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup()">
-                    <p class="close-btn">x</p>
-                </span>
-                <img id="popupImage" class="popupImage img-fluid" src="" alt="Popup Image">
-            </div>
-        </div>
-        
-        <script>
-            function showImage(element) {
-                var backgroundImage = element.style.backgroundImage;
-                var imageUrl = backgroundImage.slice(5, -2);
-        
-                document.getElementById('popupImage').src = imageUrl;
-                document.getElementById('popupContainer').style.display = "block";
-                document.getElementById('jumbot').style.position = "static"; 
-        
-                document.getElementById('popupContainer').addEventListener('click', function(event) {
-                    if (event.target === this) {
-                        closePopup();
-                    }
-                });
-            }
-        
-            function closePopup() {
-                document.getElementById('popupContainer').style.display = "none";
-                document.getElementById('jumbot').style.position = "relative"; 
-            }
-        </script>
-    </section>
-
-    <section class="gallery-container">
-    <h1 class="popular-gallery-title text-center mb-3">NYOBA</h1>
-
-    <div class="row">
-        <div class="col-12">
-            <div class="scrollable-container d-flex gap-3">
-                @foreach($galleries->take(7) as $gallery)
-                <div class="gallery-container-card" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
-                    <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="photocard" style="width:24rem">
-                    <div class="overlay">
-                        {{ $gallery->title }}
-                    </div>
-                    <div class="modal fade" id="modal{{ $gallery->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ $gallery->id }}" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header d-flex align-content-center">
-                                    <h5 class="modal-title w-100" id="exampleModalLabel{{ $gallery->id }}" style="color:#fee9ca;">
-                                        {{ $gallery->title }}
-                                    </h5>
-                                    <div data-bs-theme="dark">
-                                        <button type="button" class="btn-close p-2 m-0" aria-label="Close"></button>
+                                        </h5>
                                     </div>
-                                    <!-- <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">x</span>
-                                    </button> -->
                                 </div>
-                                <div class="modal-body p-0 m-2 mt-0 align-content-center">
-                                    <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt="">
+                                <div class="modal fade" id="modal{{ $gallery->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ $gallery->id }}" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header d-flex align-content-center">
+                                            <h5 class="modal-title w-100 text-left" id="exampleModalLabel{{ $gallery->id }}" style="color:#fee9ca;">
+                                                {{ $gallery->title }}
+                                            </h5>
+                                            <div data-bs-theme="dark">
+                                                <button type="button" class="btn-close p-2 m-0" aria-label="Close"></button>
+                                            </div>
+                                            <!-- <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">x</span>
+                                            </button> -->
+                                        </div>
+                                        <div class="modal-body p-0 m-2 mt-0 align-content-center">
+                                            <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+                    <a href="/gallery/" class="see-more-card col-md-4 d-flex" style="width: 24rem; padding: 0;">
+                        <img class="see-more-logo" src="assets/see-more-logo.png" alt="See More">
+                        <h2>See More</h2>
+                    </a>
                 </div>
-                @endforeach
-                <a href="/gallery/" class="see-more-card col-md-4 d-flex" style="width: 24rem; padding: 0;">
-                    <img class="see-more-logo" src="assets/see-more-logo.png" alt="See More">
-                    <h2>See More</h2>
-                </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </div>
 
