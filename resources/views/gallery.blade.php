@@ -41,103 +41,67 @@
         width: 94%;
         justify-content: center;
     }
+.gallery-container-card {
+    /* display: flex; */
+    border-radius: 15px !important;
 
-    .row{
-        justify-content: center;
-    }
+    background-color: #224121;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    /* border: 2px solid #224121 !important; */
+}
+.gallery-content.card {
+    border-radius: 15px !important;
+    display: flex;
+    overflow: hidden;
+    background-color: #224121;
+    border: 2px solid #224121 !important;
+}
 
-    .photocard {
-        position: relative;
-        display: flex;
-        height: 18rem;
-        width: 24.3rem;
-        border-radius: 12px;
-        border: 2px solid black;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-right: 2em; 
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
+.card-title{
+    color: white;
+}
 
-    /* .row > .photocard:nth-child(3n) {
-        margin-right: 0;
-    } */
+.row {
+    justify-content: center;
+}
 
-    .overlay {
-        position: absolute;
-        background-color: #224121;
-        bottom: 0;
-        right: 0;
-        color: white;
-        padding: 10px;
-        width: 100%;
-        border-radius: 0 0 9px 9px;
-        transition: background-color 300ms ease-out;
-    }
+.gambar-popup {
+    border-radius: 15px !important;
+}
+.modal {
+    text-align: center;
+}
 
-    .photocard:hover .overlay {
-        background-color: #FB2000; 
-    }
+.modal-content {
+    background-color: #224121;
+    border-radius: 15px;
+}
 
-    .popup {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.5);
-    }
+.modal-header {
+    border: 0;
+}
 
-    .popup-content {
-        margin: auto;
-        display: block;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        max-width: 700px;
-        max-height: 100%;
-        border: 10px solid #142213;
-    }
+#gallery-box:hover .card-price {
+    color: #224121;
+}
 
-    .popupImage{
-        width: 100%;
-    }
+#gallery-box a {
+    text-decoration: none;
+}
 
-    .close-btn{
-        padding-top: 0.4rem;
-        font-size: 2rem;
-    }
+#gallery-box .card-body {
+    transition: 300ms ease-out;
+}
+#gallery-box:hover .card-body {
+    background-color: #fb2000;
+    transition: 300ms ease-in;
+    color: #ffffff !important;
+}
 
-    .close {
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-        position: absolute;
-        top: 2%;
-        right: 2%;
-        color: #FF0000;
-        font-size: 40px;
-        background-color: #214123;
-        border-radius: 100px;
-        width: 0.8em;
-        margin-bottom: 0;
-        height: 0.8em;
-    }
 
-    .close:hover,
-    .close:focus {
-        color: #FF0000;
-        text-decoration: none;
-        cursor: pointer;
-    }
+
 </style>
 
 <div id="jumbot" class="jumbot">
@@ -148,48 +112,54 @@
 </div>
 <div class="box">
     @php $count = 0; @endphp
-    <div class=" row">
+    <div class=" row gap-4">
         @foreach ($galleries as $gallery)
-    <div class="col-md-12 photocard" style="background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')" onclick="showImage(this)">
+    <!-- <div class="col-md-12 photocard" style="background-image: url('https://picsum.photos/seed/{{ $gallery->id }}/1600/900')" onclick="showImage(this)">
         <div class="overlay">
             {{ $gallery->title }}
         </div>
-    </div>
+    </div> -->
+
+        <div class="gallery-container-card p-0" id="gallery-box" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
+            <div class="gallery-content card h-100">
+                <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top" style="width:24rem">
+                <div class="card-body flex-container">
+                
+                    <h5 class="card-title m-0">
+                        {{ Str::limit(strip_tags($gallery->title ), 38) }}
+
+                    </h5>
+                </div>
+            </div>
+            <div class="modal fade" id="modal{{ $gallery->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ $gallery->id }}" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex align-content-center">
+                            <h5 class="modal-title w-100 text-left" id="exampleModalLabel{{ $gallery->id }}" style="color:#fee9ca;">
+                                {{ $gallery->title }}
+                            </h5>
+                            <div data-bs-theme="dark">
+                                <button type="button" class="btn-close p-2 m-0" aria-label="Close"></button>
+                            </div>
+                            <!-- <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">x</span>
+                            </button> -->
+                        </div>
+                        <div class="modal-body p-0 m-2 mt-0 align-content-center">
+                            <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         @endforeach
 
     </div>
 </div>
 
-<div id="popupContainer" class="popup">
-    <div class="popup-content">
-        <span class="close" onclick="closePopup()">
-            <p class="close-btn">x</p>
-        </span>
-        <img id="popupImage" class="popupImage" src="" alt="Popup Image">
-    </div>
+<div class="d-flex justify-content-center mt-5">
+      {{ $galleries->links() }}
 </div>
-
-<script>
-    function showImage(element) {
-        var backgroundImage = element.style.backgroundImage;
-        var imageUrl = backgroundImage.slice(5, -2);
-
-        document.getElementById('popupImage').src = imageUrl;
-        document.getElementById('popupContainer').style.display = "block";
-        document.getElementById('jumbot').style.position = "static"; 
-
-        document.getElementById('popupContainer').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closePopup();
-            }
-        });
-    }
-
-    function closePopup() {
-        document.getElementById('popupContainer').style.display = "none";
-        document.getElementById('jumbot').style.position = "relative"; 
-    }
-</script>
 
 
 @endsection

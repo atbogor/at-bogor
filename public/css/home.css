@@ -158,7 +158,7 @@
     border-radius: 40px;
     padding-inline: 1rem;
 }
-.head.card-title,
+.head,
 u.head {
     color: #142213 !important;
 }
@@ -186,13 +186,13 @@ u {
 
     border-radius: 15px !important;
     /* border: 2px solid #224121 !important; */
-    display: flex;
+    /* display: flex; */
     overflow: hidden;
     background-color: #224121;
 }
 .blog-content.card {
-    border-radius: 12px !important;
-    border: 2px solid #224121 !important;
+    border-radius: 15px !important;
+    /* border: 2px solid #224121 !important; */
     display: flex;
     overflow: hidden;
     background-color: #224121;
@@ -211,69 +211,34 @@ u {
 #blog-box:hover .card-body {
     background-color: #fb2000;
 }
+.link-offset-2 {
+    margin-top: auto;
+    align-self: end;
+}
 
 /* ============================ Popular Gallery ========================= */
 .gallery-container-card {
-    display: flex;
+    /* display: flex; */
     border-radius: 15px !important;
-    border: 2px solid #224121 !important;
 
     background-color: #224121;
     flex-direction: column;
     align-items: center;
     justify-content: top;
+    /* border: 2px solid #224121 !important; */
 }
-
-box {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* gap: 2em; */
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    width: 94%;
-    justify-content: center;
+.gallery-content.card {
+    border-radius: 15px !important;
+    display: flex;
+    overflow: hidden;
+    background-color: #224121;
+    border: 2px solid #224121 !important;
 }
 
 .row {
     justify-content: center;
 }
 
-.photocard {
-    /* position: */
-    /* display: flex; */
-    height: 24rem;
-    /* width: 63vh; */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border: 2px solid #224121;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* flex-direction: column; */
-}
-
-/* .row > .photocard:nth-child(3n) {
-    margin-right: 0;
-} */
-
-.overlay {
-    /* position: relative; */
-    background-color: #224121;
-    bottom: 0;
-    right: 0;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    transition: background-color 300ms ease-out;
-}
-
-.gallery-container-card:hover .overlay {
-    background-color: #fb2000;
-}
 .gambar-popup {
     border-radius: 15px !important;
 }
@@ -290,59 +255,14 @@ box {
     border: 0;
 }
 
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+#gallery-box:hover .card-price {
+    color: #224121;
 }
 
-.popup-content {
-    margin: auto;
-    display: block;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 700px;
-    max-height: 100%;
-    border: 10px solid #142213;
-}
-
-/* .close {
-    line-height: 0;
-    font-weight: 700;
-    font-size: 2rem;
-    text-shadow: none;
-    color: #ff0000;
-} */
-
-.close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    color: #ff0000;
-    font-size: 40px;
-    background-color: #214123;
-    border-radius: 100px;
-    width: 0.8em;
-    margin-bottom: 0;
-    height: 0.8em;
-}
-
-.close:hover,
-.close:focus {
-    color: #ff0000;
+#gallery-box a {
     text-decoration: none;
-    cursor: pointer;
+}
+
+#gallery-box:hover .card-body {
+    background-color: #fb2000;
 }

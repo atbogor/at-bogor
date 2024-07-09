@@ -11,7 +11,7 @@ class GalleryController extends Controller
         return view('gallery', [
             'title' => 'Gallery', 
             'active'=> "gallery",
-            'galleries'=> Gallery::all()
+            'galleries'=> Gallery::paginate(12)->withQueryString()
         ]);
     }
 }
