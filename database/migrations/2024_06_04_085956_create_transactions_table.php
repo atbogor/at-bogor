@@ -18,9 +18,12 @@ return new class extends Migration {
             $table->foreignId('ticket_id')->references('id')->on('tickets')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->string('buyer_name');
+            $table->date('ticket_date');
+            $table->string('email');
+            $table->string('phone');
             $table->integer('quantity');
             $table->boolean('status')->default(false);
-            $table->date('transaction_date');
             $table->timestamps();
         });
     }
