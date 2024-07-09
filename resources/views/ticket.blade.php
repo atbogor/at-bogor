@@ -257,23 +257,23 @@
         color: white; 
     }
 
-    .date{
+    .ticket_date{
         margin: auto;
         font-size: 1.3rem;
     }   
 
-    #date {
+    #ticket_date {
         height: 38px;
         padding: 8px 12px; 
         font-size: 1.2rem; 
     }
 
-    .name{
+    .buyer_name{
         margin: auto;
         font-size: 1.3rem;
     }   
 
-    #name {
+    #buyer_name {
         height: 38px;
         padding: 8px 12px; 
         font-size: 1.2rem; 
@@ -290,12 +290,12 @@
         font-size: 1.2rem; 
     }
 
-    .phoneNumber{
+    .phone{
         margin: auto;
         font-size: 1.3rem;
     }   
 
-    #phoneNumber {
+    #phone {
         height: 38px;
         padding: 8px 12px; 
         font-size: 1.2rem; 
