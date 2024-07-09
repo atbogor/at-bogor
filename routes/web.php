@@ -15,6 +15,7 @@ use App\Http\Controllers\HomepageController;
 
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/welcome', function () {
@@ -44,6 +45,7 @@ Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
 Route::resource('/dashboard/galleries', AdminGalleryController::class)->middleware('admin');
 
+Route::resource('/transactions', TransactionController::class)->middleware('auth');
 
 Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::put("/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
