@@ -24,6 +24,7 @@ return new class extends Migration {
             $table->string('phone');
             $table->integer('quantity');
             $table->boolean('status')->default(false);
+            $table->string('snap_token')->nullable();
             $table->timestamps();
         });
     }

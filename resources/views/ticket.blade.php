@@ -428,7 +428,7 @@
                 Rp <span id="total-price">10</span>
             </div>
             <div class="button-parent" id="buttonParent">
-                <button type="submit" class="btn btn-custom">Check Out</button>
+                <button type="submit" class="btn btn-custom" id= "pay-button">Check Out</button>
             </div>
         </div>
     </div>
@@ -475,5 +475,6 @@
     buttonParent.addEventListener('click', function() {
         
     });
+
 </script>
 @endsection
