@@ -46,6 +46,7 @@ Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('adm
 Route::resource('/dashboard/galleries', AdminGalleryController::class)->middleware('admin');
 
 Route::resource('/transactions', TransactionController::class)->middleware('auth');
+Route::get('/transactions/{order_id}', [TransactionController::class, 'getStatus']);
 
 Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::put("/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
@@ -53,3 +54,4 @@ Route::get('/mybookings', [MyBookingController::class, 'index'])->middleware('au
 Route::get('/mytestimonials', [MyTestimonialController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
+
