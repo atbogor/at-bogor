@@ -13,18 +13,36 @@
             </div>
 
             <div>
-                <button onclick="checkStatus('YOUR_ORDER_ID')">Check Transaction Status</button>
+                <button onclick="checkStatus('{{$transaction->order_id}}')">Check Transaction Status</button>
                 <pre id="status-result"></pre>
             </div>
-
         </div>
     </div>
+
 @endsection
 
-
 @section('script')
+
+
+
 <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-KrytpI0OPRLGzIfw"></script>
     <script type="text/javascript">
+    function checkStatus(order_id) {
+            fetch(`/transactions/${order_id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('status-result').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('status-result').textContent = 'Failed to fetch transaction status';
+                });
+        }
         document.getElementById('pay-button').onclick = function() {
             // SnapToken acquired from previous step
             snap.pay('{{$transaction->snap_token}}', {
@@ -45,19 +63,9 @@
                 }
             });
         };
+
     </script>
-    <script>
-        function checkStatus(order_id) {
-            fetch(`/transactions/${order_id}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('status-result').textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }
-    </script>
+    
     
 
 @endsection

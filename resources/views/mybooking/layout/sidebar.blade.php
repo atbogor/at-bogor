@@ -17,9 +17,18 @@
         </div>
         <div class="list-group d-flex row-gap-3">
             <hr class="my-1 w-100">
-            <a href="/myprofile" class="list-group-item list-group-item-action @yield('myprofileActive')">My Profile</a>
-            <a href="/mybookings" class="list-group-item list-group-item-action @yield('mybookingActive')">My Bookings</a>
-            <a href="/mytestimonials" class="list-group-item list-group-item-action @yield('mytestimonialActive')">My Testimonial</a>
+            <a href="/myprofile" class="list-group-item list-group-item-action @yield('myprofileActive')">
+                <i class="fa-solid fa-user" style="margin-right: 10px"></i>
+                My Profile
+            </a>
+            <a href="/mybookings" class="list-group-item list-group-item-action @yield('mybookingActive')">
+                <i class="fa-solid fa-receipt" style="margin-right: 10px"></i>
+                My Bookings
+            </a>
+            <a href="/mytestimonials" class="list-group-item list-group-item-action @yield('mytestimonialActive')">
+                <i class="fa-brands fa-rocketchat" style="margin-right: 7px"></i>
+                My Testimonial
+            </a>
             <hr class="my-0 w-100">
             <form action="/logout" method="post">
                 @csrf
