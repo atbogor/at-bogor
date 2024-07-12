@@ -135,51 +135,42 @@ class TransactionController extends Controller
         $transaction = Transaction::where('transactions.order_id', $order_id)->first();
 
         $order_id = $transaction->order_id;
-        dd($order_id);
+        // dd($order_id);
 
         $url = "https://api.sandbox.midtrans.com/v2/$order_id/status";
-
+        // dd($url);
         $curl = curl_init();
 
-        curl_setopt_array(
-            $curl,
-            array(
-                CURLOPT_URL => $url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                    "Accept: application/json",
-                    "Authorization: Basic " . base64_encode($server_key . ":")
-                ),
-            )
-        );
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "Accept: application/json",
+                "Authorization: Basic " . base64_encode($server_key . ":")
+            ],
+        ]);
 
         $response = curl_exec($curl);
-        $err = curl_error($curl);
+        $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $curl_error = curl_error($curl);
 
         curl_close($curl);
 
-        if ($err) {
-            return response()->json(['error' => "cURL Error #:" . $err], 500);
+        if ($curl_error) {
+            return response()->json(['error' => "cURL Error: " . $curl_error], 500);
+        } elseif ($http_status >= 400) {
+            return response()->json(['error' => "HTTP Error: " . $http_status, 'response' => json_decode($response, true)], $http_status);
         } else {
             $response = json_decode($response, true);
             return response()->json($response);
         }
+
+
     }
-    // $transaction = Transaction::where('order_id', $order_id)->first();
-
-    // if (!$transaction) {
-    //     return response()->json(['error' => 'Transaction not found'], 404);
-    // }
-
-    // return response()->json([
-    //     'order_id' => $transaction->order_id,
-    //     // 'status' => $transaction->status,
-    //     // tambahkan data lain yang relevan
-    // ]);
 
 }

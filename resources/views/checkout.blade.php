@@ -19,6 +19,8 @@
         </div>
     </div>
 
+    <div id="snap-container"></div>
+
 @endsection
 
 @section('script')
@@ -43,26 +45,50 @@
                     document.getElementById('status-result').textContent = 'Failed to fetch transaction status';
                 });
         }
-        document.getElementById('pay-button').onclick = function() {
-            // SnapToken acquired from previous step
-            snap.pay('{{$transaction->snap_token}}', {
+        // document.getElementById('pay-button').onclick = function() {
+        //     // SnapToken acquired from previous step
+        //     snap.pay('{{$transaction->snap_token}}', {
+        //         // Optional
+                // onSuccess: function(result) {
+                //     /* You may add your own js here, this is just example */
+                //     document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                // },
+                // // Optional
+                // onPending: function(result) {
+                //     /* You may add your own js here, this is just example */
+                //     document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                // },
+                // // Optional
+                // onError: function(result) {
+                //     /* You may add your own js here, this is just example */
+                //     document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                // }
+        //     });
+        // };
+
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function () {
+      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token.
+      // Also, use the embedId that you defined in the div above, here.
+        window.snap.embed('{{$transaction->snap_token}}', {
+        embedId: 'snap-container',
+        onSuccess: function(result) {
+                    /* You may add your own js here, this is just example */
+                    // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                    console.log(result)
+                },
                 // Optional
-                onSuccess: function(result) {
+        onPending: function(result) {
                     /* You may add your own js here, this is just example */
                     document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
                 },
                 // Optional
-                onPending: function(result) {
-                    /* You may add your own js here, this is just example */
-                    document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                },
-                // Optional
-                onError: function(result) {
+        onError: function(result) {
                     /* You may add your own js here, this is just example */
                     document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
                 }
-            });
-        };
+      });
+    });
 
     </script>
     
