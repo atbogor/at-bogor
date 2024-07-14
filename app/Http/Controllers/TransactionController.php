@@ -29,6 +29,8 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request);
         $validatedData = $request->validate([
             'ticket_id' => 'required',
             'user_id' => 'required',
@@ -36,14 +38,21 @@ class TransactionController extends Controller
             'email' => 'required',
             'ticket_date' => 'required',
             'phone' => 'required',
-            'quantity' => 'required|integer'
+            'quantity' => 'required|integer',
         ]);
-
+        // dd($validatedData);
         // Ambil data tiket berdasarkan ticket_id
         $ticket = Ticket::findOrFail($validatedData['ticket_id']);
+        $price = $ticket->price;
+
+        $order_id = 'order-' . uniqid();
+        $validatedData['order_id'] = $order_id;
 
         // Create transaction
         $transaction = Transaction::create($validatedData);
+
+        // dd($transaction);
+        $gross_amount = $price * $transaction['quantity'];
 
         // Configure Midtrans
         \Midtrans\Config::$serverKey = 'SB-Mid-server-Bx3wZeVZMWNIYoB2Wn06y8__';
@@ -53,8 +62,8 @@ class TransactionController extends Controller
 
         $params = [
             'transaction_details' => [
-                'order_id' => rand(),
-                'gross_amount' => 10000 * $validatedData['quantity'], // Calculate total amount
+                'order_id' => $order_id,
+                'gross_amount' => $gross_amount, // Calculate total amount
             ],
             'customer_details' => [
                 'first_name' => $validatedData['buyer_name'],
@@ -62,6 +71,7 @@ class TransactionController extends Controller
                 'phone' => $validatedData['phone'],
             ],
         ];
+
 
         try {
             $snapToken = \Midtrans\Snap::getSnapToken($params);
@@ -71,10 +81,6 @@ class TransactionController extends Controller
             return response()->json(['error' => 'Failed to process payment: ' . $e->getMessage()], 500);
         }
 
-        // dd($transaction);
-
-        // Redirect ke halaman tiket dengan slug yang diperoleh
-        // return view('/ticket/', $ticket->slug, compact('transaction'));
 
         return redirect()->route('transactions.show', $transaction->id);
     }
@@ -94,7 +100,7 @@ class TransactionController extends Controller
             [
                 'title' => 'Checkout',
                 'active' => 'ticket',
-                "transaction" => $transaction
+                "transaction" => $transaction,
             ]
         );
     }
@@ -126,38 +132,45 @@ class TransactionController extends Controller
     public function getStatus($order_id)
     {
         $server_key = 'SB-Mid-server-Bx3wZeVZMWNIYoB2Wn06y8__';
+        $transaction = Transaction::where('transactions.order_id', $order_id)->first();
+
+        $order_id = $transaction->order_id;
+        // dd($order_id);
 
         $url = "https://api.sandbox.midtrans.com/v2/$order_id/status";
-
+        // dd($url);
         $curl = curl_init();
 
-        curl_setopt_array(
-            $curl,
-            array(
-                CURLOPT_URL => $url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                    "Accept: application/json",
-                    "Authorization: Basic " . base64_encode($server_key . ":")
-                ),
-            )
-        );
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "Accept: application/json",
+                "Authorization: Basic " . base64_encode($server_key . ":")
+            ],
+        ]);
 
         $response = curl_exec($curl);
-        $err = curl_error($curl);
+        $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $curl_error = curl_error($curl);
 
         curl_close($curl);
 
-        if ($err) {
-            return response()->json(['error' => "cURL Error #:" . $err], 500);
+        if ($curl_error) {
+            return response()->json(['error' => "cURL Error: " . $curl_error], 500);
+        } elseif ($http_status >= 400) {
+            return response()->json(['error' => "HTTP Error: " . $http_status, 'response' => json_decode($response, true)], $http_status);
         } else {
             $response = json_decode($response, true);
             return response()->json($response);
         }
+
+
     }
+
 }
