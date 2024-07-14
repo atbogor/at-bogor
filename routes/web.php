@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
 Route::get('/', [HomepageController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -55,3 +56,6 @@ Route::get('/mytestimonials', [MyTestimonialController::class, 'index'])->middle
 Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
 
+Route::get('/receipt', function () {
+    return view('receipt');
+});
