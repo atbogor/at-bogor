@@ -1,0 +1,46 @@
+.card {
+    width: 100%;
+}
+
+.card {
+    border-color: #224121 !important;
+    border-radius: 15px !important;
+}
+
+hr.custom-color {
+    color: #224121 !important;
+    opacity: 1;
+}
+#Tanggal {
+    color: #456a44 !important;
+}
+
+#Harga {
+    color: #818181 !important;
+}
+
+.button_container button {
+    width: 15%;
+    background-color: #fb2000;
+    color: #ffffff;
+    border-color: #224121;
+}
+.button_container button:hover {
+    background-color: white;
+    color: black;
+    border-color: #224121;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+.shift-right {
+    justify-content: center;
+}
+.snap-container {
+    display: none;
+    height: auto;
+    transition: all 0.5s ease;
+}

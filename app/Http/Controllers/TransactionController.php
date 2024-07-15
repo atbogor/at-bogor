@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use App\Models\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -33,10 +34,9 @@ class TransactionController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'ticket_id' => 'required',
-            'user_id' => 'required',
             'buyer_name' => 'required',
-            'email' => 'required',
-            'ticket_date' => 'required',
+            'email' => 'required|email',
+            'ticket_date' => 'required|date|after_or_equal:' . Carbon::today()->toDateString(),
             'phone' => 'required',
             'quantity' => 'required|integer',
         ]);
@@ -47,9 +47,14 @@ class TransactionController extends Controller
 
         $order_id = 'order-' . uniqid();
         $validatedData['order_id'] = $order_id;
-
+        $validatedData['user_id'] = auth()->user()->id;
         // Create transaction
-        $transaction = Transaction::create($validatedData);
+
+        // dd($validatedData);
+
+        $transaction = Transaction::create(
+            $validatedData
+        );
 
         // dd($transaction);
         $gross_amount = $price * $transaction['quantity'];
