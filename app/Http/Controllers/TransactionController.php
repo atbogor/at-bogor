@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use App\Models\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -34,8 +35,8 @@ class TransactionController extends Controller
         $validatedData = $request->validate([
             'ticket_id' => 'required',
             'buyer_name' => 'required',
-            'email' => 'required',
-            'ticket_date' => 'required',
+            'email' => 'required|email',
+            'ticket_date' => 'required|date|after_or_equal:' . Carbon::today()->toDateString(),
             'phone' => 'required',
             'quantity' => 'required|integer',
         ]);
