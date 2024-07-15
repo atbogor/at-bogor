@@ -352,7 +352,7 @@
 
 <div class="col-md-10 price-frame">
     <div class="col val-div p-0">
-        <h4 class="value">Rp {{ $ticket->price }}</h4>
+        <h4 class="value">Rp {{ number_format($ticket->price, 0, ',', '.') }}</h4>
     </div>
     <div class="col-md-3 quantity-button pr-0">
         <a class="w-5 decrease"><i class="fas fa-minus"></i></a>
@@ -425,7 +425,7 @@
         <div class="col-md-10 total">
             <h4 class="price-title">Total Price</h4>
             <div class="total-price">
-                Rp <span id="total-price">10</span>
+                <span id="total-price">10</span>
             </div>
             <div class="button-parent" id="buttonParent">
                 <button type="submit" class="btn btn-custom" id= "pay-button">Check Out</button>
@@ -443,12 +443,21 @@
         const increaseButton = document.querySelector('.increase');
         const quantityInput = document.querySelector('.quantity-input');
         const totalPriceElement = document.getElementById('total-price');
-        const pricePerItem = {{ $ticket->price }}; 
+        const pricePerItem = parseFloat("{{ $ticket->price }}"); 
 
         function updateTotalPrice() {
             const quantity = parseInt(quantityInput.value);
             const totalPrice = quantity * pricePerItem;
-            totalPriceElement.textContent = totalPrice.toLocaleString('en-US'); // Format with thousand separator
+            
+            const formattedTotalPrice = totalPrice.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+            if (formattedTotalPrice.endsWith(',00')) {
+            // Remove the ".00" if the decimal part is zero
+            const wholeNumber = formattedTotalPrice.slice(0, -3);
+            totalPriceElement.textContent = wholeNumber;
+            } else {
+            // Display the formatted price with IDR currency style
+            totalPriceElement.textContent = formattedTotalPrice;
+            }
         }
 
         decreaseButton.addEventListener('click', function () {
@@ -466,15 +475,15 @@
         });
 
         quantityInput.addEventListener('input', updateTotalPrice);
-
-        updateTotalPrice();
+        updateTotalPrice(); 
     });
+
 
     var buttonParent = document.getElementById('buttonParent');
 
-    buttonParent.addEventListener('click', function() {
+    // buttonParent.addEventListener('click', function() {
         
-    });
+    // });
 
 </script>
 @endsection
