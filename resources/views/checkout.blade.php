@@ -1,26 +1,65 @@
 @extends('layouts.main')
+<link rel="stylesheet" href="/css/checkout.css">
 @section('title', 'checkout')
 
 @section('container')
-    <div class="d-flex justify-content-center">
-        <div class="card">
-            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
-                Anda akan melakukan pembelian produk dengan harga
-                <strong>{{$transaction->quantity }}</strong>
-                <button type="button" class="btn btn-primary mt-3" id="pay-button">
-                    Bayar Sekarang
-                </button>
-            </div>
-
-            <div>
-                <button onclick="checkStatus('{{$transaction->order_id}}')">Check Transaction Status</button>
-                <pre id="status-result"></pre>
-            </div>
+<div class="p-4">
+    <h2>Back</h2>
+    <h1>Checkout</h1>
+    <div class="row center" id="checkout-row">
+        <div class="col-6">
+            
+                <div class="card border-3">
+                    <div class="card-body text-left d-flex flex-column ">
+                        <div class="row my-2">
+                            <div class="col-2 gap-1">
+                                <p class="text-bold m-0"><b>Name</b></p>
+                                <p class="text-bold m-0"><b>Email</b></p>
+                                <p class="text-bold m-0"><b>Phone Number</b></p>
+                            </div>
+                            <div class="col-10 gap-1">
+                                <p class="m-0">: {{$transaction->buyer_name}}</p>
+                                <p class="m-0">: {{$transaction->email}}</p>
+                                <p class="m-0">: {{$transaction->phone}}</p>
+                            </div>
+                        </div>
+                        <hr class="my-2 border-3 custom-color">
+                        <h4 class="my-2"><b>Purchase Summary</b></h4>
+                        
+                        <!-- TITLE, TANGGAL(masi jelek formatnya), HARGA BELOM MASUK -->
+                        <div class="ticket_detail my-2">
+                            <p class="m-0">INI TITLE</p>
+                            <p class="m-0" id="Tanggal">{{$transaction->ticket_date}}</p>
+                            <p class="m-0" id="Harga">INI HARGA</p>
+                        </div>
+                        
+                        <hr class="my-2 border-3 custom-color">
+                        
+                        <div class="my-2 d-flex justify-content-between">
+                            <p class="m-0">Subtotal</p>
+                            <p class="m-0 text-right">HARGA</p>
+                        </div>
+                        
+                        <hr class="my-2 border-3 custom-color">
+                        
+                        <div class="my-2 d-flex justify-content-between">
+                            <h4 class="m-0"><b>Total</b></h4>
+                            <h4 class="text-right m-0"><b>IDR HARGA</b></h4>
+                        </div>
+                        <div class="d-flex justify-content-end button_container">
+                            <button type="button p-0" class="btn" id="pay-button">
+                                Pay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="col-3 snap-container" id="snap-container">
+            <!-- Snap container for payment method pop up -->
         </div>
     </div>
-
-    <div id="snap-container"></div>
-
+</div>
 @endsection
 
 @section('script')
@@ -70,6 +109,13 @@
         payButton.addEventListener('click', function () {
       // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token.
       // Also, use the embedId that you defined in the div above, here.
+        var checkoutRow = document.getElementById('checkout-row');
+        checkoutRow.classList.add('shift-right');
+
+        // Display the snap-container
+        var snapContainer = document.getElementById('snap-container');
+        snapContainer.style.display = 'block';
+
         window.snap.embed('{{$transaction->snap_token}}', {
         embedId: 'snap-container',
         onSuccess: function(result) {
