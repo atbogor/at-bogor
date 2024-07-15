@@ -26,6 +26,7 @@ return new class extends Migration {
             $table->boolean('status')->default(false);
             $table->string('snap_token')->nullable();
             $table->string('order_id')->nullable();
+            $table->string('status_code')->nullable();
             $table->timestamps();
         });
     }
