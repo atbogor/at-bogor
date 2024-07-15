@@ -348,7 +348,7 @@
 <form method="POST" action="{{ route('transactions.store') }}" enctype="multipart/form-data">
 @csrf
 <input type="hidden" value="{{ $ticket->id }}" id='ticket_id' name="ticket_id">
-<input type="hidden" value="{{ auth()->user()->id }}" id='user_id' name="user_id">
+{{-- <input type="hidden" value="{{ auth()->user()->id }}" id='user_id' name="user_id"> --}}
 
 <div class="col-md-10 price-frame">
     <div class="col val-div p-0">
