@@ -58,7 +58,7 @@
     }
 </style>
 
-<div class="container mt-5">
+<div class="container mt-5">`
     <h2><b>My Bookings</b></h2>
     <br>
     <div class="col-md-11">
@@ -72,7 +72,7 @@
                                     href="#">{{ $booking->ticket->ticketcategory->name }}</a>
                             </div>
                             <div class="receipt col-md-3 d-flex justify-content-end align-items-center">
-                                <b>See receipt <i class="fa-solid fa-chevron-right"></i></b>
+                                <b><a href="{{route('receipt', $booking->id)}}"> See receipt <i class="fa-solid fa-chevron-right"></i> </a></b>
                             </div>
                         </div>
                         <div class="row">

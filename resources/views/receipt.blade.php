@@ -46,17 +46,17 @@
     .table {
         border: 2.2px solid #000000; 
         border-radius: 9px 9px 9px 9px; 
-        height: 500px; 
+        /* height: 500px;  */
     }
 
     .table-header {
         background-color: #C7D2C7;
         border-bottom: 2.2px solid #000000; 
         border-radius: 6px 6px 0 0; 
-        height: 80px;
+        /* height: 80px; */
         display: flex;
         flex: 1; 
-        padding: 0; 
+        /* padding: 0;  */
         text-align: left;
     }
 
@@ -80,7 +80,6 @@
         text-align: left;
         padding-left: 1em;
         padding-right: 1em;
-        height: 180px;
     }
 
     .divider-container{
@@ -125,14 +124,15 @@
     }
 </style>
 
-<body>
-    <div class="header row justify-content-center">
+<body class="d-flex justify-content-center mt-5">
+    <div class="receipt w-75 h-100">
+    <div class="header row justify-content-center w-100">
         <div class="col-md-5 mt-4 p-0">
             <div class="title">
                 <h3 class="font-weight-bold">Ticket Invoice</h3>
             </div>
             <div class="order">
-                <h4 class="font-weight-bold">Order ID #123456</h4> {{-- connect database --}}
+                <h4 class="font-weight-bold">Order ID #{{$receipt->transId}}</h4> {{-- connect database --}}
             </div>
         </div>
 
@@ -141,35 +141,42 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center w-100">
         <div class="identity-box col-md-7 mt-4 d-flex">
-            <div class="identity col-md-3">
+            <div class="buyer-info d-flex justify-between">
+
+            
+            <div class="identity">
                 <div class="name p-2 d-flex align-items-center">
-                    <h5 class="mb-0">Name</h5>
+                    <p class="mb-0">Name</p>
                 </div>
                 <div class="email p-2 d-flex align-items-center">
-                    <h5 class="mb-0">Email Address</h5>
+                    <p class="mb-0">Email Address</p>
                 </div>
                 <div class="phone p-2 d-flex align-items-center">
-                    <h5 class="mb-0">Phone Number</h5>
+                    <p class="mb-0">Phone Number</p>
                 </div>                
             </div>
 
-            <div class="identity-fill col-md-4">
+            <div class="identity-fill">
                 <div class="name-fill p-2 d-flex align-items-center">
-                    <h5 class="mb-0">: Name</h5> {{-- connect database --}}
+                    <p class="mb-0">: {{$receipt->buyer_name}}</p> {{-- connect database --}}
                 </div> 
                 <div class="email-fill p-2 d-flex align-items-center">
-                    <h5 class="mb-0">: Email Address</h5> {{-- connect database --}}
+                    <p class="mb-0">: {{$receipt->email}}</p> {{-- connect database --}}
                 </div>
                 <div class="phone-fill p-2 d-flex align-items-center">
-                    <h5 class="mb-0">: Phone Number</h5> {{-- connect database --}}
+                    <p class="mb-0">: {{$receipt->phone}}</p> {{-- connect database --}}
                 </div>                
+            </div>
+        </div>
+            <div class="status">
+                ppp
             </div>
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center w-100">
         <div class="col-md-7 mt-4 p-0">
             <div class="title">
                 <h4>Payment Detail</h4>
@@ -177,107 +184,104 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center w-100 h-100">
         <div class="table col-md-7 mt-4 p-0">
-            <div class="table-header d-flex p-0">
-                <div class="header-text">
-                    <div class="col-md-1 p-2 d-flex align-items-center ">
-                        <h5 class="mb-0 text-left font-weight-bold">No.</h5>
-                    </div>
-                    <div class="col-md-3 p-2 d-flex align-items-center ">
+            <div class="table-header d-flex pt-1 pb-1 justify-content-center">
+                <div class="header-text d-flex justify-content-center">
+                    <div class="col-md-4 p-2 d-flex align-items-center ">
                         <h5 class="mb-0 text-left font-weight-bold">Destination</h5>
                     </div>
-                    <div class="col-md-4 p-2 d-flex align-items-center ">
-                        <h5 class="mb-0 text-left font-weight-bold">Description</h5>
+                    <div class="col-md-3 p-2 d-flex align-items-center ">
+                        <h5 class="mb-0 text-left font-weight-bold"></h5>
                     </div> 
                     <div class="col-md-2 p-2 d-flex align-items-center ">
                         <h5 class="mb-0 text-left font-weight-bold">Quantity</h5>
                     </div>
                     <div class="col-md-2 p-2 d-flex align-items-center justify-content-end">
-                        <h5 class="mb-0 text-right font-weight-bold">Total</h5>
+                        <h5 class="mb-0 text-right font-weight-bold">Price</h5>
                     </div>                
                 </div>
             </div>
 
             <div class="table-fill d-flex p-0">
-                <div class="child-text">
-                    <div class="col-md-1 p-2 d-flex">
-                        <p class="mb-0 text-left">1.</p>
+                <div class="child-text d-flex justify-content-center">
+                    <div class="col-md-4 p-2 d-flex">
+                    <p class="mb-0 pr-2 text-left">{{$receipt->title}}</p>
                     </div>
                     <div class="col-md-3 p-2 d-flex">
-                        <p class="mb-0 pr-2 text-left">Taman Safari Ticket</p>
-                    </div>
-                    <div class="col-md-4 p-2 d-flex">
                         <p class="mb-0 pr-2 text-left">
-                            Lorem ipsum dolor sit amet consectetur. Sed feugiat at sed eget tellus egestas vulputate. Vehicula turpis sit eget diam vulputate commodo ipsum ornare et. 
+                            
                         </p>
                     </div> 
                     <div class="col-md-2 p-2 d-flex">
-                        <p class="mb-0 text-left">1</p>
+                        <p class="mb-0 text-left">{{$receipt->quantity}}</p>
                     </div>
                     <div class="col-md-2 p-2 d-flex justify-content-end">
-                        <p class="mb-0 text-right">IDR 70.000</p>
+                        <p class="mb-0 text-right">{{number_format($receipt->price, 0, ',', '.')}}</p>
                     </div>                
                 </div>
             </div>
 
-            <div class="divider-container mt-4">
+            {{-- <div class="divider-container mt-4">
                 <hr class="divider">
-            </div>
-
-            <div class="row justify-content-end pr-3">
-                <div class="price col-md-1">
-                    <div class="subtotal p-1 d-flex align-items-center">
-                        <p class="mb-0 text-left font-weight-bold">Subtotal</p>
+            </div> --}}
+{{-- 
+            <div class="calculation">
+                <div class="row justify-content-end pr-5">
+                    <div class="price col-md-1">
+                        <div class="subtotal p-1 d-flex align-items-center">
+                            <p class="mb-0 text-left font-weight-bold">Subtotal</p>
+                        </div>
+                        <div class="discount p-1 d-flex align-items-center">
+                            <p class="mb-0 text-left font-weight-bold">Disc</p>
+                        </div>
+                        <div class="service p-1 d-flex align-items-center">
+                            <p class="mb-0 text-left font-weight-bold">Services</p>
+                        </div>                
                     </div>
-                    <div class="discount p-1 d-flex align-items-center">
-                        <p class="mb-0 text-left font-weight-bold">Disc</p>
+            
+                    <div class="price-fill col-md-3 justify-content-end">
+                        <div class="subtotal-fill p-1 d-flex align-items-center justify-content-end">
+                            <p class="mb-0">{{ number_format($receipt->price * $receipt->quantity, 0, ',', '.')}}</p>
+                        </div> 
+                        <div class="discount-fill p-1 d-flex align-items-center justify-content-end">
+                            <p class="mb-0">-0</p>
+                        </div>
+                        <div class="service-fill p-1 d-flex align-items-center justify-content-end">
+                            <p class="mb-0">IDR 5.000</p> 
+                        </div>                
                     </div>
-                    <div class="service p-1 d-flex align-items-center">
-                        <p class="mb-0 text-left font-weight-bold">Services</p>
-                    </div>                
-                </div>
-        
-                <div class="price-fill col-md-3 justify-content-end">
-                    <div class="subtotal-fill p-1 d-flex align-items-center justify-content-end">
-                        <p class="mb-0">IDR 70.000</p> {{-- connect database --}}
-                    </div> 
-                    <div class="discount-fill p-1 d-flex align-items-center justify-content-end">
-                        <p class="mb-0">-0</p> {{-- connect database --}}
-                    </div>
-                    <div class="service-fill p-1 d-flex align-items-center justify-content-end">
-                        <p class="mb-0">IDR 5.000</p> {{-- connect database --}}
-                    </div>                
-                </div>
-            </div> 
+                </div> 
+            </div> --}}
             
             <div class="divider-2-container mt-4">
                 <hr class="divider-2">
             </div>
 
-            <div class="row justify-content-end pr-3">
+            <div class="row justify-content-end pr-5">
                 <div class="total col-md-1">
-                    <div class="subtotal p-1 d-flex align-items-center">
+                    <div class="subtotal p-2 d-flex align-items-center">
                         <p class="mb-0 text-left font-weight-bold">Total</p>
                     </div>              
                 </div>
         
-                <div class="total-fill col-md-3 justify-content-end">
-                    <div class="subtotal-fill p-1 d-flex align-items-center justify-content-end">
-                        <p class="mb-0">IDR 75.000</p> {{-- connect database --}}
+                <div class="total-fill col-md-2 justify-content-end ">
+                    <div class="subtotal-fill p-2 d-flex align-items-center justify-content-end">
+                        <p class="mb-0">{{ number_format($receipt->price * $receipt->quantity, 0, ',', '.')}}</p> {{-- connect database --}}
                     </div>              
                 </div>
             </div> 
 
-            <div class="row justify-content-end pr-3">
+            <div class="row justify-content-end pr-5">
                 <div class="payment-method col-md-7 justify-content-end">
                     <div class="payment p-1 d-flex align-items-center justify-content-end">
-                        <p class="payment mb-0 small">Wed, 28 March 2025 - Virtual Account BCA</p> {{-- connect database --}}
+                        <p class="payment mb-0 small">{{\Carbon\Carbon::parse($receipt->transDate)->format('D, d F Y')}} - Virtual Account BCA</p> {{-- connect database --}}
                     </div>              
                 </div>
             </div> 
             
         </div>
     </div>
+</div>
 </body>
 </html>

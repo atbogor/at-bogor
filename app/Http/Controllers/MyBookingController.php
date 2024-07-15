@@ -18,4 +18,13 @@ class MyBookingController extends Controller
             ]
         );
     }
+
+    public function receipt($id)
+    {
+        $receipt = Transaction::join('tickets', 'tickets.id', '=', 'transactions.ticket_id')
+        ->where('transactions.id', $id)
+        ->first(['transactions.id as transId', 'transactions.created_at as transDate', 'tickets.*', 'transactions.*']);
+        
+        return view('receipt', compact('receipt'));
+    }
 }
