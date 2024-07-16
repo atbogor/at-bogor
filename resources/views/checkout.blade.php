@@ -28,9 +28,18 @@
                         
                         <!-- TITLE, TANGGAL(masi jelek formatnya), HARGA BELOM MASUK -->
                         <div class="ticket_detail my-2">
-                            <p class="m-0">{{$detail->title}}</p>
-                            <p class="m-0" id="Tanggal">{{$detail->ticket_date}}</p>
-                            <p class="m-0" id="Harga">IDR {{$detail->price}}</p>
+                            <div class="div d-flex justify-content-between">
+                                <div class="div ticket_detail_container">
+                                    
+                                    <p class="m-0">{{$detail->title}}</p>
+                                    <p class="m-0" id="Tanggal">{{$detail->ticket_date}}</p>
+                                    <p class="m-0" id="Harga">IDR {{$detail->price}}</p>
+                                </div>
+                                <div class="d-flex flex-column justify-content-end">
+                                    <h6 class="m-0 align-bottom text-right"><b>Quantity : {{$transaction->quantity}}</b></h6>
+                                </div>
+                                
+                            </div>
 
                         </div>
                         
