@@ -28,23 +28,24 @@
                         
                         <!-- TITLE, TANGGAL(masi jelek formatnya), HARGA BELOM MASUK -->
                         <div class="ticket_detail my-2">
-                            <p class="m-0">INI TITLE</p>
-                            <p class="m-0" id="Tanggal">{{$transaction->ticket_date}}</p>
-                            <p class="m-0" id="Harga">INI HARGA</p>
+                            <p class="m-0">{{$detail->title}}</p>
+                            <p class="m-0" id="Tanggal">{{$detail->ticket_date}}</p>
+                            <p class="m-0" id="Harga">IDR {{$detail->price}}</p>
+
                         </div>
                         
                         <hr class="my-2 border-3 custom-color">
                         
                         <div class="my-2 d-flex justify-content-between">
                             <p class="m-0">Subtotal</p>
-                            <p class="m-0 text-right">HARGA</p>
+                            <p class="m-0 text-right">IDR {{$detail->price}}</p>
                         </div>
                         
                         <hr class="my-2 border-3 custom-color">
                         
                         <div class="my-2 d-flex justify-content-between">
                             <h4 class="m-0"><b>Total</b></h4>
-                            <h4 class="text-right m-0"><b>IDR HARGA</b></h4>
+                            <h4 class="text-right m-0"><b>IDR {{ $detail->price * $transaction->quantity }}</b></h4>
                         </div>
                         <div class="d-flex justify-content-end button_container">
                             <button type="button p-0" class="btn" id="pay-button">

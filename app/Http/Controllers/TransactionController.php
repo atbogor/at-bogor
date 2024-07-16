@@ -35,7 +35,6 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request);
         $validatedData = $request->validate([
             'ticket_id' => 'required',
             'buyer_name' => 'required',
@@ -44,25 +43,18 @@ class TransactionController extends Controller
             'phone' => 'required',
             'quantity' => 'required|integer',
         ]);
-        // dd($validatedData);
-        // Ambil data tiket berdasarkan ticket_id
+
         $ticket = Ticket::findOrFail($validatedData['ticket_id']);
         $price = $ticket->price;
 
-
-
-        // Create transaction
-
-        // dd($validatedData);
+        $validatedData['user_id'] = auth()->user()->id;
 
         $transaction = Transaction::create(
             $validatedData
         );
 
-        // dd($transaction);
         $gross_amount = $price * $transaction['quantity'];
 
-        // Configure Midtrans
         \Midtrans\Config::$serverKey = 'SB-Mid-server-Bx3wZeVZMWNIYoB2Wn06y8__';
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
@@ -71,7 +63,7 @@ class TransactionController extends Controller
         $params = [
             'transaction_details' => [
                 'order_id' => $transaction->id,
-                'gross_amount' => $gross_amount, // Calculate total amount
+                'gross_amount' => $gross_amount,
             ],
             'customer_details' => [
                 'first_name' => $validatedData['buyer_name'],
@@ -99,16 +91,18 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
-        // dd($transaction);
-        $ticket = Ticket::join('transactions', 'transactions.ticket_id', '=', 'tickets.id')->where('tickets.id', '=', 'transactions.ticket_id')->get();
+        $detail = Transaction::join('tickets', 'transactions.ticket_id', '=', 'tickets.id')
+            ->where('transactions.id', $transaction->id)
+            ->first();
 
-        // dd($ticket);
+        // dd($transactions);
         return view(
             'checkout',
             [
                 'title' => 'Checkout',
                 'active' => 'ticket',
                 "transaction" => $transaction,
+                "detail" => $detail
             ]
         );
     }
