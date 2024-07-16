@@ -9,6 +9,13 @@
 </head>
 
 <style>
+
+    @media print {
+        @page {
+            size: auto;
+        }
+    }
+
     *, *::before, *::after {
         margin: 0;
         padding: 0;
@@ -122,10 +129,20 @@
         color: 224121;
         opacity: 69%;
     }
+
+    .status img{
+        width: 7rem;
+    }
+    
 </style>
 
-<body class="d-flex justify-content-center mt-5">
-    <div class="receipt w-75 h-100">
+<body class="d-flex justify-content-center mt-5 flex-column">
+    <div class="row w-100">
+        <div class="col-8 ml-5 mt-3">
+            <a class="btn btn-outline-none" href="/mybookings"><i class="fa-solid fa-angle-left"></i> Back</a>
+        </div>
+    </div>
+    <div class="receipt w-100 h-100 d-flex justify-content-center flex-column">
     <div class="header row justify-content-center w-100">
         <div class="col-md-5 mt-4 p-0">
             <div class="title">
@@ -141,8 +158,8 @@
         </div>
     </div>
 
-    <div class="row justify-content-center w-100">
-        <div class="identity-box col-md-7 mt-4 d-flex">
+    <div class="row justify-content-center w-100 ">
+        <div class="identity-box col-md-7 mt-4 d-flex justify-content-between">
             <div class="buyer-info d-flex justify-between">
 
             
@@ -170,8 +187,16 @@
                 </div>                
             </div>
         </div>
-            <div class="status">
-                ppp
+            <div class="status d-flex justify-content-center align-items-center">
+                @if($receipt->status == '0')
+                    <img src="/assets/pending.svg" alt="Pending">
+                  @elseif($receipt->status == '1')
+                    <img src="/assets/completed.svg" alt="Completed">
+                 @elseif($receipt->status == 'cancelled')
+                    <img src="/assets/cancelled.svg" alt="Cancelled">
+                 @else
+                    <p>Status not recognized</p>
+                 @endif
             </div>
         </div>
     </div>
@@ -205,10 +230,10 @@
 
             <div class="table-fill d-flex p-0">
                 <div class="child-text d-flex justify-content-center">
-                    <div class="col-md-4 p-2 d-flex">
+                    <div class="col-md-5 p-2 d-flex">
                     <p class="mb-0 pr-2 text-left">{{$receipt->title}}</p>
                     </div>
-                    <div class="col-md-3 p-2 d-flex">
+                    <div class="col-md-2 p-2 d-flex">
                         <p class="mb-0 pr-2 text-left">
                             
                         </p>
@@ -259,27 +284,36 @@
             </div>
 
             <div class="row justify-content-end pr-5">
-                <div class="total col-md-1">
+                <div class="total col-md-2">
                     <div class="subtotal p-2 d-flex align-items-center">
                         <p class="mb-0 text-left font-weight-bold">Total</p>
                     </div>              
                 </div>
         
                 <div class="total-fill col-md-2 justify-content-end ">
-                    <div class="subtotal-fill p-2 d-flex align-items-center justify-content-end">
-                        <p class="mb-0">{{ number_format($receipt->price * $receipt->quantity, 0, ',', '.')}}</p> {{-- connect database --}}
+                    <div class="total-fill p-2 d-flex align-items-center justify-content-end text-right">
+                        <p class="mb-0">{{number_format($receipt->price * $receipt->quantity, 0, ',', '.')}}</p> {{-- connect database --}}
                     </div>              
                 </div>
             </div> 
 
             <div class="row justify-content-end pr-5">
                 <div class="payment-method col-md-7 justify-content-end">
-                    <div class="payment p-1 d-flex align-items-center justify-content-end">
+                    <div class="payment pb-2 d-flex align-items-center justify-content-end">
                         <p class="payment mb-0 small">{{\Carbon\Carbon::parse($receipt->transDate)->format('D, d F Y')}} - Virtual Account BCA</p> {{-- connect database --}}
                     </div>              
                 </div>
             </div> 
             
+        </div>
+    </div>
+    <div class="row justify-content-center w-100">
+        <div class="col-md-7 mt-4 p-0">
+            <div class="pdf">
+                <a href="{{route("browserpdf", $receipt->transId)}}">Show PDF</a>
+                <a href="{{route("downloadpdf", $receipt->transId)}}">Download PDF</a>
+
+            </div>
         </div>
     </div>
 </div>

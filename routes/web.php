@@ -53,6 +53,8 @@ Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::put("/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);
 Route::get('/mybookings', [MyBookingController::class, 'index'])->middleware('auth');
 Route::get('/mybookings/receipt/{id}', [MyBookingController::class, 'receipt'])->middleware('auth')->name('receipt');
+Route::get('/show-pdf/{id}', [MyBookingController::class, 'pdfInBrowser'])->middleware('auth')->name('browserpdf');
+Route::get('/download-pdf/{id}', [MyBookingController::class, 'downloadPdf'])->middleware('auth')->name('downloadpdf');
 Route::get('/mytestimonials', [MyTestimonialController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [AdminBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('admin');
