@@ -38,6 +38,7 @@ class MyBookingController extends Controller
         if (!$receipt) {
             return abort(404, 'Receipt not found');
         }
+
         
         $pdf = PDF::loadView('receipt', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif']);
 

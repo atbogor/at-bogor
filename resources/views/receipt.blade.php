@@ -13,7 +13,9 @@
     @media print {
         @page {
             size: auto;
+            
         }
+
     }
 
     *, *::before, *::after {
