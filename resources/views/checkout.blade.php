@@ -1,11 +1,16 @@
 @extends('layouts.main')
 <link rel="stylesheet" href="/css/checkout.css">
+<script src="https://kit.fontawesome.com/c8e35e2055.js" crossorigin="anonymous"></script>
 @section('title', 'checkout')
 
 @section('container')
 <div class="p-4">
-    <h2>Back</h2>
-    <h1>Checkout</h1>
+    <div class="row">
+            <div class="col-8 mt-3">
+                <a class="btn btn-outline-none" href="javascript:history.go(-1)"><i class="fa-solid fa-angle-left"></i> Back</a>
+            </div>
+        </div>
+    <!-- <h1>Checkout</h1> -->
     <div class="row center" id="checkout-row">
         <div class="col-6">
             
