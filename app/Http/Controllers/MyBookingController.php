@@ -40,7 +40,7 @@ class MyBookingController extends Controller
         }
 
         
-        $pdf = PDF::loadView('receipt', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('invoice', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif']);
 
        
         return $pdf->stream('invoice.pdf');
