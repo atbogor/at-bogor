@@ -238,17 +238,65 @@ class TransactionController extends Controller
     // }
 
 
+    // public function callback(Request $request)
+    // {
+    //     $serverKey = config('midtrans.server_key');
+
+    //     if ($request->transactionStatus == 'capture') {
+    //         $transaction = Transaction::find($request->order_id);
+    //         $transaction->status_code = 'Paid';
+    //         $transaction->save();
+
+
+    //     } else if ($request->transactionStatus == 'settlement') {
+    //         $transaction = Transaction::find($request->order_id);
+    //         $transaction->status_code = 'Paid';
+    //         $transaction->save();
+
+    //     } else if ($request->transactionStatus == 'cancel' || $request->transactionStatus == 'deny' || $request->transactionStatus == 'expire') {
+    //         $transaction = Transaction::find($request->order_id);
+    //         $transaction->update(['status_code' => 'Cancel']);
+
+    //     } else if ($request->transactionStatus == 'pending') {
+
+    //         $transaction = Transaction::find($request->order_id);
+    //         $transaction->update(['status_code' => 'Pending']);
+    //     }
+    // }
+
     public function callback(Request $request)
     {
-        $serverKey = config('midtrans.server_key');
-        $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
-        if ($hashed == $request->signature_key) {
-            if ($request->transaction_status == 'capture') {
-                $transaction = Transaction::find($request->order_id);
-                $transaction->update(['status_code' => 'Paid']);
+        // Check if the status code is '200'
+        if ($request->status_code == '200') {
+            // Find the transaction by order_id
+            $transaction = Transaction::find($request->order_id);
+
+            $transaction->payment_method = $request->payment_type;
+
+
+            // Debugging: Check if transaction is null
+            if ($transaction === null) {
+                \Log::error('Transaction not found: ' . $request->order_id);
+                return response()->json(['error' => 'Transaction not found'], 404);
             }
+
+            // Update the transaction status
+            $transaction->status_code = 'Paid';
+            $transaction->save();
+
+            // Debugging: Log the transaction update
+            \Log::info('Transaction updated: ' . $transaction->id . ' to status: Paid');
+
+            return response()->json(['success' => 'Transaction updated successfully' . $request->issuer], 200);
+        } else {
+            // Debugging: Log invalid status code
+            \Log::error('Invalid status code: ' . $request->status_code . ' for order_id: ' . $request->order_id);
+            return response()->json(['error' => 'Invalid status code'], 400);
         }
+
+
     }
+
 
 
 }

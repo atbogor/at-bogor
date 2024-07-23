@@ -36,9 +36,10 @@
                         @if($posts[0]->image)
                             <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid rounded-start"
                                 alt="{{ $posts[0]->category->name }}">
-                        @endif
+                        @else
                         <img src="https://picsum.photos/seed/{{ $posts[0]->category->name }}/1600/900"
                             class="img-fluid rounded-start" alt="{{ $posts[0]->category->name }}">
+                        @endif
                     </div>
                 </div>
             </div>

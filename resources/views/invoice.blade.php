@@ -157,11 +157,11 @@
                                 : {{$receipt->buyer_name}}<br />
                                 : {{$receipt->email}}<br />
                                 : {{$receipt->phone}} <br>
-                                @if($receipt->status == '0')
+                                @if($receipt->status_code == 'Unpaid')
                                     : Pending
-                                @elseif($receipt->status == '1')
+                                @elseif($receipt->status_code == 'Paid')
                                     : Completed
-                                @elseif($receipt->status == 'cancelled')
+                                @elseif($receipt->status_code == 'cancelled')
                                     : Cancelled
                                 @else
                                     <p>: Status not recognized</p>
@@ -192,7 +192,7 @@
         </table>
         <br>
         <div class="details">
-            <p>{{\Carbon\Carbon::parse($receipt->transDate)->format('D, d F Y')}} - Virtual Account BCA</p>
+            <p>{{\Carbon\Carbon::parse($receipt->transDate)->format('D, d F Y')}} - {{$receipt->payment_method}}</p>
         </div>
     </div>
 </body>

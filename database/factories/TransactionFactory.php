@@ -20,7 +20,6 @@ class TransactionFactory extends Factory
             "user_id" => mt_rand(1, 10),
             "ticket_id" => mt_rand(1, 100),
             "quantity" => $this->faker->numberBetween(1, 10),
-            "status" => $this->faker->boolean(),
             "buyer_name" => $this->faker->name(),
             "phone" => $this->faker->phoneNumber(),
             "email" => $this->faker->email(),

@@ -96,9 +96,11 @@
                         <div class="row">
                             <div class="status col-md-10 d-flex align-items-center">
                                 <b>
-                                    @if ($booking->status)
-                                        Completed
-                                    @else
+                                    @if ($booking->status_code == 'Paid')
+                                        Complete
+                                    @elseif ($booking->status_code == 'Cancel')
+                                        Cancelled
+                                    @elseif($booking->status_code == 'Unpaid')
                                         Pending
                                     @endif
                                 </b>

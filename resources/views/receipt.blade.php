@@ -190,11 +190,11 @@
             </div>
         </div>
             <div class="status d-flex justify-content-center align-items-center">
-                @if($receipt->status == '0')
+                @if($receipt->status_code == 'Unpaid')
                     <img src="/assets/pending.svg" alt="Pending">
-                  @elseif($receipt->status == '1')
+                  @elseif($receipt->status_code == 'Paid')
                     <img src="/assets/completed.svg" alt="Completed">
-                 @elseif($receipt->status == 'cancelled')
+                 @elseif($receipt->status_code == 'Cancel')
                     <img src="/assets/cancelled.svg" alt="Cancelled">
                  @else
                     <p>Status not recognized</p>
@@ -302,7 +302,7 @@
             <div class="row justify-content-end pr-5">
                 <div class="payment-method col-md-7 justify-content-end">
                     <div class="payment pb-2 d-flex align-items-center justify-content-end">
-                        <p class="payment mb-0 small">{{\Carbon\Carbon::parse($receipt->transDate)->format('D, d F Y')}} - Virtual Account BCA</p> {{-- connect database --}}
+                        <p class="payment mb-0 small">{{\Carbon\Carbon::parse($receipt->transDate)->format('D, d F Y')}} - {{$receipt->payment_method}}</p> {{-- connect database --}}
                     </div>              
                 </div>
             </div> 

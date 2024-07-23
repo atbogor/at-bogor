@@ -47,7 +47,7 @@ Route::resource('/dashboard/posts', AdminBlogController::class)->middleware('adm
 Route::resource('/dashboard/galleries', AdminGalleryController::class)->middleware('admin');
 
 Route::resource('/transactions', TransactionController::class)->middleware('auth');
-Route::post('/midtrans-callback', [TransactionController::class, 'callback']);
+
 
 Route::get("/myprofile", [MyProfileController::class, "index"]);
 Route::put("/myprofile/saveprofile", [MyProfileController::class, "saveprofile"]);

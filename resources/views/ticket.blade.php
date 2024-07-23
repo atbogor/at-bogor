@@ -28,6 +28,7 @@
             width: 100%;
             height: 29em;
             object-fit: cover;
+            border-radius: 15px !important;
         }
 
         .gap-2 {
