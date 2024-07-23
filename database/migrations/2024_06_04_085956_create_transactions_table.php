@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->string('email');
             $table->string('phone');
             $table->integer('quantity');
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(true);
             $table->string('snap_token')->nullable();
             $table->string('order_id')->nullable();
             $table->string('status_code')->nullable();

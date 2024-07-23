@@ -56,9 +56,14 @@
     hr {
         border: 1px solid #142213;
     }
+
+    .receipt a{
+        color: inherit;
+        text-decoration: none
+    }
 </style>
 
-<div class="container mt-5">`
+<div class="container mt-5">
     <h2><b>My Bookings</b></h2>
     <br>
     <div class="col-md-11">

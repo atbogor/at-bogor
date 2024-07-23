@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use Dompdf\Options;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -23,9 +24,9 @@ class MyBookingController extends Controller
     public function receipt($id)
     {
         $receipt = Transaction::join('tickets', 'tickets.id', '=', 'transactions.ticket_id')
-        ->where('transactions.id', $id)
-        ->first(['transactions.id as transId', 'transactions.created_at as transDate', 'tickets.*', 'transactions.*']);
-        
+            ->where('transactions.id', $id)
+            ->first(['transactions.id as transId', 'transactions.created_at as transDate', 'tickets.*', 'transactions.*']);
+
         return view('receipt', compact('receipt'));
     }
 
@@ -34,15 +35,15 @@ class MyBookingController extends Controller
         $receipt = Transaction::join('tickets', 'tickets.id', '=', 'transactions.ticket_id')
             ->where('transactions.id', $id)
             ->first(['transactions.id as transId', 'transactions.created_at as transDate', 'tickets.*', 'transactions.*']);
-        
+
         if (!$receipt) {
             return abort(404, 'Receipt not found');
         }
 
-        
-        $pdf = PDF::loadView('invoice', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif']);
 
-       
+        $pdf = PDF::loadView('invoice', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif', 'isRemoteEnabled' => true]);
+
+
         return $pdf->stream('invoice.pdf');
     }
 
@@ -51,12 +52,12 @@ class MyBookingController extends Controller
         $receipt = Transaction::join('tickets', 'tickets.id', '=', 'transactions.ticket_id')
             ->where('transactions.id', $id)
             ->first(['transactions.id as transId', 'transactions.created_at as transDate', 'tickets.*', 'transactions.*']);
-        
+
         if (!$receipt) {
             return abort(404, 'Receipt not found');
         }
 
-        $pdf = PDF::loadView('receipt', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif']);
-        return $pdf->download('downloadedreceipt.pdf');
+        $pdf = PDF::loadView('invoice', ['receipt' => $receipt])->setOptions(['defaultFont' => 'sans-serif', 'isRemoteEnabled' => true]);
+        return $pdf->download('invoice.pdf');
     }
 }
