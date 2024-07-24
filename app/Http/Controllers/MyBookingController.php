@@ -11,12 +11,13 @@ class MyBookingController extends Controller
 {
     public function index()
     {
+        $bookings = Transaction::select('*')->where('transactions.user_id', '=', auth()->user()->id)->paginate(5);
         return view(
             'mybooking.mybooking',
             [
                 'title' => 'My Booking',
                 'active' => 'ticket',
-                'bookings' => Transaction::latest()->paginate(5)->withQueryString()
+                'bookings' => $bookings
             ]
         );
     }

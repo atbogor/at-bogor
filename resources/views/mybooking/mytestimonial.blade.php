@@ -3,6 +3,10 @@
 @section('content')
 
 <style>
+    h4{
+        color: #214123;
+        
+    }
     h2 {
         color: #214123;
     }
@@ -20,7 +24,7 @@
     <h2><b>My Testimonial</b></h2>
     <br>
     <div class="col-md-10">
-        @foreach ($testimonials as $testimonial)
+        @forelse ($testimonials as $testimonial)
             <div class="card card-testi mb-4">
                 <div class="card-body">
                     <div class="container">
@@ -35,8 +39,9 @@
                     </div>
                 </div>
             </div>
-
-        @endforeach
+        @empty
+            <h4 class="text-center">No Testimonial Available</h4>
+        @endforelse
     </div>
 
     <div class="d-flex justify-content-center align-items-center">

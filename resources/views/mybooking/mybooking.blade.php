@@ -33,6 +33,11 @@
         color: #142213;
     }
 
+    h4 {
+        color: #142213;
+    }
+
+
     .btn-secondary {
         background-color: #FEE9CA !important;
         width: 110px !important;
@@ -67,7 +72,7 @@
     <h2><b>My Bookings</b></h2>
     <br>
     <div class="col-md-11">
-        @foreach ($bookings as $booking)
+        @forelse ($bookings as $booking)
             <div class="card card-history mb-4">
                 <div class="card-body">
                     <div class="container">
@@ -109,7 +114,9 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+            @empty
+            <h4 class="text-center">No Bookings Available</h4>
+        @endforelse
     </div>
 
     <div class="d-flex justify-content-center align-items-center">

@@ -45,7 +45,19 @@ u.head:hover{
 
 .img-fluid {
     border-radius: 12px !important;
+    height: 250px !important;
+    width: 450px !important;
+    object-fit: cover;
+
 }
+
+.img-jumbotron{
+    border-radius: 12px !important;
+    object-fit: cover;
+    height: 300px !important; 
+    width: 620px;
+}
+
 
 .blog-content.card {
     border-radius: 12px !important;

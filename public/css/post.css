@@ -3,8 +3,9 @@
 }
 .img-fluid{
     border-radius: 15px !important;
-    width: 1105px;
-    height: 456px;
+    width: 100% !important;
+    height: 456px !important;
+    object-fit: cover !important;
 }
 
 .btn-secondary{
