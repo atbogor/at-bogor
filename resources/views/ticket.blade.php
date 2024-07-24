@@ -368,7 +368,13 @@
             <div class="justify-content-center col-md-4 mb-3">
                 <label class="ticket_date">Date</label>
                 <div class="form-floating">
-                    <input type="date" name="ticket_date" class="form-control border border-dark @error('ticket_date') is-invalid @enderror" id="ticket_date" value="{{ old('ticket_date') }}">
+                    <input type="date" 
+                           name="ticket_date" 
+                           class="form-control border border-dark @error('ticket_date') is-invalid @enderror" 
+                           id="ticket_date" 
+                           value="{{ old('ticket_date') }}"
+                           min="{{ now()->toDateString() }}" 
+                           max="{{ now()->addDays(7)->toDateString() }}">
                 </div>
                 @error('ticket_date')
                     <div class="invalid-feedback">
@@ -376,6 +382,7 @@
                     </div>
                 @enderror
             </div>
+            
         </div>
     </div>
 

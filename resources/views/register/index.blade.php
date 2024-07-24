@@ -36,20 +36,22 @@
   .gender-floating-form {
     box-shadow: 0 0 0 0.5px #214123;
   }
-
+  
   .create{
     color: #214123
+  }
+  
+  .gender-floating-form{
+    border-radius: 3px;
+    border: #214123;
+    box-shadow: 0 0 0 0.5px #214123;
   }
 </style>
 
 <div class="row justify-content-center">
   <div class="col-md-4">
-
-    <!-- disini nanti bs tambahin message kalau sukses apa engga -->
-
     <main class="form-signin">
-      <form action="/register" method="post"> <!-- jangan lupa tambahin action dan method -->
-        <!-- tambahin logic backend di setiap input kalau error gimana, sama id dan name jangan lupa ubah -->
+      <form action="/register" method="post">
         @csrf
         <div class="d-flex align-items-center justify-content-center">
           <img class="mb-4" src="{{ asset('assets/atBogor-logo-reglog.png') }}" alt="" width="" height="57">
@@ -137,7 +139,7 @@
           <select name="gender"
             class="gender-floating-form form-select col-md-12 px-2 @error('gender') is-invalid @enderror" id="gender"
             aria-label=" Default select example" required value="{{ old('gender') }}">
-            <option disabled {{ old('gender') === null ? 'selected' : '' }}>Gender</option>
+            <option selected {{ old('gender') === null ? 'selected' : '' }}>Gender</option>
             <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
             <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
           </select>
