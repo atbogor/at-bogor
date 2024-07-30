@@ -11,7 +11,7 @@ class MyBookingController extends Controller
 {
     public function index()
     {
-        $bookings = Transaction::select('*')->where('transactions.user_id', '=', auth()->user()->id)->paginate(5);
+        $bookings = Transaction::select('*')->where('transactions.user_id', '=', auth()->user()->id)->latest()->paginate(5);
         return view(
             'mybooking.mybooking',
             [

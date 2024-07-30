@@ -195,7 +195,7 @@
                   @elseif($receipt->status_code == 'Paid')
                     <img src="/assets/completed.svg" alt="Completed">
                  @elseif($receipt->status_code == 'Cancel')
-                    <img src="/assets/cancelled.svg" alt="Cancelled">
+                    <img src="/assets/canceled.svg" alt="a">
                  @else
                     <p>Status not recognized</p>
                  @endif

@@ -25,7 +25,7 @@ return new class extends Migration {
             $table->integer('quantity');
             $table->string('snap_token')->nullable();
             $table->string('payment_method')->nullable();
-            $table->string('status_code')->default('Unpaid');
+            $table->string('status_code')->default('Pending');
             $table->timestamps();
         });
     }

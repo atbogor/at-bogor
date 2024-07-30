@@ -81,7 +81,7 @@
 
 
 
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-KrytpI0OPRLGzIfw"></script>
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key= {{config('midtrans.clientKey')}}></script>
     <script type="text/javascript">
         var payButton = document.getElementById('pay-button');
         payButton.addEventListener('click', function () {

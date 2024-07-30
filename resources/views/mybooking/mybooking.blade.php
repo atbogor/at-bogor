@@ -105,7 +105,7 @@
                                         Complete
                                     @elseif ($booking->status_code == 'Cancel')
                                         Cancelled
-                                    @elseif($booking->status_code == 'Unpaid')
+                                    @elseif($booking->status_code == 'Pending')
                                         Pending
                                     @endif
                                 </b>
