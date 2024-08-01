@@ -89,6 +89,8 @@
 .img-fluid {
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
+    max-height: 13.4rem;
+    object-fit: cover !important;
 }
 .ticket-box {
     flex: 0 0 auto;
@@ -168,11 +170,6 @@ u {
 .card-title,
 .card-text {
     color: #ffffff !important;
-}
-
-.card-img-top {
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
 }
 
 .article-container.card {

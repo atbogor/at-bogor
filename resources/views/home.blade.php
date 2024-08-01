@@ -23,13 +23,13 @@
                 <div class="scrollable-container d-flex gap-3 " style="height: auto;">
                     
                 
-                @foreach($tickets->take(7) as $ticket)
+                @foreach($tickets as $ticket)
                     <div class="col-md-4 d-flex" id="ticket-box" style = "width: 24rem; padding: 0;">
                     <a href="/ticket/{{ $ticket->slug }}" id="atickets">
                     <div class="ticket-content card h-100">
 
                     @if ($ticket->image)
-                        <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top" alt="{{ $ticket->ticketcategory->name }}">
+                        <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top img-fluid" alt="{{ $ticket->ticketcategory->name }}">
                     @else
                         <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid" alt="...">
                     @endif
@@ -38,7 +38,7 @@
                     <button class="btn btn-secondary mb-2 disabled flex-button">{{$ticket->ticketcategory->name}}</button>
                     <h3 class="card-title">{{$ticket->title}}</h3>
                     <h5 class="card-location">{{$ticket->location}}</h5>
-                    <h4 class="card-price">IDR {{$ticket->price}}</h4>
+                    <h4 class="card-price">IDR {{ number_format($ticket->price, 0, ',', '.') }}</h4>
                     </div>
                     </div>
                     </a>

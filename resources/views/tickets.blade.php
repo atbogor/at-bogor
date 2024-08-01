@@ -123,8 +123,7 @@
 
   .img-fluid{
     border-radius: 15px 15px 0 0  !important;
-    height: 250px !important;
-    width: 450px !important;
+    max-height: 13.4rem;
     object-fit: cover !important;
   }
 
