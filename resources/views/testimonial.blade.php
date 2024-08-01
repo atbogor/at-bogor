@@ -135,7 +135,7 @@
 <section class="testi-header">
     <div class="container-md pt-5 pb-4">
         <h1>Testimonial</h2>
-        <h5>Lorem ipsum dolor sit amet consectetur.</h5>
+        <h5>Share your experience with our app! Your feedback helps others and guides us in improving. We’d love to hear from you!</h5>
 
     </div>
 </section>

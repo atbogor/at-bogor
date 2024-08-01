@@ -36,7 +36,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col">
-            <h1>Edit Blog</h1>
+            <h1>Edit Item</h1>
         </div>
     </div>
     <hr>

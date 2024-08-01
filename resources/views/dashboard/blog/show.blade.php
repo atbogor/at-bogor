@@ -18,7 +18,7 @@
             <h1>{{ $post->title }}</h1>
         </div>
     </div>
-    <a href="/dashboard/tickets" class="btn btn-success">Back to All My Post</a>
+    <a href="/dashboard/tickets" class="btn btn-success">Back to All My Blogs</a>
     <hr>
 
     

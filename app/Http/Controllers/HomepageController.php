@@ -14,10 +14,11 @@ class HomepageController extends Controller
         return view('home', [
             'title' => 'Home',
             'active' => 'home',
-            "posts" => Post::all(),
-            "tickets" => Ticket::all(),
-            "galleries" => Gallery::all()
+            'posts' => Post::all(),
+            'tickets' => Ticket::latest()->take(7)->get(),
+            'galleries' => Gallery::latest()->take(7)->get() 
         ]);
+        
 
         
     }

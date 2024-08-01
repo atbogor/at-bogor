@@ -19,7 +19,7 @@
             <h1>{{ $ticket->title }}</h1>
         </div>
     </div>
-    <a href="/dashboard/tickets" class="btn btn-success">Back to All My Post</a>
+    <a href="/dashboard/tickets" class="btn btn-success">Back to All Tickets</a>
     <hr>
 
     @if ($ticket->image)
@@ -33,7 +33,7 @@
     @endif
 
     <div class="row mt-2">
-        <p><b>Price: </b>Rp. {{ $ticket->price }}</p>
+        <p><b>Price: </b>IDR {{ number_format($ticket->price, 0, ',', '.') }}</p>
     </div>
     <div class="row">
         <p><b>Location: </b>{{ $ticket->location }}</p>

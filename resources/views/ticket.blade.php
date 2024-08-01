@@ -19,6 +19,7 @@
             width: 94%;
             background-position: center;
             margin: auto;
+            border-radius: 15px !important;
             /* background-image: url('https://source.unsplash.com/1600x900/?');
             background-size: cover; */
             /* background-attachment: fixed; */
@@ -353,7 +354,7 @@
 
     <div class="col-md-10 price-frame">
         <div class="col val-div p-0">
-            <h4 class="value">Rp {{ number_format($ticket->price, 0, ',', '.') }}</h4>
+            <h4 class="value">IDR {{ number_format($ticket->price, 0, ',', '.') }}</h4>
         </div>
         <div class="col-md-3 quantity-button pr-0">
             <a class="w-5 decrease"><i class="fas fa-minus"></i></a>
@@ -433,6 +434,7 @@
             <div class="col-md-10 total">
                 <h4 class="price-title ps-5">Total Price</h4>
                 <div class="total-price">
+                    IDR
                     <span id="total-price">10</span>
                 </div>
                 <div class="button-parent" id="buttonParent">
@@ -457,7 +459,7 @@
                 const quantity = parseInt(quantityInput.value);
                 const totalPrice = quantity * pricePerItem;
                 
-                const formattedTotalPrice = totalPrice.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+                const formattedTotalPrice = totalPrice.toLocaleString().replace(',', '.');
                 if (formattedTotalPrice.endsWith(',00')) {
                 // Remove the ".00" if the decimal part is zero
                 const wholeNumber = formattedTotalPrice.slice(0, -3);
