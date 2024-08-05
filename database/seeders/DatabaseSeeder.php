@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
 
         Testimonial::factory(20)->create();
 
-        Gallery::factory(12)->create();
+        Gallery::factory(20)->create();
 
         Transaction::factory(138)->create();
     }

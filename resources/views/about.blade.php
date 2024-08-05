@@ -18,7 +18,7 @@
     .header-jumbotron h1{
         margin: 0;
         margin-right: 1rem;
-        font-weight;: 700 !important
+        font-weight: 700 !important
     }
 
     .header-jumbotron img {
