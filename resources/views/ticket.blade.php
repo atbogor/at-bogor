@@ -376,12 +376,13 @@
                            value="{{ old('ticket_date') }}"
                            min="{{ now()->toDateString() }}" 
                            max="{{ now()->addDays(7)->toDateString() }}">
+
+                           @error('ticket_date')
+                               <div class="invalid-feedback">
+                                   {{ $message }}
+                               </div>
+                           @enderror
                 </div>
-                @error('ticket_date')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
             </div>
             
         </div>
@@ -393,36 +394,36 @@
                 <label class="buyer_name">Full Name</label>
                 <div class="form-floating">
                     <input type="name"  name="buyer_name" class="form-control border border-dark @error('buyer_name') is-invalid @enderror" id="buyer_name" value="{{ old('buyer_name') }}">
+                    @error('buyer_name')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
-                @error('buyer_name')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                @enderror
             </div>
 
             <div class="justify-content-center col-md-4 mb-3">
                 <label class="email">Email</label>
                 <div class="form-floating">
                     <input type="email" id="email" name="email" class="form-control border border-dark @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}">
+                    @error('email')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
-                @error('email')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                @enderror
             </div>
 
             <div class="justify-content-center col-md-4 mb-3">
                 <label class="phone">Phone Number</label>
                 <div class="form-floating">
                     <input type="phone" id="phone" name="phone" class="form-control border border-dark @error('phone') is-invalid @enderror" id="phone" value="{{ old('phone') }}">
+                    @error('phone')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
-                @error('phone')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                @enderror
             </div>
         </div>
     </div>

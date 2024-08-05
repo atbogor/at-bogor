@@ -139,16 +139,16 @@
           <select name="gender"
             class="gender-floating-form form-select col-md-12 px-2 @error('gender') is-invalid @enderror" id="gender"
             aria-label=" Default select example" required value="{{ old('gender') }}">
-            <option selected {{ old('gender') === null ? 'selected' : '' }}>Gender</option>
+            <option value="" selected {{ old('gender') === null ? 'selected' : '' }}>Gender</option>
             <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
             <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
           </select>
 
           @error('gender')
-      <div class="invalid-feedback">
-        {{ $message }}
-      </div>
-    @enderror
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
         </div>
 
         <div class="input-group-prepend">
