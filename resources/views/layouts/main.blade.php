@@ -18,6 +18,9 @@
 
   <title>@Bogor | {{ $title }}</title>
   <style>
+    ::-webkit-scrollbar {
+    display: none;
+    }
   </style>
 </head>
 

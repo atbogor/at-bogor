@@ -17,7 +17,7 @@
 
 <div class="home-page ml-4 mr-4 d-flex flex-column gap-5">
     <section class="popular-destination ">
-        <h1 class="popular-destination-title text-center mb-3">Popular Destination</h1>
+        <h1 class="popular-destination-title text-center mb-3">Destinations</h1>
         <div class="row">
             <div class="col-12">
                 <div class="scrollable-container d-flex gap-3 " style="height: auto;">
@@ -57,7 +57,7 @@
     
 
     <section class="popular-article-container">
-        <h1 class="popular-article-title text-center mb-3">Popular Article</h1>
+        <h1 class="popular-article-title text-center mb-3">Articles</h1>
 
         <div class="row">
             <div class="col-12">

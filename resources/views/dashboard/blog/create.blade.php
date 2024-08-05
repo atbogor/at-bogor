@@ -69,7 +69,7 @@
             <select name="category_id"
                 class="category-floating-form form-select col-md-12 px-2 @error('category') is-invalid @enderror"
                 id="category_id" aria-label=" Default select example" required value="{{ old('category_id') }}">
-                <option disabled {{ old('category_id') === null ? 'selected' : '' }}>Category</option>
+                <option value="" {{ old('category_id') === null ? 'selected' : '' }}>Category</option>
                 @foreach ($categories as $category)
                     @if(old('category_id') == $category->id)
                         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>

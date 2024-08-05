@@ -126,7 +126,7 @@
                 <div class="card-body flex-container">
                 
                     <h5 class="card-title m-0">
-                        {{ Str::limit(strip_tags($gallery->title ), 38) }}
+                        {{ Str::limit(strip_tags($gallery->title ), 34) }}
 
                     </h5>
                 </div>

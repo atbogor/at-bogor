@@ -171,7 +171,7 @@
       </form>
 
       <small class="d-block text-center mt-2">
-        Already have an account? <a href="#" class="col-reg">Login</a>
+        Already have an account? <a href="/login" class="col-reg">Login</a>
       </small>
 
       <div class="container col-lg-4">

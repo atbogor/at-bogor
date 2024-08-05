@@ -81,7 +81,7 @@
             <select name="category_id"
                 class="category-floating-form form-select col-md-12 px-2 @error('category') is-invalid @enderror"
                 id="category_id" aria-label=" Default select example" required value="{{ old('category_id') }}">
-                <option disabled {{ old('category_id') === null ? 'selected' : '' }}>Category</option>
+                <option value="" disabled {{ old('category_id') === null ? 'selected' : '' }}>Category</option>
                 @foreach ($ticketcategories as $ticketcategory)
                     @if(old('category_id') == $ticketcategory->id)
                         <option value="{{ $ticketcategory->id }}" selected>{{ $ticketcategory->name }}</option>
@@ -90,12 +90,12 @@
                     @endif
                 @endforeach
             </select>
-
             @error('category')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
             @enderror
+
         </div>
 
         <div class="mb-3">

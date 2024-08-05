@@ -99,7 +99,7 @@
         onSuccess: function(result) {
                     sendTransactionStatus(result, 'success', function() {
                         // Redirect to another page after data is successfully sent
-                        window.location.href = '/';  // Gantilah URL ini dengan halaman tujuan Anda
+                        window.location.href = 'https://5b43-182-16-186-50.ngrok-free.app/';  // Gantilah URL ini dengan halaman tujuan Anda
                     });
                 },
                 // Optional
