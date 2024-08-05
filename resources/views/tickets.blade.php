@@ -185,6 +185,10 @@
     background-color: #FB2000;
   }
 
+  .card-title{
+    width: 24rem;
+  }
+
 </style>
 
 
@@ -282,7 +286,7 @@
     @foreach ($tickets as $ticket)
       <div class="col-md-4 mb-4 d-flex" id="ticket-box">
         <a href="/ticket/{{ $ticket->slug }}" id="atickets">
-          <div class="ticket-content card h-100">
+          <div class="ticket-content card h-100" style="width: fit-content">
             {{-- <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid" alt="..."> --}}
             @if($ticket->image)
                 <img src="{{ asset('storage/' . $ticket->image) }}" class=" img-fluid rounded-start"

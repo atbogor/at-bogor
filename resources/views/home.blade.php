@@ -26,12 +26,12 @@
                 @foreach($tickets as $ticket)
                     <div class="col-md-4 d-flex" id="ticket-box" style = "width: 24rem; padding: 0;">
                     <a href="/ticket/{{ $ticket->slug }}" id="atickets">
-                    <div class="ticket-content card h-100">
+                    <div class="ticket-content card h-100" style="width: 24rem">
 
                     @if ($ticket->image)
-                        <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top img-fluid" alt="{{ $ticket->ticketcategory->name }}">
+                        <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top img-fluid img_Ticket" alt="{{ $ticket->ticketcategory->name }}">
                     @else
-                        <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid" alt="...">
+                        <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900" class="img-fluid" alt="...">
                     @endif
 
                     <div class="card-body flex-container">
@@ -67,7 +67,12 @@
                     <div class="article-container card" style= "width: 24rem;" id="blog-box">
                         <a href="/post/{{ $post->slug }}" id="ablogs" class="card-link">
                             <div class="blog-content card h-100">
-                                <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top" alt="...">
+                                @if ($post->image)
+                                    <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top img-fluid img_Blog" alt="{{ $post->category->name }}">
+                                @else
+                                    <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top " alt="...">
+                                @endif
+                                
                                 <div class="card-body flex-container">
                                     <button class="btn btn-secondary disabled mb-2 disabled flex-button"
                                         href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</button>
@@ -99,11 +104,16 @@
                         
                         <div class="gallery-container-card" id="gallery-box" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
                                 <div class="gallery-content card h-100">
-                                    <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top" style="width:24rem">
+                                    @if ($gallery->image)
+                                        <img src="{{ asset('storage/' . $gallery->image) }}" class="card-img-top img-fluid img_gallery">
+                                    @else
+                                        <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top" style="width:24rem">
+                                    @endif
+                                    
                                     <div class="card-body flex-container">
                                     
-                                        <h5 class="card-title m-0">
-                                            {{ Str::limit(strip_tags($gallery->title ), 38) }}
+                                        <h5 class="card-title m-0" style="width: 24rem">
+                                            {{ Str::limit(strip_tags($gallery->title ), 34) }}
 
                                         </h5>
                                     </div>
@@ -123,7 +133,11 @@
                                             </button> -->
                                         </div>
                                         <div class="modal-body p-0 m-2 mt-0 align-content-center">
-                                            <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt="">
+                                            @if ($gallery->image)
+                                                <img src="{{ asset('storage/' . $gallery->image) }}" class="card-img-top img-fluid gambar-popup">
+                                            @else
+                                                <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top gambar-popup img-fluid">
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

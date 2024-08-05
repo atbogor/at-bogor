@@ -14,7 +14,7 @@ class HomepageController extends Controller
         return view('home', [
             'title' => 'Home',
             'active' => 'home',
-            'posts' => Post::all(),
+            'posts' => Post::latest()->take(7)->get(),
             'tickets' => Ticket::latest()->take(7)->get(),
             'galleries' => Gallery::latest()->take(7)->get() 
         ]);

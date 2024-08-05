@@ -86,7 +86,9 @@
     border-color: #ffffff !important;
 }
 
-.img-fluid {
+.img_Ticket,
+.img_Blog,
+.img_gallery {
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
     max-height: 13.4rem;
@@ -238,7 +240,10 @@ u {
 
 .gambar-popup {
     border-radius: 15px !important;
+    max-height: 80vh !important;
+    object-fit: cover;
 }
+
 .modal {
     text-align: center;
 }

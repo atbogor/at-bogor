@@ -77,6 +77,6 @@ class DatabaseSeeder extends Seeder
 
         Gallery::factory(20)->create();
 
-        Transaction::factory(138)->create();
+        Transaction::factory(200)->create();
     }
 }

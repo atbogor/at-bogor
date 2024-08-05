@@ -4,13 +4,17 @@ u.head {
     transition: 300ms;
 }
 
+.card-title {
+    width: 24rem;
+}
+
 .card-title,
 .card-text {
     color: #ffffff !important;
 }
 
-u.head:hover{
-    color: #FB2000 !important;
+u.head:hover {
+    color: #fb2000 !important;
     transition: 300ms;
 }
 .btn-success {
@@ -48,16 +52,14 @@ u.head:hover{
     height: 250px !important;
     width: 450px !important;
     object-fit: cover;
-
 }
 
-.img-jumbotron{
+.img-jumbotron {
     border-radius: 12px !important;
     object-fit: cover;
-    height: 300px !important; 
+    height: 300px !important;
     width: 620px;
 }
-
 
 .blog-content.card {
     border-radius: 12px !important;
@@ -99,40 +101,35 @@ u {
     margin-top: var(--bs-gutter-y);
 }
 
-
 .flex-button {
     align-self: start;
-  }
+}
 
-  .card-body:hover {
+.card-body:hover {
     /* background-color: #FB2000; */
     color: putih;
     transition: 300ms ease-in;
-  }
+}
 
-  #blog-box:hover .card-price {
+#blog-box:hover .card-price {
     color: #224121;
-  }
+}
 
-  #blog-box a {
+#blog-box a {
     text-decoration: none;
-  }
+}
 
-  #blog-box:hover .card-body {
-    background-color: #FB2000;
-  }
-
+#blog-box:hover .card-body {
+    background-color: #fb2000;
+}
 
 .card-body {
     display: flex;
     flex-direction: column;
     transition: 300ms ease-in;
-
 }
-
 
 .link-offset-2 {
-    margin-top: auto; 
-    align-self: end; 
+    margin-top: auto;
+    align-self: end;
 }
-
