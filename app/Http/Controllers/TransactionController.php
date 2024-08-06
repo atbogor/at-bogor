@@ -150,34 +150,33 @@ class TransactionController extends Controller
                 $transaction->payment_method = $request->payment_type;
                 $transaction->status_code = 'Paid';
                 $transaction->save();
-
-
             } else if ($request->transaction_status == 'settlement') {
                 $transaction = Transaction::find($request->order_id);
                 $transaction->payment_method = $request->payment_type;
                 $transaction->status_code = 'Paid';
                 $transaction->save();
-
             } else if ($request->transaction_status == 'cancel' || $request->transaction_status == 'deny' || $request->transaction_status == 'expire') {
                 $transaction = Transaction::find($request->order_id);
                 $transaction->payment_method = $request->payment_type;
                 $transaction->update(['status_code' => 'Cancel']);
-
             } else if ($request->transaction_status == 'pending') {
                 $transaction = Transaction::find($request->order_id);
                 $transaction->payment_method = $request->payment_type;
                 $transaction->update(['status_code' => 'Pending']);
             } else {
-                // Debugging: Log invalid status code
                 \Log::error('Invalid status code: ' . $request->status_code . ' for order_id: ' . $request->order_id);
                 return response()->json(['error' => 'Invalid status code'], 400);
             }
+
+            return redirect('/home');
+
         } else {
             \Log::error('Invalid signature key: ' . $request->signature_key . ' for order_id: ' . $request->order_id);
             return response()->json(['error' => 'Invalid signature key'], 400);
         }
-
     }
+
+
 
 
 

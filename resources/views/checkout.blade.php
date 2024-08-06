@@ -38,7 +38,7 @@
                                     
                                     <p class="m-0">{{$detail->title}}</p>
                                     <p class="m-0" id="Tanggal">{{$detail->ticket_date}}</p>
-                                    <p class="m-0" id="Harga">IDR {{$detail->price}}</p>
+                                    <p class="m-0" id="Harga">IDR {{ number_format($detail->price, 0, ',', '.') }}</p>
                                 </div>
                                 <div class="d-flex flex-column justify-content-end">
                                     <h6 class="m-0 align-bottom text-right"><b>Quantity : {{$transaction->quantity}}</b></h6>
@@ -52,14 +52,15 @@
                         
                         <div class="my-2 d-flex justify-content-between">
                             <p class="m-0">Subtotal</p>
-                            <p class="m-0 text-right">IDR {{$detail->price}}</p>
+                            <p class="m-0 text-right">IDR {{ number_format($detail->price, 0, ',', '.') }}</p>
                         </div>
+                        
                         
                         <hr class="my-2 border-3 custom-color">
                         
                         <div class="my-2 d-flex justify-content-between">
                             <h4 class="m-0"><b>Total</b></h4>
-                            <h4 class="text-right m-0"><b>IDR {{ $detail->price * $transaction->quantity }}</b></h4>
+                            <h4 class="text-right m-0"><b>IDR {{ number_format( $detail->price * $transaction->quantity, 0, ',', '.') }}</b></h4>
                         </div>
                         <div class="d-flex justify-content-end button_container">
                             <button type="button p-0" class="btn" id="pay-button">
@@ -99,7 +100,7 @@
         onSuccess: function(result) {
                     sendTransactionStatus(result, 'success', function() {
                         // Redirect to another page after data is successfully sent
-                        window.location.href = 'https://5b43-182-16-186-50.ngrok-free.app/';  // Gantilah URL ini dengan halaman tujuan Anda
+                        window.location.href =  "/home"; 
                     });
                 },
                 // Optional
