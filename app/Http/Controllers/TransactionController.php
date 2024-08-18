@@ -8,7 +8,8 @@ use Carbon\Carbon;
 use App\Http\Controllers\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use Faker\Factory as Faker;
+use Str;
 
 
 class TransactionController extends Controller
@@ -48,11 +49,14 @@ class TransactionController extends Controller
         $ticket = Ticket::findOrFail($validatedData['ticket_id']);
         $price = $ticket->price;
 
+        $validatedData['id'] = 'TR-' . Str::upper(Str::random(2)) . '-' . mt_rand(100, 999);
         $validatedData['user_id'] = auth()->user()->id;
 
         $transaction = Transaction::create(
             $validatedData
         );
+
+        // dd($validatedData);
 
         $gross_amount = $price * $transaction['quantity'];
 
