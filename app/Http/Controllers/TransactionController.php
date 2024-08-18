@@ -36,7 +36,6 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request);
         $validatedData = $request->validate([
             'ticket_id' => 'required',
             'buyer_name' => 'required',
@@ -56,7 +55,6 @@ class TransactionController extends Controller
             $validatedData
         );
 
-        // dd($validatedData);
 
         $gross_amount = $price * $transaction['quantity'];
 
@@ -64,6 +62,8 @@ class TransactionController extends Controller
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
+
+
 
         $params = [
             'transaction_details' => [
@@ -78,6 +78,7 @@ class TransactionController extends Controller
         ];
 
 
+
         try {
             $snapToken = \Midtrans\Snap::getSnapToken($params);
             $transaction->snap_token = $snapToken;
@@ -85,7 +86,6 @@ class TransactionController extends Controller
         } catch (\Exception $e) {
             return response()->json(['error' => 'Failed to process payment: ' . $e->getMessage()], 500);
         }
-
 
         return redirect()->route('transactions.show', $transaction->id);
     }
@@ -96,6 +96,7 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
+        // dd($transaction);
         $detail = Transaction::join('tickets', 'transactions.ticket_id', '=', 'tickets.id')
             ->where('transactions.id', $transaction->id)
             ->first();
