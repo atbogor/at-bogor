@@ -17,9 +17,9 @@ class TestimonialFactory extends Factory
     public function definition(): array
     {
         return [
-            "testimonial_content"=>$this->faker->text(),
-            "slug"=>$this->faker->slug(),
-            "user_id"=>mt_rand(1,12)
+            "testimonial_content" => $this->faker->text(),
+            "slug" => $this->faker->slug(),
+            "user_id" => mt_rand(1, 12)
         ];
     }
 }

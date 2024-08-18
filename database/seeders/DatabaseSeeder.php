@@ -73,11 +73,205 @@ class DatabaseSeeder extends Seeder
 
         // Ticket::factory(10)->create();
 
-        // Testimonial::factory(10)->create();
+        Testimonial::create([
+            "testimonial_content" => "Aplikasi @Bogor sangat membantu saya dalam merencanakan liburan ke Bogor. Semua informasi wisata tersedia lengkap!",
+            "slug" => "aplikasi-bogor-sangat-membantu",
+            "user_id" => mt_rand(1, 10)
+        ]);
 
-        // Gallery::factory(10)->create();
+        Testimonial::create([
+            "testimonial_content" => "Pembelian tiket jadi lebih mudah dan cepat. Tidak perlu antre lagi di lokasi wisata. Sangat direkomendasikan!",
+            "slug" => "pembelian-tiket-mudah",
+            "user_id" => mt_rand(1, 10)
+        ]);
 
-        
+        Testimonial::create([
+            "testimonial_content" => "Galeri foto di @Bogor sangat memukau. Banyak inspirasi tempat wisata baru yang belum pernah saya kunjungi.",
+            "slug" => "galeri-foto-memukau",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Blog @Bogor informatif banget! Banyak tips perjalanan yang sangat bermanfaat.",
+            "slug" => "blog-informatif",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Harga tiket yang ditawarkan sangat bersaing, bahkan ada beberapa promo menarik. Hemat banget!",
+            "slug" => "harga-tiket-bersaing",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Aplikasi ini membuat saya lebih mudah menemukan tempat wisata yang sesuai dengan keinginan. Fitur pencariannya keren!",
+            "slug" => "fitur-pencarian-keren",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Saya suka dengan tampilan antarmuka @Bogor yang user-friendly. Sangat nyaman digunakan.",
+            "slug" => "tampilan-user-friendly",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Sudah beberapa kali pakai @Bogor untuk beli tiket, semuanya berjalan lancar. Tidak ada kendala berarti.",
+            "slug" => "pengalaman-tiket-lancar",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Rekomendasi tempat wisata dari @Bogor sangat akurat. Tempat-tempat yang direkomendasikan memang bagus dan layak dikunjungi.",
+            "slug" => "rekomendasi-akurat",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Saya menemukan banyak hidden gems di Bogor berkat @Bogor. Aplikasinya sangat membantu dalam mengeksplorasi tempat baru.",
+            "slug" => "temukan-hidden-gems",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Blog dan artikel di @Bogor sangat menarik untuk dibaca sebelum melakukan perjalanan. Informasinya sangat detail.",
+            "slug" => "blog-dan-artikel-menarik",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Aplikasi ini benar-benar all-in-one. Saya bisa pesan tiket, lihat galeri foto, dan baca tips perjalanan dalam satu aplikasi.",
+            "slug" => "aplikasi-all-in-one",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Senang sekali dengan fitur peta wisata di @Bogor. Sangat memudahkan saat mencari lokasi wisata di Bogor.",
+            "slug" => "fitur-peta-wisata",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Aplikasi ini memudahkan saya dalam mengatur jadwal perjalanan di Bogor. Semua informasi sudah tersedia di satu tempat.",
+            "slug" => "atur-jadwal-perjalanan",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+        Testimonial::create([
+            "testimonial_content" => "Saya sangat puas dengan layanan @Bogor. Semoga terus berkembang dan menambah lebih banyak fitur menarik.",
+            "slug" => "layanan-puas",
+            "user_id" => mt_rand(1, 10)
+        ]);
+
+
+        Gallery::create([
+            'title' => 'Kebun Raya Bogor',
+            'slug' => 'kebun-raya-bogor',
+            'image' => 'ticket-images/kebun-raya.png',
+            'user_id' => 1,
+        ]);
+
+        Gallery::create([
+            'title' => 'Taman Safari Indonesia',
+            'slug' => 'taman-safari-indonesia',
+            'image' => 'ticket-images/Taman Wisata Matahari.png',
+            'user_id' => 2,
+        ]);
+
+        Gallery::create([
+            'title' => 'Puncak',
+            'slug' => 'puncak',
+            'image' => 'ticket-images/puncakpass.png',
+            'user_id' => 3,
+        ]);
+
+        Gallery::create([
+            'title' => 'Curug Cilember',
+            'slug' => 'curug-cilember',
+            'image' => 'ticket-images/curug_cilember.png',
+            'user_id' => 4,
+        ]);
+
+        Gallery::create([
+            'title' => 'Curug Bidadari',
+            'slug' => 'curug-bidadari',
+            'image' => 'ticket-images/curug_bidadari.png',
+            'user_id' => 5,
+        ]);
+
+        Gallery::create([
+            'title' => 'De\'Ranch',
+            'slug' => 'de-ranch',
+            'image' => 'ticket-images/deranch.png',
+            'user_id' => 6,
+        ]);
+
+        Gallery::create([
+            'title' => 'Kampung Warna-Warni',
+            'slug' => 'kampung-warna-warni',
+            'image' => 'ticket-images/kampungwarna.png',
+            'user_id' => 7,
+        ]);
+
+        Gallery::create([
+            'title' => 'Puncak Pass',
+            'slug' => 'puncak-pass',
+            'image' => 'ticket-images/puncakpass.png',
+            'user_id' => 8,
+        ]);
+
+        Gallery::create([
+            'title' => 'Gunung Salak',
+            'slug' => 'gunung-salak',
+            'image' => 'ticket-images/curug_bidadari.png',
+            'user_id' => 9,
+        ]);
+
+        Gallery::create([
+            'title' => 'Taman Wisata Matahari',
+            'slug' => 'taman-wisata-matahari',
+            'image' => 'ticket-images/Taman Wisata Matahari.png',
+            'user_id' => 10,
+        ]);
+
+        Gallery::create([
+            'title' => 'Bogor Botanical Gardens',
+            'slug' => 'bogor-botanical-gardens',
+            'image' => 'ticket-images/bogor-botanical.png',
+            'user_id' => 1,
+        ]);
+
+        Gallery::create([
+            'title' => 'Pura Parahyangan Agung Jagatkartta',
+            'slug' => 'pura-parahyangan-agung-jagatkartta',
+            'image' => 'ticket-images/pura-parahyangan.png',
+            'user_id' => 2,
+        ]);
+
+        Gallery::create([
+            'title' => 'The Jungle Waterpark',
+            'slug' => 'the-jungle-waterpark',
+            'image' => 'ticket-images/the_jungle_waterpark.png',
+            'user_id' => 3,
+        ]);
+
+        Gallery::create([
+            'title' => 'Kampung Budaya Sindangbarang',
+            'slug' => 'kampung-budaya-sindangbarang',
+            'image' => 'ticket-images/Kampung Budaya Sindangbarang.png',
+            'user_id' => 4,
+        ]);
+
+        Gallery::create([
+            'title' => 'Taman Nasional Gunung Gede Pangrango',
+            'slug' => 'taman-nasional-gunung-gede-pangrango',
+            'image' => 'ticket-images/Taman Wisata Matahari.png',
+            'user_id' => 5,
+        ]);
+
+
+
+
 
         Ticket::create([
             "title" => "Kebun Raya Bogor",
@@ -86,6 +280,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Taman botani seluas 87 hektar yang memiliki koleksi tanaman langka dan sejarah yang panjang. Ideal untuk piknik dan jalan-jalan santai.",
             "category_id" => 1,
+            "image" => "ticket-images/kebun-raya.png"
         ]);
 
         Ticket::create([
@@ -95,6 +290,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Kebun binatang yang menawarkan pengalaman melihat berbagai satwa liar dari dalam mobil. Ada juga wahana hiburan dan pertunjukan.",
             "category_id" => 3,
+            "image" => "ticket-images/kebun-raya.png"
         ]);
 
         Ticket::create([
@@ -104,15 +300,17 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Area pegunungan yang terkenal dengan pemandangan alamnya, kebun teh, dan udara sejuk. Cocok untuk berkemah atau sekadar bersantai.",
             "category_id" => 1,
+            "image" => "ticket-images/puncakpass.png"
         ]);
 
         Ticket::create([
             "title" => "Curug Cilember",
-            "slug" => "curug-cilember",
+            "slug" => "curug_cilember",
             "price" => 20000,
             "location" => "Bogor",
             "description" => "Air terjun yang terletak di tengah hutan tropis dengan trek trekking yang menyenangkan dan pemandangan alam yang indah.",
             "category_id" => 1,
+            "image" => "ticket-images/curug_cilember.png"
         ]);
 
         Ticket::create([
@@ -122,6 +320,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Air terjun yang indah dengan kolam di bawahnya, cocok untuk berenang dan menikmati suasana alam.",
             "category_id" => 1,
+            "image" => "ticket-images/curug_bidadari.png"
         ]);
 
         Ticket::create([
@@ -131,6 +330,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Tempat wisata keluarga dengan tema peternakan, menawarkan aktivitas berkuda, bermain di area playground, dan mencoba berbagai wahana.",
             "category_id" => 3,
+            "image" => "ticket-images/deranch.png"
         ]);
 
         Ticket::create([
@@ -140,6 +340,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Kawasan pemukiman yang telah dicat dengan warna-warni cerah, menawarkan suasana yang Instagramable.",
             "category_id" => 2,
+            "image" => "ticket-images/kampungwarna.png"
         ]);
 
         Ticket::create([
@@ -149,6 +350,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Titik tertinggi di Puncak dengan pemandangan pegunungan yang menakjubkan. Tempat yang bagus untuk makan sambil menikmati lanskap.",
             "category_id" => 1,
+            "image" => "ticket-images/puncakpass.png"
         ]);
 
         Ticket::create([
@@ -158,6 +360,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Gunung berapi yang menawarkan jalur pendakian dengan pemandangan indah dan udara segar. Cocok untuk para pendaki.",
             "category_id" => 1,
+            "image" => "ticket-images/kebun-raya.png"
         ]);
 
         Ticket::create([
@@ -167,6 +370,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Taman bermain dengan berbagai wahana untuk anak-anak dan dewasa, termasuk kolam renang dan area bermain.",
             "category_id" => 3,
+            "image" => "ticket-images/Taman Wisata Matahari.png"
         ]);
 
         Ticket::create([
@@ -176,6 +380,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Sebuah taman botani dengan berbagai koleksi tanaman dan suasana yang menenangkan.",
             "category_id" => 1,
+            "image" => "ticket-images/bogor-botanical.png"
         ]);
 
         Ticket::create([
@@ -185,6 +390,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Tempat ibadah Hindu Bali yang terletak di kawasan pegunungan. Menawarkan pemandangan yang indah dan suasana spiritual.",
             "category_id" => 2,
+            "image" => "ticket-images/pura-parahyangan.png"
         ]);
 
         Ticket::create([
@@ -194,6 +400,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Taman air dengan berbagai wahana air, kolam renang, dan area bermain untuk keluarga. Cocok untuk bersantai dan bersenang-senang.",
             "category_id" => 3,
+            "image" => "ticket-images/the_jungle_waterpark.png"
         ]);
 
         Ticket::create([
@@ -203,6 +410,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Desa budaya yang menampilkan kehidupan dan tradisi masyarakat Sunda, termasuk rumah adat, kerajinan tangan, dan pertunjukan budaya.",
             "category_id" => 2,
+            "image" => "ticket-images/Kampung Budaya Sindangbarang.png"
         ]);
 
         Ticket::create([
@@ -212,6 +420,7 @@ class DatabaseSeeder extends Seeder
             "location" => "Bogor",
             "description" => "Taman nasional yang meliputi dua gunung berapi, menawarkan trek pendakian, flora dan fauna yang kaya, serta pemandangan alam yang spektakuler.",
             "category_id" => 1,
+            "image" => "ticket-images/kebun-raya.png"
         ]);
 
 
