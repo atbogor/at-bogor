@@ -24,7 +24,7 @@
 
     @if ($ticket->image)
         <div style="max-height: 350px; overflow:hidden;">
-            <img src="{{ asset('storage/' . $ticket->image) }}" class="img-fluid mt-3"
+            <img src="{{ asset($ticket->image) }}" class="img-fluid mt-3"
                 alt="{{ $ticket->ticketcategory->name }}">
         </div>
     @else

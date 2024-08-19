@@ -24,7 +24,7 @@
     
     @if ($post->image)
     <div style="max-height: 350px; overflow:hidden;">
-        <img src="{{ asset('storage/'.$post->image) }}" class="img-fluid mt-3" alt="{{ $post->title }}">
+        <img src="{{ asset($post->image) }}" class="img-fluid mt-3" alt="{{ $post->title }}">
     </div>
     @else
     <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="img-fluid"

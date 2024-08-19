@@ -26,7 +26,7 @@
     @if ($gallery->image)
         <div style="max-height: 1000px; overflow:hidden;">
             <!-- Hi -->
-            <img src="{{ asset('storage/' . $gallery->image) }}" class="img-fluid mt-3">
+            <img src="{{ asset($gallery->image) }}" class="img-fluid mt-3">
         </div>
     @else
         <img src="https://picsum.photos/seed/{{ $gallery->title }}/1200/400" class="img-fluid mt-3">
