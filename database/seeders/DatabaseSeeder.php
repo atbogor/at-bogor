@@ -54,8 +54,6 @@ class DatabaseSeeder extends Seeder
             'slug' => 'entertainment',
         ]);
 
-        Post::factory(70)->create();
-
         TicketCategory::create([
             'name' => "Nature",
             "slug" => "nature",
