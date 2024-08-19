@@ -29,7 +29,7 @@
                     <div class="ticket-content card h-100" style="width: 24rem">
 
                     @if ($ticket->image)
-                        <img src="{{ asset('storage/' . $ticket->image) }}" class="card-img-top img-fluid img_Ticket" alt="{{ $ticket->ticketcategory->name }}">
+                        <img src="{{ asset($ticket->image) }}" class="card-img-top img-fluid img_Ticket" alt="{{ $ticket->ticketcategory->name }}">
                     @else
                         <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900" class="img-fluid" alt="...">
                     @endif
@@ -68,7 +68,7 @@
                         <a href="/post/{{ $post->slug }}" id="ablogs" class="card-link">
                             <div class="blog-content card h-100">
                                 @if ($post->image)
-                                    <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top img-fluid img_Blog" alt="{{ $post->category->name }}">
+                                    <img src="{{ asset($post->image) }}" class="card-img-top img-fluid img_Blog" alt="{{ $post->category->name }}">
                                 @else
                                     <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="card-img-top " alt="...">
                                 @endif
@@ -105,7 +105,7 @@
                         <div class="gallery-container-card" id="gallery-box" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
                                 <div class="gallery-content card h-100">
                                     @if ($gallery->image)
-                                        <img src="{{ asset('storage/' . $gallery->image) }}" class="card-img-top img-fluid img_gallery">
+                                        <img src="{{ asset($gallery->image) }}" class="card-img-top img-fluid img_gallery">
                                     @else
                                         <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top" style="width:24rem">
                                     @endif

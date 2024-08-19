@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-md-6">
                         @if($posts[0]->image)
-                            <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-jumbotron rounded-start"
+                            <img src="{{ asset($posts[0]->image) }}" class="img-jumbotron rounded-start"
                                 alt="{{ $posts[0]->category->name }}">
                         @else
                         <img src="https://picsum.photos/seed/{{ $posts[0]->category->name }}/1600/900"
@@ -78,7 +78,7 @@
                             <div class="blog-content card h-100">
                                 <div class="img-container">
                                     @if($post->image)
-                                        <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid rounded-start"
+                                        <img src="{{ asset($post->image) }}" class="img-fluid rounded-start"
                                             alt="{{ $post->category->name }}">
                                     @else
                                         <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900"

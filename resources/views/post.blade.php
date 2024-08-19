@@ -34,7 +34,7 @@
         </div>
         <div class="row mt-2">
             @if($post->image)
-                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
+                <img src="{{ asset($post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
             @else
                 <img src="https://picsum.photos/seed/{{ $post->category->name }}/1600/900" class="img-fluid" alt="{{ $post->category->name }}">
             @endif

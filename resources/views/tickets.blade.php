@@ -289,7 +289,7 @@
           <div class="ticket-content card h-100" style="width: fit-content">
             {{-- <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="img-fluid" alt="..."> --}}
             @if($ticket->image)
-                <img src="{{ asset('storage/' . $ticket->image) }}" class=" img-fluid rounded-start"
+                <img src="{{ asset($ticket->image) }}" class=" img-fluid rounded-start"
                     alt="{{ $ticket->ticketcategory->name }}">
             @else
                 <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"

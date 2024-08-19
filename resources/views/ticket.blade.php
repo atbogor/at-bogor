@@ -311,7 +311,7 @@
 
     <div class="col-md-10 d-flex jumbotron jumbotron-fluid ">
     @if ($ticket->image)
-            <img class="jumbo-img" src="{{ asset('storage/' . $ticket->image) }}" 
+            <img class="jumbo-img" src="{{ asset($ticket->image) }}" 
             alt="{{ $ticket->ticketcategory->name }}">
     @else
     <img src="https://picsum.photos/seed/{{ $ticket->ticketcategory->name }}/1600/900"h-100 class="jumbo-img" alt="...">

@@ -123,7 +123,7 @@
         <div class="gallery-container-card p-0" id="gallery-box" style="width: 24rem;" data-toggle="modal" data-target="#modal{{ $gallery->id }}">
             <div class="gallery-content card h-100">
 
-                <img src="{{ asset('storage/' . $gallery->image) }}" class="card-img-top" alt="{{ $gallery->image }}" style="width: 24rem">
+                <img src="{{ asset($gallery->image) }}" class="card-img-top" alt="{{ $gallery->image }}" style="width: 24rem">
                 <div class="card-body flex-container">
                 
                     <h5 class="card-title m-0">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="modal-body p-0 m-2 mt-0 align-content-center">
                             {{-- <img src="https://picsum.photos/seed/{{ $gallery->id }}/1600/900" class="img-fluid gambar-popup" alt=""> --}}
-                            <img src="{{ asset('storage/' . $gallery->image) }}" class="img-fluid gambar-popup" alt="{{ $gallery->image }}" style="object-fit: cover; width: 100%; height:auto">
+                            <img src="{{ asset($gallery->image) }}" class="img-fluid gambar-popup" alt="{{ $gallery->image }}" style="object-fit: cover; width: 100%; height:auto">
                         </div>
                     </div>
                 </div>
