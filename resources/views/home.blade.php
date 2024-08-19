@@ -134,7 +134,7 @@
                                         </div>
                                         <div class="modal-body p-0 m-2 mt-0 align-content-center">
                                             @if ($gallery->image)
-                                                <img src="{{ asset('storage/' . $gallery->image) }}" class="card-img-top img-fluid gambar-popup">
+                                                <img src="{{ asset($gallery->image) }}" class="card-img-top img-fluid gambar-popup">
                                             @else
                                                 <img src='https://picsum.photos/seed/{{ $gallery->id }}/1600/900' class="card-img-top gambar-popup img-fluid">
                                             @endif
